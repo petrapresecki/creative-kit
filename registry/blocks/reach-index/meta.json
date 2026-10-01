@@ -1,0 +1,12 @@
+{
+  "title": "Reach index",
+  "description": "Project titles scattered down the page and one small dark card mid-screen. Hover a title and the card stretches over behind it, fills with the project, and the title turns to grain where they cross.",
+  "category": "Sections",
+  "files": ["ReachIndex.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap", "@gsap/react"],
+  "registryDependencies": ["cut-type", "grain-dissolve"],
+  "inspiredBy": ["lib-koko-hover"],
+  "usedIn": [],
+  "theme": "quartz"
+}

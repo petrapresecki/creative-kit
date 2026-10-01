@@ -1,0 +1,12 @@
+{
+  "title": "Cut type",
+  "description": "Each letter is cut horizontally, the top half in the display face and the bottom in the sans. The cuts sweep in on scroll and shuffle on hover.",
+  "category": "Text",
+  "files": ["CutType.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap", "@gsap/react"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-koko-split"],
+  "usedIn": [],
+  "theme": "quartz"
+}
