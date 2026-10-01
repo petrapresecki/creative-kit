@@ -11,7 +11,7 @@ pnpm kit list     # every block and theme
 ## Start a new site
 
 ```sh
-pnpm kit new ../my-site --theme graphite --blocks melt-text,spiral-gallery --install
+pnpm kit new ../my-site --theme graphite --blocks melt-text,orbit-gallery --install
 cd ../my-site && pnpm dev
 ```
 

@@ -1,9 +1,9 @@
 {
-  "title": "Spiral gallery",
+  "title": "Orbit gallery",
   "description": "Cards flowing over a 3D shape: a spiral staircase, a cone, a sphere, an ellipsoid or a torus. Scroll speeds it up, drag pushes it, hover slows it and shows a label, click flies the card to the camera.",
   "category": "3D",
   "files": [
-    "SpiralGallery.tsx"
+    "OrbitGallery.tsx"
   ],
   "lib": [
     "gsap",

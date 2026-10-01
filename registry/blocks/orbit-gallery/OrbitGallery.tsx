@@ -6,7 +6,7 @@ import { gsap, prefersReducedMotion } from '@kit/lib/gsap'
 import { getLenis } from '@kit/lib/lenis'
 import { readToken } from '@kit/lib/tokens'
 
-export interface SpiralItem {
+export interface OrbitItem {
   id: string
   /** Image URL (portrait 3:4 works best) */
   src: string
@@ -20,7 +20,7 @@ const CARD = 1.55
 const LEAN = -0.16
 const GOLDEN = Math.PI * (3 - Math.sqrt(5))
 
-export type SpiralShape = 'spiral' | 'cone' | 'sphere' | 'ellipsoid' | 'torus'
+export type OrbitShape = 'spiral' | 'cone' | 'sphere' | 'ellipsoid' | 'torus'
 
 interface Shape {
   /**
@@ -47,7 +47,7 @@ function onSphere(t: number, count: number, out: THREE.Vector3) {
   return out.set(Math.sin(a) * ring, y, Math.cos(a) * ring)
 }
 
-const SHAPES: Record<SpiralShape, Shape> = {
+const SHAPES: Record<OrbitShape, Shape> = {
   // A spiral staircase: upright cards facing outward on a vertical helix
   spiral: {
     place: (t, count, pos, normal) => {
@@ -166,7 +166,7 @@ const fragmentShader = /* glsl */ `
     vec3 color = texture2D(uMap, vUv).rgb;
     // Backs of the far cards would show the image mirrored, so render them as dark, muted shadows
     if (!gl_FrontFacing) color = mix(vec3(dot(color, vec3(0.299, 0.587, 0.114))), color, 0.3) * 0.28;
-    // Cards on the far side of the spiral sink into the dark
+    // Cards on the far side of the shape sink into the dark
     float fog = smoothstep(9.5, 15.5, vDepth);
     color = mix(color, vec3(0.004), fog * 0.78);
     color = mix(vec3(0.004), color, uFade * uDim * uEdge);
@@ -189,13 +189,13 @@ const clamp = (v: number, min: number, max: number) => Math.min(max, Math.max(mi
 const damp = THREE.MathUtils.damp
 
 interface SwirlProps {
-  cards: SpiralItem[]
+  cards: OrbitItem[]
   shape: Shape
   offsetX: number
   speed: number
   highlight: React.RefObject<string | null>
-  onHover: (item: SpiralItem | null) => void
-  onOpen?: (item: SpiralItem) => void
+  onHover: (item: OrbitItem | null) => void
+  onOpen?: (item: OrbitItem) => void
 }
 
 function Swirl({ cards, shape, offsetX, speed, highlight, onHover, onOpen }: SwirlProps) {
@@ -332,7 +332,7 @@ function Swirl({ cards, shape, offsetX, speed, highlight, onHover, onOpen }: Swi
     const m = motion.current
 
     if (!reduced) {
-      // Page scroll and dragging push the cards along the spiral (in cards per second)
+      // Page scroll and dragging push the cards along the path (in cards per second)
       m.vel = clamp(m.vel + (getLenis()?.velocity ?? 0) * 0.0012, -6, 6)
       m.vel *= Math.pow(0.93, dt * 60)
       m.timeScale = damp(m.timeScale, m.hovered >= 0 || highlight.current ? 0.2 : 1, 4, dt)
@@ -342,7 +342,7 @@ function Swirl({ cards, shape, offsetX, speed, highlight, onHover, onOpen }: Swi
     // Cards hug the cylinder at rest and bend further with speed
     shared.uBend.value = damp(shared.uBend.value, clamp(-0.1 - m.vel * 0.05, -0.35, 0.2), 6, dt)
 
-    // Lean the spiral a little and let the pointer tilt it, so you can look around
+    // Lean the shape a little and let the pointer tilt it, so you can look around
     group.current.rotation.x = damp(group.current.rotation.x, shape.tilt - state.pointer.y * 0.12, 3, dt)
     group.current.rotation.y = damp(group.current.rotation.y, state.pointer.x * 0.25, 3, dt)
     group.current.rotation.z = LEAN
@@ -419,15 +419,15 @@ function Swirl({ cards, shape, offsetX, speed, highlight, onHover, onOpen }: Swi
   )
 }
 
-export interface SpiralGalleryProps {
-  items: SpiralItem[]
+export interface OrbitGalleryProps {
+  items: OrbitItem[]
   /** What the cards flow over: a spiral staircase, a widening cone, a sphere, a flattened ellipsoid or a torus */
-  shape?: SpiralShape
+  shape?: OrbitShape
   /** Called after a clicked card has flown to the camera */
-  onOpen?: (item: SpiralItem) => void
+  onOpen?: (item: OrbitItem) => void
   /** Group whose cards stay lit while the rest dim */
   highlight?: string | null
-  /** Shift the spiral sideways, as a fraction of the container width (e.g. 0.14 to make room for text) */
+  /** Shift the gallery sideways, as a fraction of the container width (e.g. 0.14 to make room for text) */
   offsetX?: number
   /** Flow speed multiplier */
   speed?: number
@@ -438,7 +438,7 @@ export interface SpiralGalleryProps {
   background?: string
 }
 
-export default function SpiralGallery({
+export default function OrbitGallery({
   items,
   shape = 'spiral',
   onOpen,
@@ -449,12 +449,12 @@ export default function SpiralGallery({
   hint = 'Drag to spin · Click a card',
   className = '',
   background,
-}: SpiralGalleryProps) {
+}: OrbitGalleryProps) {
   const wrap = useRef<HTMLDivElement>(null)
   const label = useRef<HTMLDivElement>(null)
   const pill = useRef<HTMLDivElement>(null)
-  const [hovered, setHovered] = useState<SpiralItem | null>(null)
-  const [lastHovered, setLastHovered] = useState<SpiralItem | null>(null)
+  const [hovered, setHovered] = useState<OrbitItem | null>(null)
+  const [lastHovered, setLastHovered] = useState<OrbitItem | null>(null)
   const [visible, setVisible] = useState(true)
   const [bg, setBg] = useState(background ?? '#0c0c0c')
   const highlightRef = useRef<string | null>(highlight)
@@ -491,7 +491,7 @@ export default function SpiralGallery({
     return () => el.removeEventListener('pointermove', onMove)
   }, [])
 
-  const onHover = (item: SpiralItem | null) => {
+  const onHover = (item: OrbitItem | null) => {
     setHovered(item)
     if (item) setLastHovered(item)
   }

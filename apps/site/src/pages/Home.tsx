@@ -1,6 +1,6 @@
 import MeltText from '@kit/blocks/melt-text/MeltText'
 import Marquee from '@kit/blocks/marquee/Marquee'
-import SpiralGallery from '@kit/blocks/spiral-gallery/SpiralGallery'
+import OrbitGallery from '@kit/blocks/orbit-gallery/OrbitGallery'
 import DitherTrail from '@kit/blocks/dither-trail/DitherTrail'
 import ScrambleText from '@kit/blocks/scramble-text/ScrambleText'
 import RollText from '@kit/blocks/roll-text/RollText'
@@ -45,7 +45,7 @@ export default function Home() {
             </div>
           </Cell>
           <Cell colSpan={2} rowSpan={2} tone="ink" className="!p-0">
-            <SpiralGallery items={demoCards} onOpen={() => navigate('/blocks/spiral-gallery')} className="h-[70svh] md:h-full" hint="Spiral gallery · drag, hover, click" />
+            <OrbitGallery items={demoCards} onOpen={() => navigate('/blocks/orbit-gallery')} className="h-[70svh] md:h-full" hint="Orbit gallery · drag, hover, click" />
           </Cell>
           <Cell tone="window">
             <span />

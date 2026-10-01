@@ -14,7 +14,7 @@ const steps = [
   {
     title: 'Add blocks',
     text: 'Copies the block’s code into src/components/kit, plus any blocks and helpers it needs. It’s your code from then on: change anything.',
-    cmd: 'pnpm kit add spiral-gallery work-index melt-text --to ../my-site',
+    cmd: 'pnpm kit add orbit-gallery work-index melt-text --to ../my-site',
   },
   {
     title: 'Install what the blocks list',
