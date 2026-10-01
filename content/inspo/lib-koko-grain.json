@@ -1,0 +1,13 @@
+{
+  "id": "lib-koko-grain",
+  "title": "Kokopako — titles dissolve into grain on scroll",
+  "note": "One fullscreen WebGL canvas draws the whole page (SvelteKit + custom GL, Tweakpane left in). As a title leaves it breaks into stippled noise dots from the edges in; the next one flips in on X, squashed then unrolled. Dashed wireframe rocks and rods float in 3D, scatter and spin when the pointer passes, and fast scrolling stretches the image card. Best felt scrolling slowly.",
+  "url": "https://kokopako.fr/work",
+  "kind": "site",
+  "section": "Motion",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/koko-grain.jpg",
+  "added": 1790892900000
+}
