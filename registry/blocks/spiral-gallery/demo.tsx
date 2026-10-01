@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import type { Control, DemoProps } from '@kit/lib/demo'
 import { demoCards, demoProjects } from '@site/data/demo'
-import SpiralGallery, { type SpiralItem } from './SpiralGallery'
+import SpiralGallery, { type SpiralItem, type SpiralShape } from './SpiralGallery'
 
 export const controls: Control[] = [
+  { name: 'shape', label: 'Shape', type: 'select', options: ['spiral', 'cone', 'sphere', 'ellipsoid', 'torus'], default: 'spiral' },
   { name: 'speed', label: 'Flow speed', type: 'range', min: 0, max: 3, step: 0.25, default: 1 },
   { name: 'highlight', label: 'Highlight group', type: 'select', options: ['none', ...demoProjects.map(p => p.id)], default: 'none' },
 ]
@@ -14,6 +15,7 @@ export default function Demo({ values }: DemoProps) {
     <div className="relative">
       <SpiralGallery
         items={demoCards}
+        shape={(values.shape as SpiralShape) ?? 'spiral'}
         speed={Number(values.speed)}
         highlight={values.highlight === 'none' ? null : String(values.highlight)}
         onOpen={setOpened}

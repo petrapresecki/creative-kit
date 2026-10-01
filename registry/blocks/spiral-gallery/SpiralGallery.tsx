@@ -16,15 +16,117 @@ export interface SpiralItem {
   group?: string
 }
 
-// A spiral staircase of cards: upright, facing outward on a vertical helix.
-// The helix is periodic, so cards can flow up it forever and wrap back to the bottom.
-const PER_TURN = 9
-const STEP = (Math.PI * 2) / PER_TURN
-const RISE = 0.42
-const RADIUS = 3.4
 const CARD = 1.55
 const LEAN = -0.16
-const BASE_TILT_X = 0.12
+const GOLDEN = Math.PI * (3 - Math.sqrt(5))
+
+export type SpiralShape = 'spiral' | 'cone' | 'sphere' | 'ellipsoid' | 'torus'
+
+interface Shape {
+  /**
+   * Where card `t` (0…count, flowing forward over time) sits and the outward direction it faces.
+   * May also set `side`, the card's left-to-right direction; left at zero, cards stay upright.
+   */
+  place: (t: number, count: number, pos: THREE.Vector3, normal: THREE.Vector3, side: THREE.Vector3) => void
+  /** Looping shapes are seamless; open ones fade cards out over this many cards at each end */
+  fade: number
+  /** Size to fit into the view, in world units; height 0 lets it run off the top and bottom */
+  width: number
+  height: number
+  /** Base tilt towards the camera, radians */
+  tilt: number
+  card: number
+}
+
+// Fibonacci sphere: card t of count sits at an even-area height, turning by the golden angle,
+// so cards cover the surface evenly while still flowing along one continuous path
+function onSphere(t: number, count: number, out: THREE.Vector3) {
+  const y = (2 * t) / count - 1
+  const ring = Math.sqrt(Math.max(0, 1 - y * y))
+  const a = t * GOLDEN
+  return out.set(Math.sin(a) * ring, y, Math.cos(a) * ring)
+}
+
+const SHAPES: Record<SpiralShape, Shape> = {
+  // A spiral staircase: upright cards facing outward on a vertical helix
+  spiral: {
+    place: (t, count, pos, normal) => {
+      const a = (t * Math.PI * 2) / 9
+      normal.set(Math.sin(a), 0, Math.cos(a))
+      pos.set(normal.x * 3.4, (t - count / 2) * 0.42, normal.z * 3.4)
+    },
+    fade: 3,
+    width: 9.2,
+    height: 0,
+    tilt: 0.12,
+    card: 1,
+  },
+  // A vortex: the helix widens as it rises
+  cone: {
+    place: (t, count, pos, normal) => {
+      const a = (t * Math.PI * 2) / 8
+      const r = 1.3 + (t / count) * 3.4
+      normal.set(Math.sin(a), 0, Math.cos(a))
+      pos.set(normal.x * r, (t - count / 2) * 0.36, normal.z * r)
+    },
+    fade: 3,
+    width: 11,
+    height: 0,
+    tilt: 0.22,
+    card: 0.95,
+  },
+  sphere: {
+    place: (t, count, pos, normal) => {
+      onSphere(t, count, normal)
+      pos.copy(normal).multiplyScalar(3.6)
+    },
+    fade: 1.5,
+    width: 9.8,
+    height: 9.8,
+    tilt: 0.1,
+    card: 0.95,
+  },
+  // A wide, flattened sphere; the normal of an ellipsoid is the direction divided by each radius
+  ellipsoid: {
+    place: (t, count, pos, normal) => {
+      onSphere(t, count, pos)
+      normal.set(pos.x / 5.2, pos.y / 2.6, pos.z / 3.4).normalize()
+      pos.set(pos.x * 5.2, pos.y * 2.6, pos.z * 3.4)
+    },
+    fade: 1.5,
+    width: 12.4,
+    height: 7.8,
+    tilt: 0.2,
+    card: 0.9,
+  },
+  // A donut tilted towards you: cards wind round the tube while travelling round the ring, and it loops seamlessly
+  torus: {
+    place: (t, count, pos, normal, side) => {
+      const winds = Math.max(2, Math.round(count / 8))
+      const ring = (t / count) * Math.PI * 2
+      const tube = ring * winds
+      normal.set(Math.cos(tube) * Math.cos(ring), Math.sin(tube), Math.cos(tube) * Math.sin(ring))
+      const r = 3.5 + Math.cos(tube) * 1.5
+      pos.set(r * Math.cos(ring), Math.sin(tube) * 1.5, r * Math.sin(ring))
+      // Along the ring, so cards roll over the top of the tube instead of flipping
+      side.set(Math.sin(ring), 0, -Math.cos(ring))
+    },
+    fade: 0,
+    width: 11.4,
+    height: 9,
+    tilt: 0.95,
+    card: 0.72,
+  },
+}
+
+// Scratch objects reused every frame
+const UP = new THREE.Vector3(0, 1, 0)
+const _pos = new THREE.Vector3()
+const _normal = new THREE.Vector3()
+const _x = new THREE.Vector3()
+const _y = new THREE.Vector3()
+const _basis = new THREE.Matrix4()
+const _quat = new THREE.Quaternion()
 
 const vertexShader = /* glsl */ `
   uniform float uTime;
@@ -88,6 +190,7 @@ const damp = THREE.MathUtils.damp
 
 interface SwirlProps {
   cards: SpiralItem[]
+  shape: Shape
   offsetX: number
   speed: number
   highlight: React.RefObject<string | null>
@@ -95,7 +198,7 @@ interface SwirlProps {
   onOpen?: (item: SpiralItem) => void
 }
 
-function Swirl({ cards, offsetX, speed, highlight, onHover, onOpen }: SwirlProps) {
+function Swirl({ cards, shape, offsetX, speed, highlight, onHover, onOpen }: SwirlProps) {
   const COUNT = cards.length
   const textures = useLoader(
     THREE.TextureLoader,
@@ -116,6 +219,7 @@ function Swirl({ cards, offsetX, speed, highlight, onHover, onOpen }: SwirlProps
       card: cards[i],
       seq: i,
       push: 0,
+      lastT: -1,
       phase: rand() * Math.PI * 2,
     }))
   }, [COUNT, cards])
@@ -197,7 +301,6 @@ function Swirl({ cards, offsetX, speed, highlight, onHover, onOpen }: SwirlProps
         gsap.delayedCall(0.9, () => {
           m.flying = -1
           m.hovered = -1
-          mesh.rotation.set(0, 0, 0)
           materials.forEach(mat => (mat.uniforms.uFade.value = 1))
         })
       },
@@ -240,7 +343,7 @@ function Swirl({ cards, offsetX, speed, highlight, onHover, onOpen }: SwirlProps
     shared.uBend.value = damp(shared.uBend.value, clamp(-0.1 - m.vel * 0.05, -0.35, 0.2), 6, dt)
 
     // Lean the spiral a little and let the pointer tilt it, so you can look around
-    group.current.rotation.x = damp(group.current.rotation.x, BASE_TILT_X - state.pointer.y * 0.12, 3, dt)
+    group.current.rotation.x = damp(group.current.rotation.x, shape.tilt - state.pointer.y * 0.12, 3, dt)
     group.current.rotation.y = damp(group.current.rotation.y, state.pointer.x * 0.25, 3, dt)
     group.current.rotation.z = LEAN
 
@@ -254,23 +357,39 @@ function Swirl({ cards, offsetX, speed, highlight, onHover, onOpen }: SwirlProps
       mat.uniforms.uDim.value = damp(mat.uniforms.uDim.value, lit ? 1 : 0.18, 6, dt)
       if (k === m.flying) return
 
-      // Position along the (periodic) helix, flowing upward over time
+      // Position along the shape's (periodic) path, flowing forward over time
       const t = (((item.seq + m.flow) % COUNT) + COUNT) % COUNT
-      const a = t * STEP
+      _x.set(0, 0, 0)
+      shape.place(t, COUNT, _pos, _normal, _x)
       item.push = damp(item.push, isHovered ? 0.7 : 0, 8, dt)
-      const r = RADIUS + item.push
-      mesh.position.set(Math.sin(a) * r, (t - COUNT / 2) * RISE, Math.cos(a) * r)
-      mesh.rotation.set(0, a, 0)
-      // Fade out at both ends so the wrap from top to bottom is invisible
-      mat.uniforms.uEdge.value = THREE.MathUtils.smoothstep(COUNT / 2 - Math.abs(t - COUNT / 2), 0, 3)
+      _pos.addScaledVector(_normal, item.push)
+      // Face outward; unless the shape says otherwise, x runs along the horizon so cards stay upright
+      if (_x.lengthSq() === 0) _x.crossVectors(UP, _normal)
+      if (_x.lengthSq() < 1e-6) _x.set(1, 0, 0)
+      _x.normalize()
+      _y.crossVectors(_normal, _x)
+      _quat.setFromRotationMatrix(_basis.makeBasis(_x, _y, _normal))
+      // Ease towards the spot, so switching shapes morphs; snap when a card wraps from one end to the other
+      const wrapped = item.lastT < 0 || Math.abs(t - item.lastT) > COUNT / 2
+      item.lastT = t
+      if (wrapped) {
+        mesh.position.copy(_pos)
+        mesh.quaternion.copy(_quat)
+      } else {
+        const k = 1 - Math.exp(-10 * dt)
+        mesh.position.lerp(_pos, k)
+        mesh.quaternion.slerp(_quat, k)
+      }
+      // Open shapes fade out at both ends so the wrap is invisible
+      mat.uniforms.uEdge.value = shape.fade ? THREE.MathUtils.smoothstep(COUNT / 2 - Math.abs(t - COUNT / 2), 0, shape.fade) : 1
       const boost = isHovered ? 1.12 : highlight.current && lit ? 1.05 : 1
-      const s = damp(mesh.scale.x, CARD * boost, 8, dt)
+      const s = damp(mesh.scale.x, CARD * shape.card * boost, 8, dt)
       mesh.scale.set(s, s, 1)
     })
   })
 
-  // Fit the spiral's width (2 × radius + a card) into the container
-  const fit = Math.min(viewport.width / 9.2, 1.05)
+  // Fit the shape (plus a card's margin) into the container
+  const fit = Math.min(viewport.width / shape.width, viewport.height / shape.height, 1.05)
   const offset = viewport.width * offsetX
 
   return (
@@ -302,6 +421,8 @@ function Swirl({ cards, offsetX, speed, highlight, onHover, onOpen }: SwirlProps
 
 export interface SpiralGalleryProps {
   items: SpiralItem[]
+  /** What the cards flow over: a spiral staircase, a widening cone, a sphere, a flattened ellipsoid or a torus */
+  shape?: SpiralShape
   /** Called after a clicked card has flown to the camera */
   onOpen?: (item: SpiralItem) => void
   /** Group whose cards stay lit while the rest dim */
@@ -319,6 +440,7 @@ export interface SpiralGalleryProps {
 
 export default function SpiralGallery({
   items,
+  shape = 'spiral',
   onOpen,
   highlight = null,
   offsetX = 0,
@@ -388,6 +510,7 @@ export default function SpiralGallery({
           <Swirl
             key={items.map(i => i.id).join()}
             cards={items}
+            shape={SHAPES[shape]}
             offsetX={offsetX}
             speed={speed}
             highlight={highlightRef}
