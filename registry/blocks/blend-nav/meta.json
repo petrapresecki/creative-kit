@@ -1,0 +1,11 @@
+{
+  "title": "Blend nav",
+  "description": "Iva's “mask” header: drawn in white with mix-blend-difference, so it reads black on light sections and inverts over images and dark ones. Pill hovers fill in the accent colour.",
+  "category": "Navigation",
+  "files": ["BlendNav.tsx"],
+  "lib": ["tokens"],
+  "dependencies": [],
+  "registryDependencies": [],
+  "inspiredBy": ["iva-d-mask", "iva-original", "lib-kaspar-grid"],
+  "usedIn": ["iva"]
+}
