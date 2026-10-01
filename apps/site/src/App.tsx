@@ -25,7 +25,26 @@ export default function App() {
     getLenis()?.scrollTo(0, { immediate: true })
     window.scrollTo(0, 0)
     const id = requestAnimationFrame(() => ScrollTrigger.refresh())
-    return () => cancelAnimationFrame(id)
+
+    // A trackpad flick keeps sending wheel events for a second after the click, which would
+    // scroll the new page straight down. Swallow that tail; the first wheel after a pause is a real scroll.
+    let last = performance.now()
+    const release = () => document.removeEventListener('wheel', swallow, { capture: true })
+    const swallow = (e: WheelEvent) => {
+      const now = performance.now()
+      if (now - last > 150) return release()
+      last = now
+      e.preventDefault()
+      e.stopPropagation()
+    }
+    document.addEventListener('wheel', swallow, { capture: true, passive: false })
+    const cap = window.setTimeout(release, 3000)
+
+    return () => {
+      cancelAnimationFrame(id)
+      clearTimeout(cap)
+      release()
+    }
   }, [path])
 
   return (
