@@ -1,5 +1,5 @@
 import { useId, useRef } from 'react'
-import { gsap, ScrollTrigger, SplitText, useGSAP, prefersReducedMotion } from '@kit/lib/gsap'
+import { gsap, ScrollTrigger, SplitText, useGSAP, useScroller, prefersReducedMotion } from '@kit/lib/gsap'
 
 export interface MeltTextProps {
   children: string
@@ -39,10 +39,11 @@ export default function MeltText({
   const root = useRef<HTMLElement>(null)
   const defs = useRef<SVGDefsElement>(null)
   const uid = useId().replace(/:/g, '')
+  const scrollerEl = useScroller(scroller)
 
   useGSAP(
     () => {
-      if (prefersReducedMotion()) return
+      if (prefersReducedMotion() || scrollerEl === undefined) return
       let revealed = false
 
       SplitText.create(root.current!, {
@@ -88,14 +89,14 @@ export default function MeltText({
               trigger: root.current,
               start,
               once: true,
-              scroller: scroller?.current ?? undefined,
+              scroller: scrollerEl ?? undefined,
               onEnter: () => tl.play(),
             })
           return tl
         },
       })
     },
-    { scope: root },
+    { scope: root, dependencies: [scrollerEl] },
   )
 
   return (
