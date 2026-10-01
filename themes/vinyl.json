@@ -1,0 +1,24 @@
+{
+  "id": "vinyl",
+  "name": "Vinyl",
+  "description": "Pure red and forest green with lilac, peach and powder-blue bands. One huge, tight grotesk (set it in caps), ruled caption bars, pill badges.",
+  "inspiredBy": ["lib-gass-type", "lib-gass-color", "lib-gass-rows"],
+  "colors": { "paper": "#ff0000", "ink": "#00220b", "accent": "#ffbb90", "mist": "#d2bad8", "muted": "#5a0b00" },
+  "palette": [
+    { "name": "Powder blue", "value": "#afcdda" },
+    { "name": "Op-art pink", "value": "#fbe3f3" },
+    { "name": "Ember", "value": "#ff5500" }
+  ],
+  "fonts": {
+    "sans": { "family": "Archivo", "fallback": "'Neue Haas Grotesk Display', 'Helvetica Neue', Arial, sans-serif", "google": "Archivo:wght@400;500;600" }
+  },
+  "type": [
+    { "name": "display", "size": "clamp(64px, 12vw, 240px)", "leading": "0.8", "tracking": "-0.06em", "weight": 400 },
+    { "name": "headline", "size": "clamp(44px, 8vw, 140px)", "leading": "0.82", "tracking": "-0.055em", "weight": 400 },
+    { "name": "title", "size": "clamp(28px, 3.2vw, 48px)", "leading": "0.95", "tracking": "-0.04em", "weight": 600 },
+    { "name": "lead", "size": "clamp(20px, 2vw, 32px)", "leading": "1.05", "tracking": "-0.03em", "weight": 500 },
+    { "name": "body", "size": "15px", "leading": "1.35", "tracking": "-0.01em", "weight": 500 }
+  ],
+  "radius": "24px",
+  "ease": { "out-expo": "cubic-bezier(0.16, 1, 0.3, 1)", "in-out-quart": "cubic-bezier(0.76, 0, 0.24, 1)" }
+}

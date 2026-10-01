@@ -9,7 +9,7 @@ const steps = [
   {
     title: 'Make a new site',
     text: 'Copies the starter (Vite, React, TypeScript, Tailwind, GSAP, Lenis) into a new folder with a theme already applied.',
-    cmd: 'pnpm kit new ../my-site --theme iva',
+    cmd: 'pnpm kit new ../my-site --theme graphite',
   },
   {
     title: 'Add blocks',
@@ -24,7 +24,7 @@ const steps = [
   {
     title: 'Swap or tweak the theme',
     text: 'Rewrites src/styles/theme.css. Start from a theme here, then edit the colours and fonts in the new site.',
-    cmd: 'pnpm kit theme ledger --to ../my-site',
+    cmd: 'pnpm kit theme cinnabar --to ../my-site',
   },
   {
     title: 'See what’s in the kit',

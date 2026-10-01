@@ -1,6 +1,6 @@
 {
-  "id": "soap",
-  "name": "Soap",
+  "id": "marzipan",
+  "name": "Marzipan",
   "description": "Warm off-white with plum ink, apricot accent and soft colour blocks; a blobby display face and typewriter text.",
   "inspiredBy": ["lib-sapo", "lib-sapo-sticky"],
   "colors": { "paper": "#fbf4ea", "ink": "#5b1236", "accent": "#ffab5e", "mist": "#f2e4d3", "muted": "#9a6a7e" },

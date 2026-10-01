@@ -1,6 +1,6 @@
 {
-  "id": "aspen",
-  "name": "Aspen",
+  "id": "graphite",
+  "name": "Graphite",
   "description": "Edge-to-edge cells and 1px rules, graphite ink and a cool mint accent, mono captions.",
   "inspiredBy": ["lib-aspen", "lib-aspen-grid"],
   "colors": { "paper": "#ffffff", "ink": "#232323", "accent": "#a1ffcb", "mist": "#e0e0e0", "muted": "#7b7b7b" },

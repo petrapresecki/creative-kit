@@ -1,6 +1,6 @@
 {
-  "id": "disc",
-  "name": "Disc",
+  "id": "neon",
+  "name": "Neon",
   "description": "Electric violet with white ink, a pixel display face and pill buttons. For playful, game-like sites.",
   "inspiredBy": ["lib-gg", "lib-gg-wheel"],
   "colors": { "paper": "#4101f5", "ink": "#ffffff", "accent": "#c9ff3d", "mist": "#5b2ff7", "muted": "#b9a5ff" },

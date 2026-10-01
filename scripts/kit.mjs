@@ -158,7 +158,7 @@ function add(slugs = positional) {
 }
 
 function theme(id = positional[0]) {
-  if (!id) fail('Name a theme, e.g. pnpm kit theme iva --to ../my-site')
+  if (!id) fail('Name a theme, e.g. pnpm kit theme graphite --to ../my-site')
   const file = path.join(THEMES, `${id}.json`)
   if (!fs.existsSync(file)) fail(`No theme called "${id}". Available: ${allThemes().map(t => t.id).join(', ')}`)
   const t = readJson(file)
@@ -183,7 +183,7 @@ function theme(id = positional[0]) {
 
 function create() {
   const target = positional[0]
-  if (!target) fail('Name the new folder, e.g. pnpm kit new ../my-site --theme iva')
+  if (!target) fail('Name the new folder, e.g. pnpm kit new ../my-site --theme graphite')
   const dir = path.resolve(process.cwd(), target)
   if (fs.existsSync(dir) && fs.readdirSync(dir).length) fail(`${dir} already exists and isn't empty.`)
   const name = path.basename(dir)
@@ -201,7 +201,7 @@ function create() {
 
   flags.to = dir
   copyLib(dir, ['gsap', 'lenis'])
-  theme(typeof flags.theme === 'string' ? flags.theme : 'iva')
+  theme(typeof flags.theme === 'string' ? flags.theme : 'graphite')
   if (typeof flags.blocks === 'string') add(flags.blocks.split(',').map(s => s.trim()).filter(Boolean))
 
   if (flags.install) execSync('pnpm install', { cwd: dir, stdio: 'inherit' })
@@ -214,7 +214,7 @@ if (!commands[command]) {
 ${c.bold('creative-kit')}
 
   pnpm kit list                                  Every block and theme
-  pnpm kit new <folder> [--theme iva] [--blocks a,b] [--install]
+  pnpm kit new <folder> [--theme graphite] [--blocks a,b] [--install]
   pnpm kit add <block...> --to <project> [--install] [--force] [--dir src/components/kit]
   pnpm kit theme <theme> --to <project>
 `)

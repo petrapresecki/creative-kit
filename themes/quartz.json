@@ -1,0 +1,26 @@
+{
+  "id": "quartz",
+  "name": "Quartz",
+  "description": "White sheet and soft black, silver greys and a dark night world. A light sharp serif cut together with a round sans, tiny mono labels.",
+  "inspiredBy": ["lib-koko-split", "lib-koko-hover", "lib-koko-portal"],
+  "colors": { "paper": "#ffffff", "ink": "#0f0f0f", "accent": "#c9cad2", "mist": "#f2f2f4", "muted": "#8e8f97" },
+  "palette": [
+    { "name": "Night", "value": "#141518" },
+    { "name": "Fog", "value": "#2f3137" },
+    { "name": "Silver", "value": "#bbbcc4" }
+  ],
+  "fonts": {
+    "sans": { "family": "Figtree", "fallback": "'F37 Beckett', 'Helvetica Neue', Arial, sans-serif", "google": "Figtree:wght@400;500" },
+    "display": { "family": "Fraunces", "fallback": "Cirka, Georgia, serif", "google": "Fraunces:opsz,wght@9..144,300;9..144,400" },
+    "mono": { "family": "Roboto Mono", "fallback": "ui-monospace, Menlo, monospace", "google": "Roboto+Mono:wght@400;500" }
+  },
+  "type": [
+    { "name": "display", "size": "clamp(64px, 11vw, 200px)", "leading": "0.92", "tracking": "-0.02em", "weight": 300, "font": "display" },
+    { "name": "headline", "size": "clamp(44px, 7.5vw, 140px)", "leading": "0.95", "tracking": "-0.02em", "weight": 300, "font": "display" },
+    { "name": "title", "size": "clamp(24px, 2.4vw, 36px)", "leading": "1.1", "tracking": "-0.01em", "weight": 400 },
+    { "name": "lead", "size": "clamp(17px, 1.3vw, 20px)", "leading": "1.35", "tracking": "0", "weight": 300, "font": "display" },
+    { "name": "body", "size": "14px", "leading": "1.45", "tracking": "0", "weight": 400 }
+  ],
+  "radius": "36px",
+  "ease": { "out-expo": "cubic-bezier(0.19, 1, 0.22, 1)", "in-out-quart": "cubic-bezier(0.77, 0, 0.18, 1)" }
+}

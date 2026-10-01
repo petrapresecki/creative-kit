@@ -54,7 +54,7 @@ export default function Home() {
           <Cell tone="accent">
             <p className="text-lead">Start the next site from here:</p>
             <div className="grid gap-3">
-              <Command>pnpm kit new ../my-site --theme iva</Command>
+              <Command>pnpm kit new ../my-site --theme graphite</Command>
               <a {...linkProps('/start')} className="group caption w-fit border-b border-ink pb-0.5">
                 <RollText text="How it works →" />
               </a>

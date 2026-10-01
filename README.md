@@ -11,7 +11,7 @@ pnpm kit list     # every block and theme
 ## Start a new site
 
 ```sh
-pnpm kit new ../my-site --theme iva --blocks melt-text,spiral-gallery --install
+pnpm kit new ../my-site --theme graphite --blocks melt-text,spiral-gallery --install
 cd ../my-site && pnpm dev
 ```
 
@@ -19,7 +19,7 @@ cd ../my-site && pnpm dev
 
 ```sh
 pnpm kit add work-index dither-reveal --to ../my-site --install
-pnpm kit theme ledger --to ../my-site
+pnpm kit theme cinnabar --to ../my-site
 ```
 
 Blocks are copied in as source (into `src/components/kit/`), so each site can change them freely.
