@@ -1,0 +1,13 @@
+{
+  "id": "lib-muller-mosaic",
+  "title": "helloMuller — cards and mosaics fade up on scroll",
+  "note": "Each card and mosaic rises 150px and fades in as it enters (Webflow interactions). Nav hover draws a thick black bar under the item. Vimeo loops without controls inside the grids.",
+  "url": "https://www.hellomuller.com/projects.html",
+  "kind": "shot",
+  "section": "Motion",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/muller-mosaic.jpg",
+  "added": 1790879460000
+}

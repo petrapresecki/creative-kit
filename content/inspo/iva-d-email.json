@@ -1,0 +1,10 @@
+{
+  "id": "iva-d-email",
+  "title": "Email scrambles in (her original effect)",
+  "note": "Decodes through random characters when the footer scrolls in and again on hover, with an underline sweep. White footer.",
+  "kind": "decision",
+  "section": "Footer",
+  "verdict": "love",
+  "project": "iva",
+  "added": 1790864740000
+}

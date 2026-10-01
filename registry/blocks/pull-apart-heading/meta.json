@@ -1,0 +1,11 @@
+{
+  "title": "Pull-apart heading",
+  "description": "Two words that slide to opposite edges as the heading scrolls into view.",
+  "category": "Text",
+  "files": ["PullApartHeading.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap", "@gsap/react"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-bleib-work"],
+  "usedIn": ["iva"]
+}

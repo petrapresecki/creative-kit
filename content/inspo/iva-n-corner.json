@@ -1,0 +1,10 @@
+{
+  "id": "iva-n-corner",
+  "title": "Corner wordmark that merges as you scroll",
+  "note": "\"iva … presečki\" in the corners didn’t make sense; the split-email merge also broke depending on screen height.",
+  "kind": "decision",
+  "section": "Footer",
+  "verdict": "nope",
+  "project": "iva",
+  "added": 1790863960000
+}

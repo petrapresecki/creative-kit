@@ -1,0 +1,10 @@
+{
+  "id": "iva-q-hires",
+  "title": "Ask Iva for larger image exports",
+  "note": "The reveal is capped by the source images (max 1920px wide), slightly upscaled on big retina screens.",
+  "kind": "idea",
+  "section": "Hero",
+  "verdict": "maybe",
+  "project": "iva",
+  "added": 1790864380000
+}

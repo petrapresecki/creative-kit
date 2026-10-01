@@ -1,0 +1,11 @@
+{
+  "id": "iva-q-work",
+  "title": "Work section: Rows, Index or Strips?",
+  "note": "Rows = Aspen grid with three snippets per project. Index = huge titles, green row wipe, floating video preview. Strips = four video strips in black and white that widen into colour.",
+  "kind": "question",
+  "section": "Work",
+  "verdict": "maybe",
+  "project": "iva",
+  "image": "images/v2-work-index.jpg",
+  "added": 1790864560000
+}

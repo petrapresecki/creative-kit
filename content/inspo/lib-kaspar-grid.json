@@ -1,0 +1,13 @@
+{
+  "id": "lib-kaspar-grid",
+  "title": "Maximilian Kaspar — ASCII figure, scramble, difference nav",
+  "note": "An animated ASCII plant/bird floats behind everything (canvas). Nav and project headers use mix-blend-difference over photos; links scramble on hover (GSAP ScrambleText) with a square bullet jumping in. Projects expand inline with a × to close (GSAP Flip). Lenis smooth scroll.",
+  "url": "https://www.maximiliankaspar.com/",
+  "kind": "shot",
+  "section": "Interaction",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/kaspar-grid.jpg",
+  "added": 1790879580000
+}

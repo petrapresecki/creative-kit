@@ -1,0 +1,10 @@
+{
+  "id": "iva-n-red",
+  "title": "Brightened Gabagool red",
+  "note": "Her red #aa1a20 is too dark for black text; the brightened #f31b24 didn’t feel right.",
+  "kind": "decision",
+  "section": "Color",
+  "verdict": "nope",
+  "project": "iva",
+  "added": 1790864020000
+}

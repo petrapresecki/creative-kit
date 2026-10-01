@@ -1,0 +1,11 @@
+{
+  "title": "Pixel cursor",
+  "description": "An image cursor that eases after the pointer and swaps to a hover image over links and buttons. Ships with Iva's green pixel hand.",
+  "category": "Interaction",
+  "files": ["PixelCursor.tsx", "cursor.svg", "cursor-hover.svg"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap"],
+  "registryDependencies": [],
+  "inspiredBy": ["iva-original"],
+  "usedIn": ["iva"]
+}

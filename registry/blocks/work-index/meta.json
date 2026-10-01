@@ -1,0 +1,11 @@
+{
+  "title": "Work index",
+  "description": "Huge project titles as the layout. Rows wipe in the accent colour on hover while a video preview trails the pointer.",
+  "category": "Sections",
+  "files": ["WorkIndex.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap", "@gsap/react"],
+  "registryDependencies": ["melt-text", "lazy-video"],
+  "inspiredBy": ["lib-bleib-goo", "iva-original", "iva-q-work"],
+  "usedIn": ["iva"]
+}

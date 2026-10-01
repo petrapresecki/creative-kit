@@ -1,0 +1,11 @@
+{
+  "title": "Work rows",
+  "description": "One row per project: a title cell that fills with the accent on hover, plus three media cells, all split by 1px rules.",
+  "category": "Sections",
+  "files": ["WorkRows.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap", "@gsap/react"],
+  "registryDependencies": ["lazy-video", "roll-text"],
+  "inspiredBy": ["lib-aspen-grid", "iva-q-work"],
+  "usedIn": ["iva"]
+}

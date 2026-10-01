@@ -1,0 +1,13 @@
+{
+  "id": "lib-k95-hover",
+  "title": "k95 — hover slows the whole scene",
+  "note": "Hovered card scales up, all motion drops to ~30% speed, a title + category pill trails the cursor. Great way to make a busy 3D scene readable.",
+  "url": "https://k95.it/en",
+  "kind": "shot",
+  "section": "Interaction",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/k95-hover.jpg",
+  "added": 1790865940000
+}

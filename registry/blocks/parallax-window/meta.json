@@ -1,0 +1,11 @@
+{
+  "title": "Parallax window",
+  "description": "A rounded frame whose image or video drifts inside it while you scroll past.",
+  "category": "Media",
+  "files": ["ParallaxWindow.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap", "@gsap/react"],
+  "registryDependencies": ["lazy-video"],
+  "inspiredBy": ["lib-donut"],
+  "usedIn": ["iva"]
+}

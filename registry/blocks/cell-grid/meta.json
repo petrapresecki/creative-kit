@@ -1,0 +1,11 @@
+{
+  "title": "Cell grid",
+  "description": "Edge-to-edge cells split by 1px rules. Cells can be paper, ink, accent or transparent windows onto a background effect.",
+  "category": "Layout",
+  "files": ["CellGrid.tsx"],
+  "lib": [],
+  "dependencies": [],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-aspen-grid", "lib-aspen"],
+  "usedIn": ["iva"]
+}

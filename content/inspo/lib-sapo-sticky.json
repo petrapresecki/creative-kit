@@ -1,0 +1,13 @@
+{
+  "id": "lib-sapo-sticky",
+  "title": "Mount Sapo — stacked sections + fisheye index",
+  "note": "Each colour section is sticky, so the next slides over the last like a pile of cards. The bottom-left section list scales the current name up large and its neighbours medium, so navigation doubles as a progress indicator. Great for a list of portfolio projects.",
+  "url": "https://mountsapo.com/",
+  "kind": "shot",
+  "section": "Navigation",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Product / service",
+  "image": "images/sapo-sticky.jpg",
+  "added": 1790879700000
+}

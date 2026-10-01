@@ -1,0 +1,11 @@
+{
+  "title": "Marquee",
+  "description": "An endless horizontal ticker for section titles or divider bands. CSS only.",
+  "category": "Text",
+  "files": ["Marquee.tsx"],
+  "lib": [],
+  "dependencies": [],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-mis", "lib-donut"],
+  "usedIn": ["iva"]
+}

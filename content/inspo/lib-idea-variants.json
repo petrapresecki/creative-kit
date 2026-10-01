@@ -1,0 +1,10 @@
+{
+  "id": "lib-idea-variants",
+  "title": "Build switchable variants to decide",
+  "note": "Comparing real prototypes side by side (with a small switcher bar) beat static mockups and Claude Design every time.",
+  "kind": "idea",
+  "section": "Overall",
+  "verdict": "love",
+  "project": "library",
+  "added": 1790865400000
+}

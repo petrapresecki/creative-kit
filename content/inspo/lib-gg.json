@@ -1,0 +1,13 @@
+{
+  "id": "lib-gg",
+  "title": "Good Growth — one-screen 3D \"disc\" carousel",
+  "note": "Electric violet with halftone dots, pixel/techno display type, wireframe orbits. The page never scrolls: each wheel tick spins to the next project object and swaps the big title. An \"Insert disc\" gate with sound, then a boot sequence where G O O D spreads to the edges while a counter runs and 3D icons orbit in. three.js + GSAP + Web Audio.",
+  "url": "https://goodgrowth.com/",
+  "kind": "site",
+  "section": "Hero",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/gg-boot.jpg",
+  "added": 1790880000000
+}

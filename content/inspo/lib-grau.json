@@ -1,0 +1,13 @@
+{
+  "id": "lib-grau",
+  "title": "Elias Grau — info column + one looping reel panel",
+  "note": "Minimal one-screen portfolio: left column with name (GT America Expanded), email, bio, awards; right a big rounded near-black panel where project images fan out in a staggered cascade, one grows to fill the square, holds, then the next plays. It is a single GIF (shows compression), so it could be rebuilt properly with GSAP and real video. Framer.",
+  "url": "https://www.eliasgrau.com/",
+  "kind": "site",
+  "section": "Hero",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/grau-cascade.jpg",
+  "added": 1790879400000
+}

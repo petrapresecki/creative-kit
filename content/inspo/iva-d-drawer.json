@@ -1,0 +1,10 @@
+{
+  "id": "iva-d-drawer",
+  "title": "Project drawer with its own link",
+  "note": "Slides up like the original, URL /work/:id so it can be shared, Escape closes, previous / next at the bottom, full description + tool pills + gallery.",
+  "kind": "decision",
+  "section": "Pages",
+  "verdict": "love",
+  "project": "iva",
+  "added": 1790864800000
+}

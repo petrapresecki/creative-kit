@@ -1,0 +1,13 @@
+{
+  "id": "lib-aspen",
+  "title": "Aspen Search — dithered hero with a fluid trail",
+  "note": "Drifting noise printed as 2px black/white Bayer dots; the pointer leaves a mint smoke trail (small fluid sim). Solid grid cells sit on top, empty cells are windows onto it.",
+  "url": "https://www.aspensearch.com/",
+  "kind": "site",
+  "section": "Hero",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Product / service",
+  "image": "images/aspen-trail.jpg",
+  "added": 1790865760000
+}

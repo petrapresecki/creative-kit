@@ -1,0 +1,13 @@
+{
+  "id": "lib-sapo",
+  "title": "Mount Sapo — liquid wordmark under the cursor",
+  "note": "Playful skincare shop: flat apricot / olive / pink / sky blocks, plum text, blobby wordmark, typewriter mono body. The giant logo smears and drips where the mouse moves, then eases back (raw WebGL displacement). Monospace marquee ticker across the top. WordPress + GSAP.",
+  "url": "https://mountsapo.com/",
+  "kind": "site",
+  "section": "Interaction",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Product / service",
+  "image": "images/sapo-liquid.jpg",
+  "added": 1790879760000
+}

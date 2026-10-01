@@ -1,0 +1,13 @@
+{
+  "id": "lib-an-pool",
+  "title": "A Noche Sone — fixed pool background, oval products",
+  "note": "The water photo stays fixed (background-attachment: fixed) while products scroll over it. Soft feathered-oval product photos in a 4-column grid, script logo, blackletter-ish headings, Roboto Mono details, rounded blue \"Add to cart\" pill.",
+  "url": "https://anochesone.com/",
+  "kind": "shot",
+  "section": "Color",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Webshop",
+  "image": "images/an-pool.jpg",
+  "added": 1790879100000
+}

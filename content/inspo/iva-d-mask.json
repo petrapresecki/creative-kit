@@ -1,0 +1,10 @@
+{
+  "id": "iva-d-mask",
+  "title": "Keep the inverting nav pills (the \"mask\")",
+  "note": "mix-blend-difference on the nav. Also reused for the Donut-style letter reveal over videos.",
+  "kind": "decision",
+  "section": "Navigation",
+  "verdict": "love",
+  "project": "iva",
+  "added": 1790864680000
+}

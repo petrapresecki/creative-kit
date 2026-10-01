@@ -1,0 +1,13 @@
+{
+  "id": "lib-bleib-goo",
+  "title": "Bleibtgleich — \"melt\" line reveal on headings",
+  "note": "Each heading line enters as a blur blob, goes gooey, then snaps sharp (SVG blur + alpha threshold, ~1.2s). Best seen scrolling slowly. Huge Akzidenz type on a strict 8-column grid with a vertical rule.",
+  "url": "https://bleibtgleich.dev/",
+  "kind": "site",
+  "section": "Type",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/bleib-goo.jpg",
+  "added": 1790865880000
+}

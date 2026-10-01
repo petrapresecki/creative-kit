@@ -1,0 +1,11 @@
+{
+  "title": "Scramble text",
+  "description": "Decodes through random characters left to right, when it scrolls into view and again on hover.",
+  "category": "Text",
+  "files": ["ScrambleText.tsx"],
+  "lib": ["gsap", "use-text-scramble"],
+  "dependencies": ["gsap", "@gsap/react"],
+  "registryDependencies": [],
+  "inspiredBy": ["iva-d-email", "lib-kaspar-grid"],
+  "usedIn": ["iva"]
+}

@@ -1,0 +1,33 @@
+{
+  "title": "Spiral gallery",
+  "description": "Upright cards flowing up a 3D spiral. Scroll speeds it up, drag pushes it, hover slows it and shows a label, click flies the card to the camera.",
+  "category": "3D",
+  "files": [
+    "SpiralGallery.tsx"
+  ],
+  "lib": [
+    "gsap",
+    "lenis",
+    "tokens"
+  ],
+  "dependencies": [
+    "three",
+    "@react-three/fiber",
+    "gsap",
+    "lenis"
+  ],
+  "devDependencies": [
+    "@types/three"
+  ],
+  "registryDependencies": [],
+  "inspiredBy": [
+    "iva-d-spiral",
+    "iva-showcase",
+    "lib-k95",
+    "lib-k95-hover"
+  ],
+  "usedIn": [
+    "iva"
+  ],
+  "webgl": true
+}

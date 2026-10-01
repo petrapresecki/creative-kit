@@ -1,0 +1,11 @@
+{
+  "title": "Roll text",
+  "description": "Letters roll up to a copy of themselves on hover, one after another. Pure CSS.",
+  "category": "Text",
+  "files": ["RollText.tsx"],
+  "lib": [],
+  "dependencies": [],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-donut"],
+  "usedIn": ["iva"]
+}

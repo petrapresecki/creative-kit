@@ -1,0 +1,13 @@
+{
+  "id": "lib-k95",
+  "title": "k95 — interactive 3D project gallery",
+  "note": "Project images on rings around a chrome rose. Scroll spins and bends the cards, hovering slows everything down and shows a label pill, clicking flies the card toward you and opens the project. Rings ↔ spiral layout switch. Plain three.js.",
+  "url": "https://k95.it/en",
+  "kind": "site",
+  "section": "Motion",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/k95-hero.jpg",
+  "added": 1790866000000
+}

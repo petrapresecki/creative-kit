@@ -1,0 +1,11 @@
+{
+  "title": "Melt text",
+  "description": "Each line blurs in as a gooey blob, then snaps sharp. Plays when scrolled into view, or immediately.",
+  "category": "Text",
+  "files": ["MeltText.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap", "@gsap/react"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-bleib-goo"],
+  "usedIn": ["iva"]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "iva-q-nav",
+  "title": "Nav over the full-screen dots",
+  "note": "The inverting nav gets noisy over the dither. Tried a white fade, an orange fade (turns the nav blue) and a magenta fade (turns it green but the pink shows). \"We’ll figure out something else.\"",
+  "kind": "question",
+  "section": "Navigation",
+  "verdict": "maybe",
+  "project": "iva",
+  "added": 1790864440000
+}

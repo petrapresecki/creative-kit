@@ -1,0 +1,11 @@
+{
+  "title": "Axis grid",
+  "description": "An 8-column typographic grid where lines of big type start on different columns, crossed by one vertical rule.",
+  "category": "Layout",
+  "files": ["AxisGrid.tsx"],
+  "lib": [],
+  "dependencies": [],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-bleib-goo", "lib-bleib-work"],
+  "usedIn": ["iva"]
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Fit text",
+  "description": "A single line that scales to fill its container edge to edge, re-fitting on resize and font load.",
+  "category": "Text",
+  "files": ["FitText.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-donut"],
+  "usedIn": ["iva"]
+}

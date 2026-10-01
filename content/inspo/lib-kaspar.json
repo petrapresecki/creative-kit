@@ -1,0 +1,13 @@
+{
+  "id": "lib-kaspar",
+  "title": "Maximilian Kaspar — page transition from the grid columns",
+  "note": "Swiss/brutalist white page with a visible 4-column hairline grid, huge Neue Montreal statement, tiny mono labels, images captioned with file names (li_005.jpg). Changing page: screen goes black, then black bars shrink back into each grid column to reveal the new page. Barba + GSAP. Reusable: make the grid itself the transition.",
+  "url": "https://www.maximiliankaspar.com/",
+  "kind": "site",
+  "section": "Motion",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/kaspar-curtain.jpg",
+  "added": 1790879640000
+}

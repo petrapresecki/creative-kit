@@ -1,0 +1,21 @@
+{
+  "id": "disc",
+  "name": "Disc",
+  "description": "Electric violet with white ink, a pixel display face and pill buttons. For playful, game-like sites.",
+  "inspiredBy": ["lib-gg", "lib-gg-wheel"],
+  "colors": { "paper": "#4101f5", "ink": "#ffffff", "accent": "#c9ff3d", "mist": "#5b2ff7", "muted": "#b9a5ff" },
+  "fonts": {
+    "sans": { "family": "Hanken Grotesk", "fallback": "'Helvetica Neue', Arial, sans-serif", "google": "Hanken+Grotesk:wght@400;500;600" },
+    "display": { "family": "Pixelify Sans", "fallback": "monospace", "google": "Pixelify+Sans:wght@500;700" },
+    "mono": { "family": "Geist Mono", "fallback": "ui-monospace, Menlo, monospace", "google": "Geist+Mono:wght@400;500" }
+  },
+  "type": [
+    { "name": "display", "size": "clamp(64px, 12vw, 220px)", "leading": "0.86", "tracking": "0", "weight": 700, "font": "display" },
+    { "name": "headline", "size": "clamp(40px, 6vw, 104px)", "leading": "0.92", "tracking": "0", "weight": 700, "font": "display" },
+    { "name": "title", "size": "clamp(26px, 2.8vw, 44px)", "leading": "1.05", "tracking": "-0.02em", "weight": 600 },
+    { "name": "lead", "size": "clamp(18px, 1.6vw, 24px)", "leading": "1.25", "tracking": "-0.01em", "weight": 500 },
+    { "name": "body", "size": "16px", "leading": "1.45", "tracking": "0", "weight": 400 }
+  ],
+  "radius": "999px",
+  "ease": { "out-expo": "cubic-bezier(0.16, 1, 0.3, 1)", "in-out-quart": "cubic-bezier(0.76, 0, 0.24, 1)" }
+}

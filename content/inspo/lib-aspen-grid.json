@@ -1,0 +1,13 @@
+{
+  "id": "lib-aspen-grid",
+  "title": "Aspen Search — edge-to-edge grid, 1px rules",
+  "note": "No gutters: cells split by 1px lines, content anchored bottom-left, mono uppercase captions with a small square. White / #232323 / mint palette. Sticky stat cells that step like a bar chart.",
+  "url": "https://www.aspensearch.com/",
+  "kind": "shot",
+  "section": "Layout",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Product / service",
+  "image": "images/aspen-stats.jpg",
+  "added": 1790865700000
+}

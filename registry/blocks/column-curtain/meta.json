@@ -1,0 +1,11 @@
+{
+  "title": "Column curtain",
+  "description": "A page transition built from the site's own grid: bars drop into every column, the content swaps, then they slide away.",
+  "category": "Motion",
+  "files": ["ColumnCurtain.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-kaspar"],
+  "usedIn": []
+}

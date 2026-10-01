@@ -1,0 +1,10 @@
+{
+  "id": "iva-q-version",
+  "title": "Grid version or full-screen version?",
+  "note": "Both are live behind the switcher in iva-v2. Full-screen has no notes yet beyond the hero.",
+  "kind": "question",
+  "section": "Overall",
+  "verdict": "maybe",
+  "project": "iva",
+  "added": 1790864620000
+}

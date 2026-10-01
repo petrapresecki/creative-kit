@@ -1,0 +1,11 @@
+{
+  "title": "Work strips",
+  "description": "Every project at once as video strips in black and white; the hovered one widens into full colour with its title.",
+  "category": "Sections",
+  "files": ["WorkStrips.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap", "@gsap/react"],
+  "registryDependencies": ["lazy-video", "roll-text"],
+  "inspiredBy": ["iva-q-strips"],
+  "usedIn": ["iva"]
+}

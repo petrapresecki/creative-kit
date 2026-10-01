@@ -1,0 +1,13 @@
+{
+  "id": "lib-ss-hover",
+  "title": "Short Sentence — mega-menu and image-swap cards",
+  "note": "SHOP opens a white panel with link columns + 3 product cards with prices. Product cards swap to a second pose on hover. Product page: round size buttons (sold out crossed through), square black ADD TO CART, fixed details column while photos scroll.",
+  "url": "https://shortsentence.com/",
+  "kind": "shot",
+  "section": "Interaction",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Webshop",
+  "image": "images/ss-hover.jpg",
+  "added": 1790879220000
+}

@@ -1,0 +1,25 @@
+{
+  "id": "iva",
+  "name": "Iva",
+  "description": "White sheet, near-black ink and one neon green. One grotesk for everything. Built for Iva Presečki's portfolio.",
+  "inspiredBy": ["iva-original", "iva-d-palette", "iva-d-type"],
+  "colors": { "paper": "#ffffff", "ink": "#0c0c0c", "accent": "#05ff43", "mist": "#ececec", "muted": "#8a8a8a" },
+  "palette": [
+    { "name": "Rool orange", "value": "#ff6b1a" },
+    { "name": "Booklet blue", "value": "#5570f1" },
+    { "name": "Gabagool pink", "value": "#ff93b8" },
+    { "name": "Gabagool red", "value": "#aa1a20" }
+  ],
+  "fonts": {
+    "sans": { "family": "Inter Tight", "fallback": "'Helvetica Neue', Helvetica, Arial, sans-serif", "google": "Inter+Tight:wght@400;500;600" }
+  },
+  "type": [
+    { "name": "display", "size": "clamp(64px, 11vw, 220px)", "leading": "0.84", "tracking": "-0.055em", "weight": 500 },
+    { "name": "headline", "size": "clamp(40px, 6.6vw, 124px)", "leading": "0.9", "tracking": "-0.05em", "weight": 500 },
+    { "name": "title", "size": "clamp(28px, 3.4vw, 56px)", "leading": "1.02", "tracking": "-0.04em", "weight": 500 },
+    { "name": "lead", "size": "clamp(18px, 1.6vw, 26px)", "leading": "1.2", "tracking": "-0.02em", "weight": 500 },
+    { "name": "body", "size": "16px", "leading": "1.45", "tracking": "0", "weight": 400 }
+  ],
+  "radius": "10px",
+  "ease": { "out-expo": "cubic-bezier(0.16, 1, 0.3, 1)", "in-out-quart": "cubic-bezier(0.76, 0, 0.24, 1)" }
+}

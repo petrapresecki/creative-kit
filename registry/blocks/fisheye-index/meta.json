@@ -1,0 +1,11 @@
+{
+  "title": "Fisheye index",
+  "description": "A section list that sets the current section large and its neighbours medium, so navigation doubles as progress.",
+  "category": "Navigation",
+  "files": ["FisheyeIndex.tsx"],
+  "lib": ["gsap", "lenis"],
+  "dependencies": ["gsap", "lenis"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-sapo-sticky"],
+  "usedIn": []
+}

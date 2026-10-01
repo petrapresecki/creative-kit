@@ -1,0 +1,21 @@
+{
+  "id": "aspen",
+  "name": "Aspen",
+  "description": "Edge-to-edge cells and 1px rules, graphite ink and a cool mint accent, mono captions.",
+  "inspiredBy": ["lib-aspen", "lib-aspen-grid"],
+  "colors": { "paper": "#ffffff", "ink": "#232323", "accent": "#a1ffcb", "mist": "#e0e0e0", "muted": "#7b7b7b" },
+  "palette": [{ "name": "Silver", "value": "#d9d9d9" }, { "name": "Noise grey", "value": "#888888" }],
+  "fonts": {
+    "sans": { "family": "Geist", "fallback": "'Helvetica Neue', Arial, sans-serif", "google": "Geist:wght@400;500;600" },
+    "mono": { "family": "Geist Mono", "fallback": "ui-monospace, Menlo, monospace", "google": "Geist+Mono:wght@400;500" }
+  },
+  "type": [
+    { "name": "display", "size": "clamp(52px, 12vw, 200px)", "leading": "0.8", "tracking": "-0.04em", "weight": 500 },
+    { "name": "headline", "size": "clamp(40px, 6vw, 100px)", "leading": "0.9", "tracking": "-0.04em", "weight": 500 },
+    { "name": "title", "size": "clamp(26px, 2.8vw, 44px)", "leading": "1.05", "tracking": "-0.03em", "weight": 500 },
+    { "name": "lead", "size": "clamp(20px, 2vw, 32px)", "leading": "1.15", "tracking": "-0.02em", "weight": 400 },
+    { "name": "body", "size": "16px", "leading": "1.45", "tracking": "0", "weight": 400 }
+  ],
+  "radius": "0px",
+  "ease": { "out-expo": "cubic-bezier(0.16, 1, 0.3, 1)", "in-out-quart": "cubic-bezier(0.87, 0, 0.13, 1)" }
+}

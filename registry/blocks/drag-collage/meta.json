@@ -1,0 +1,11 @@
+{
+  "title": "Drag collage",
+  "description": "Pieces you can pick up and drop anywhere on a board, paper-doll style. The grabbed piece comes to the front.",
+  "category": "Interaction",
+  "files": ["DragCollage.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap", "@gsap/react"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-an"],
+  "usedIn": []
+}

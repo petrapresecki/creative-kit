@@ -1,0 +1,10 @@
+{
+  "id": "iva-n-progress",
+  "title": "Progress bar in the full-screen hero",
+  "note": "Small four-part bar showing time to the next project. \"Please no.\"",
+  "kind": "decision",
+  "section": "Hero",
+  "verdict": "nope",
+  "project": "iva",
+  "added": 1790863840000
+}

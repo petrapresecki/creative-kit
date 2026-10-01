@@ -1,0 +1,10 @@
+{
+  "id": "iva-n-stack",
+  "title": "Stacking cards work layout",
+  "note": "Deck of cards dealt over each other while scrolling. Definitely not.",
+  "kind": "decision",
+  "section": "Work",
+  "verdict": "nope",
+  "project": "iva",
+  "added": 1790863900000
+}

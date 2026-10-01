@@ -1,0 +1,12 @@
+{
+  "title": "Dither trail",
+  "description": "Drifting noise printed as 2px dots with a swirling accent-colour trail behind the pointer. Lay solid grid cells over it so the empty ones become windows.",
+  "category": "Effects",
+  "files": ["DitherTrail.tsx"],
+  "lib": ["gsap", "tokens"],
+  "dependencies": ["gsap"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-aspen"],
+  "usedIn": [],
+  "webgl": true
+}

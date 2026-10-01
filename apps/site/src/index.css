@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@import "../../../registry/lib/kit.css";
+
+/* Blocks live outside the site folder; make sure their classes are generated */
+@source "../../../registry";
+
+/* The site's own chrome uses the Iva theme, with a mono face for captions */
+@theme {
+  --color-paper: #ffffff;
+  --color-ink: #0c0c0c;
+  --color-accent: #05ff43;
+  --color-mist: #ececec;
+  --color-muted: #8a8a8a;
+  --font-sans: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --radius-kit: 10px;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --text-display: clamp(64px, 11vw, 220px);
+  --text-display--line-height: 0.84;
+  --text-display--letter-spacing: -0.055em;
+  --text-display--font-weight: 500;
+  --text-headline: clamp(40px, 6.6vw, 124px);
+  --text-headline--line-height: 0.9;
+  --text-headline--letter-spacing: -0.05em;
+  --text-headline--font-weight: 500;
+  --text-title: clamp(28px, 3.4vw, 56px);
+  --text-title--line-height: 1.02;
+  --text-title--letter-spacing: -0.04em;
+  --text-title--font-weight: 500;
+  --text-lead: clamp(18px, 1.6vw, 26px);
+  --text-lead--line-height: 1.2;
+  --text-lead--letter-spacing: -0.02em;
+  --text-lead--font-weight: 500;
+  --text-body: 16px;
+  --text-body--line-height: 1.45;
+  --text-body--letter-spacing: 0;
+  --text-body--font-weight: 400;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}

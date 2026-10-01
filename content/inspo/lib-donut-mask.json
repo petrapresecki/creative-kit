@@ -1,0 +1,13 @@
+{
+  "id": "lib-donut-mask",
+  "title": "Donut Studio — letter-by-letter \"mask\" text",
+  "note": "Paragraph lights up character by character as you scroll, set in mix-blend-difference so it inverts over the images behind it and reads as cut out of them.",
+  "url": "https://www.donut-studio.com/",
+  "kind": "shot",
+  "section": "Motion",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Product / service",
+  "image": "images/donut-mask.jpg",
+  "added": 1790865580000
+}

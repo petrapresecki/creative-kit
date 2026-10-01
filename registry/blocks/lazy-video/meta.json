@@ -1,0 +1,11 @@
+{
+  "title": "Lazy video",
+  "description": "Muted, looping, inline video that plays only near the viewport, so a page full of clips stays light.",
+  "category": "Media",
+  "files": ["LazyVideo.tsx"],
+  "lib": [],
+  "dependencies": [],
+  "registryDependencies": [],
+  "inspiredBy": [],
+  "usedIn": ["iva"]
+}

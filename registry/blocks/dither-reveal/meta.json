@@ -1,0 +1,12 @@
+{
+  "title": "Dither reveal",
+  "description": "Images printed as ink dots that dissolve from one to the next; the pointer trail uncovers the real image at full resolution, edged in the accent colour.",
+  "category": "Effects",
+  "files": ["DitherReveal.tsx"],
+  "lib": ["gsap", "tokens"],
+  "dependencies": ["gsap"],
+  "registryDependencies": [],
+  "inspiredBy": ["iva-d-reveal", "lib-aspen", "lib-idea-mix"],
+  "usedIn": ["iva"],
+  "webgl": true
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Slide drawer",
+  "description": "A full-screen panel that slides up over the page for project details. Pauses smooth scroll, closes on Escape.",
+  "category": "Interaction",
+  "files": ["SlideDrawer.tsx"],
+  "lib": ["gsap", "lenis"],
+  "dependencies": ["gsap", "lenis"],
+  "registryDependencies": [],
+  "inspiredBy": ["iva-d-drawer", "iva-original"],
+  "usedIn": ["iva"]
+}
