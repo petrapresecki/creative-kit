@@ -1,0 +1,13 @@
+{
+  "id": "lib-and2es-ring",
+  "title": "AND2ES — work on a ring orbiting a big hero image",
+  "note": "About ten project images sit on a level ring roughly 60% of the screen wide. They face outward, so the ones at the sides turn edge-on into slivers, and the far side washes out towards white. The current project is pulled out of its slot to the centre, turned to face you and blown up to about 47% of the screen height (420px of 900). Each wheel notch or arrow key turns the ring one slot over about a second: the hero shrinks back into the ring, the next card comes round from the right and grows out. The caption pill at the bottom swaps (\"Yeat\" + \"View Case\"). Cards on the near side pass in front of the hero and cards on the far side pass behind it, which gives a layered, collage-like overlap. Moving the pointer tips the ring a few degrees and dragging spins it. Three.js planes with the images as textures. Worth reusing as a whole: it's the kit's ring-carousel block.",
+  "url": "https://www.and2es.com/",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "kind": "shot",
+  "section": "Motion",
+  "image": "images/and2es-ring.jpg",
+  "added": 1790979268080
+}

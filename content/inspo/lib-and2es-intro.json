@@ -1,0 +1,13 @@
+{
+  "id": "lib-and2es-intro",
+  "title": "AND2ES — preloader line, image flipbook, then the stack fans out into the ring",
+  "note": "The opening runs in three beats. (1) The one-line description (11px, centred) fades in left to right, holds about a second, then fades out. (2) The project images flick through in the middle about every 120ms, each fading in over the last so they briefly crossfade into double exposures, at about 360px tall. (3) The stack collapses into a tight cluster of cards turned edge-on, which then spreads out sideways into the full ring while turning, and the hero grows out of the front. Only after that do the nav pills drop in. Worth reusing: the flipbook-then-fan-out turns a loading wait into a preview of every project. It's built into the ring-carousel block's intro.",
+  "url": "https://www.and2es.com/",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "kind": "shot",
+  "section": "Motion",
+  "image": "images/and2es-intro.jpg",
+  "added": 1790979328080
+}
