@@ -1,0 +1,13 @@
+{
+  "id": "lib-obys-grid",
+  "title": "Obys — grid view: every thumbnail faint, scattered around the lens",
+  "note": "\"Vertical, Horizontal, Grid\" sits bottom left (underlined when active). Grid scatters every thumbnail over the page in loose columns at about 10% strength, with small numbers beside them, and the lens closes up in the middle. Switching views animates the same tiles from the strip into the grid (they fly out and settle) rather than cutting. Worth reusing: one set of thumbnails with several layouts, morphing between them (GSAP Flip would do it).",
+  "url": "https://obys.agency/",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "kind": "shot",
+  "section": "Work",
+  "image": "images/obys-grid.jpg",
+  "added": 1790980144820
+}

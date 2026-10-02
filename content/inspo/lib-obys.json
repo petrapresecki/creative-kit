@@ -1,0 +1,13 @@
+{
+  "id": "lib-obys",
+  "title": "Obys — a white page, one strip of work and a lens that frames it",
+  "note": "A design studio's site with a single idea: a narrow column of project thumbnails down the middle of a white page, and two black brackets at the centre that frame whichever one is current. Everything else hangs off that centre line: the project list on the left, category and services beside the frame, the number at the far right. A big OBYS® wordmark (their own ObysSans at 80px, tracking -2.4px) sits top left and shrinks to a small logo as you scroll; all other text is 11px. Colours are only #ffffff, #000000 and #c9c9c9 for inactive text. One fullscreen canvas draws the images; the brackets are an SVG with mix-blend-mode: difference, so they stay visible over anything. Worth reusing: one horizontal line as the organising axis of the whole page.",
+  "url": "https://obys.agency/",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "kind": "site",
+  "section": "Overall",
+  "image": "images/obys-concept.jpg",
+  "added": 1790979904820
+}

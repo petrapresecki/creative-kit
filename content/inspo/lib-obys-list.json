@@ -1,0 +1,13 @@
+{
+  "id": "lib-obys-list",
+  "title": "Obys — a project list that turns so the current one sits on the centre line",
+  "note": "On the left, every project title in an 11px column with 13px line spacing, the current one in black and the rest in #c9c9c9. The list loops and slides along with the strip, so the current title always sits on the page's centre line next to the frame, with its category (\"Technology, Furniture\") and services on the same line further right and its number (\"17\") at the far right edge. Clicking a title scrolls the strip to it. Worth reusing: a list that works as navigation and as a progress indicator, with nothing to read except what is on the line.",
+  "url": "https://obys.agency/",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "kind": "shot",
+  "section": "Navigation",
+  "image": "images/obys-list.jpg",
+  "added": 1790980084820
+}
