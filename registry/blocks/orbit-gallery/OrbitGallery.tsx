@@ -36,7 +36,7 @@ interface Shape {
   /** Base tilt towards the camera, radians */
   tilt: number
   card: number
-  /** Cards keep their spot and the whole shape turns about its axis (radians per card of flow) instead of flowing along the path */
+  /** Turns by default instead of flowing: cards keep their spot and the whole shape turns about its axis, in radians per card of flow */
   spin?: number
   /** Cards always face the camera instead of facing outward */
   billboard?: boolean
@@ -101,6 +101,7 @@ const SHAPES: Record<OrbitShape, Shape> = {
     height: 9.8,
     tilt: 0.1,
     card: 0.95,
+    spin: 0.55,
   },
   // A wide, flattened sphere; the normal of an ellipsoid is the direction divided by each radius
   ellipsoid: {
@@ -114,6 +115,7 @@ const SHAPES: Record<OrbitShape, Shape> = {
     height: 7.8,
     tilt: 0.2,
     card: 0.9,
+    spin: 0.5,
   },
   // A donut tilted towards you: cards wind round the tube while travelling round the ring, and it loops seamlessly
   torus: {
@@ -137,11 +139,10 @@ const SHAPES: Record<OrbitShape, Shape> = {
   // with a slideshow card in the middle, on the light paper colour
   globe: {
     place: (t, count, pos, normal) => {
-      // Half a step off, so no card sits exactly on a pole
-      onSphere(t + 0.5, count, normal)
+      onSphere(t, count, normal)
       pos.copy(normal).multiplyScalar(3.4)
     },
-    fade: 0,
+    fade: 1.5,
     width: 10.5,
     height: 10.5,
     tilt: 0.18,
@@ -242,6 +243,8 @@ const damp = THREE.MathUtils.damp
 interface SwirlProps {
   cards: OrbitItem[]
   shape: Shape
+  /** Radians the shape turns per card of flow; 0 flows the cards along the path instead */
+  turn: number
   background: string
   offsetX: number
   speed: number
@@ -250,7 +253,7 @@ interface SwirlProps {
   onOpen?: (item: OrbitItem) => void
 }
 
-function Swirl({ cards, shape, background, offsetX, speed, highlight, onHover, onOpen }: SwirlProps) {
+function Swirl({ cards, shape, turn, background, offsetX, speed, highlight, onHover, onOpen }: SwirlProps) {
   const COUNT = cards.length
   const textures = useLoader(
     THREE.TextureLoader,
@@ -444,7 +447,7 @@ function Swirl({ cards, shape, background, offsetX, speed, highlight, onHover, o
     group.current.rotation.x = damp(group.current.rotation.x, shape.tilt - state.pointer.y * 0.12, 3, dt)
     group.current.rotation.y = damp(group.current.rotation.y, state.pointer.x * 0.25, 3, dt)
     group.current.rotation.z = shape.lean ?? LEAN
-    const spin = shape.spin ? m.flow * shape.spin : 0
+    const spin = turn ? m.flow * turn : 0
     const size = CARD * shape.card
 
     meshes.current.forEach((mesh, k) => {
@@ -457,13 +460,15 @@ function Swirl({ cards, shape, background, offsetX, speed, highlight, onHover, o
       mat.uniforms.uDim.value = damp(mat.uniforms.uDim.value, lit ? 1 : 0.18, 6, dt)
       if (k === m.flying) return
 
-      // Position along the shape's (periodic) path, flowing forward over time; spinning shapes turn instead
-      const t = shape.spin ? item.seq : (((item.seq + m.flow) % COUNT) + COUNT) % COUNT
+      // Position along the shape's (periodic) path, flowing forward over time; turning holds each card
+      // half a step in from the ends (so none sits on a pole) and turns the whole shape instead
+      const t = turn ? item.seq + 0.5 : (((item.seq + m.flow) % COUNT) + COUNT) % COUNT
       _x.set(0, 0, 0)
       shape.place(t, COUNT, _pos, _normal, _x)
-      if (spin) {
+      if (turn) {
         _pos.applyAxisAngle(UP, spin)
         _normal.applyAxisAngle(UP, spin)
+        _x.applyAxisAngle(UP, spin)
       }
       item.push = damp(item.push, isHovered ? 0.7 : 0, 8, dt)
       _pos.addScaledVector(_normal, item.push)
@@ -479,8 +484,8 @@ function Swirl({ cards, shape, background, offsetX, speed, highlight, onHover, o
         _quat.setFromRotationMatrix(_basis.makeBasis(_x, _y, _normal))
       }
 
-      // Open shapes fade out at both ends so the wrap is invisible
-      mat.uniforms.uEdge.value = shape.fade ? THREE.MathUtils.smoothstep(COUNT / 2 - Math.abs(t - COUNT / 2), 0, shape.fade) : 1
+      // Flowing open shapes fade out at both ends so the wrap is invisible; turning never wraps
+      mat.uniforms.uEdge.value = shape.fade && !turn ? THREE.MathUtils.smoothstep(COUNT / 2 - Math.abs(t - COUNT / 2), 0, shape.fade) : 1
 
       if (ip.active) {
         // Out to a scattered spot as a tiny thumbnail, back into one stack in the middle, then out to the shape
@@ -573,6 +578,11 @@ export interface OrbitGalleryProps {
   offsetX?: number
   /** Flow speed multiplier */
   speed?: number
+  /**
+   * `flow` moves the cards along the shape's path; `turn` holds them in place and turns the whole shape.
+   * Defaults to turn for the sphere, ellipsoid and globe, and flow for the spiral, cone and torus
+   */
+  motion?: 'flow' | 'turn'
   paused?: boolean
   hint?: string | null
   /** Where the hovered card's label shows: a pill trailing the cursor, or a two-face caption at the bottom (the globe's default) */
@@ -589,6 +599,7 @@ export default function OrbitGallery({
   highlight = null,
   offsetX = 0,
   speed = 1,
+  motion,
   paused = false,
   hint = 'Drag to spin · Click a card',
   caption,
@@ -596,6 +607,7 @@ export default function OrbitGallery({
   background,
 }: OrbitGalleryProps) {
   const light = SHAPES[shape].light
+  const turn = (motion ?? (SHAPES[shape].spin ? 'turn' : 'flow')) === 'turn' ? (SHAPES[shape].spin ?? 0.3) : 0
   const where = caption ?? (light ? 'bottom' : 'cursor')
   const wrap = useRef<HTMLDivElement>(null)
   const label = useRef<HTMLDivElement>(null)
@@ -662,6 +674,7 @@ export default function OrbitGallery({
             key={items.map(i => i.id).join()}
             cards={items}
             shape={SHAPES[shape]}
+            turn={turn}
             background={bg}
             offsetX={offsetX}
             speed={speed}
