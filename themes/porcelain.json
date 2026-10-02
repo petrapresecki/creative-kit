@@ -1,0 +1,25 @@
+{
+  "id": "porcelain",
+  "name": "Porcelain",
+  "description": "Pure black on a white sheet, frosted grey pills and one chrome blue. A grotesk and a text serif paired at the same small size, 4px corners.",
+  "inspiredBy": ["lib-gn", "lib-gn-type", "lib-gn-nav", "lib-gn-spine"],
+  "colors": { "paper": "#ffffff", "ink": "#000000", "accent": "#d6d8ff", "mist": "#ededed", "muted": "#6b6b6b" },
+  "palette": [
+    { "name": "Chrome blue", "value": "#1112a0" },
+    { "name": "Tile", "value": "#f0f0f0" },
+    { "name": "Frost", "value": "rgba(237, 237, 237, 0.5)" }
+  ],
+  "fonts": {
+    "sans": { "family": "Inter Tight", "fallback": "'Lay Grotesk', 'Helvetica Neue', Arial, sans-serif", "google": "Inter+Tight:wght@400;500" },
+    "display": { "family": "Newsreader", "fallback": "Teodor, Georgia, serif", "google": "Newsreader:opsz,wght@6..72,400" }
+  },
+  "type": [
+    { "name": "display", "size": "clamp(40px, 4.6vw, 72px)", "leading": "1.08", "tracking": "-0.015em", "weight": 400, "font": "display" },
+    { "name": "headline", "size": "clamp(30px, 3.2vw, 48px)", "leading": "1.1", "tracking": "-0.01em", "weight": 400, "font": "display" },
+    { "name": "title", "size": "clamp(18px, 1.4vw, 22px)", "leading": "1.2", "tracking": "-0.01em", "weight": 500 },
+    { "name": "lead", "size": "17px", "leading": "1.45", "tracking": "0", "weight": 400, "font": "display" },
+    { "name": "body", "size": "14px", "leading": "1.45", "tracking": "0", "weight": 500 }
+  ],
+  "radius": "4px",
+  "ease": { "out-expo": "cubic-bezier(0.16, 1, 0.3, 1)", "in-out-quart": "cubic-bezier(0.65, 0, 0.35, 1)" }
+}

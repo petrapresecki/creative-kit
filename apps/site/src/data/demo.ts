@@ -62,3 +62,13 @@ export const demoText = {
     'I am motivated by continuous learning and the exploration of ways to integrate animation, 3D, and classic 2D practices into cohesive product presentations.',
   email: 'presecki.iva@gmail.com',
 }
+
+/** An about page in short blocks: what she does, recognition and where to find her. */
+export const demoAbout = {
+  services: [
+    { title: 'Branding', items: ['Visual identity', 'Packaging', 'Tone of voice', 'Brand guidelines'] },
+    { title: 'Editorial', items: ['Books', 'Booklets', 'Posters', 'Type layout'] },
+    { title: 'Motion', items: ['Product animation', '3D renders', 'Social media', 'Presentations'] },
+  ],
+  contact: ['Email', 'Instagram', 'Behance', 'LinkedIn'],
+}
