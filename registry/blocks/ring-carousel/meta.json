@@ -1,0 +1,13 @@
+{
+  "title": "Ring carousel",
+  "description": "Work on a level ring that orbits one big hero image. Each scroll, swipe or arrow key turns the ring one item: the hero shrinks back into its slot as the next card comes round and grows out to the middle, with the title in small pills below. The pointer tips the ring, the far side washes out, and it opens with a line of text, a flick through every image and the stack fanning out into the ring.",
+  "category": "3D",
+  "files": ["RingCarousel.tsx"],
+  "lib": ["gsap", "tokens"],
+  "dependencies": ["three", "@react-three/fiber", "gsap"],
+  "devDependencies": ["@types/three"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-and2es", "lib-and2es-ring", "lib-and2es-intro", "lib-and2es-pills"],
+  "usedIn": [],
+  "webgl": true
+}
