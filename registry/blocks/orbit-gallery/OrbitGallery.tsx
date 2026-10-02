@@ -4,13 +4,13 @@ import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import { gsap, prefersReducedMotion } from '@kit/lib/gsap'
 import { getLenis } from '@kit/lib/lenis'
-import { readToken } from '@kit/lib/tokens'
+import { readToken, toRgb } from '@kit/lib/tokens'
 
 export interface OrbitItem {
   id: string
   /** Image URL (portrait 3:4 works best) */
   src: string
-  /** Shown in the pill while hovering */
+  /** Shown while hovering; with the bottom caption, "Name — Category" sets the name in the sans and the rest in the display face */
   label?: string
   /** Items sharing a group light up together when `highlight` names it */
   group?: string
@@ -20,7 +20,7 @@ const CARD = 1.55
 const LEAN = -0.16
 const GOLDEN = Math.PI * (3 - Math.sqrt(5))
 
-export type OrbitShape = 'spiral' | 'cone' | 'sphere' | 'ellipsoid' | 'torus'
+export type OrbitShape = 'spiral' | 'cone' | 'sphere' | 'ellipsoid' | 'torus' | 'globe'
 
 interface Shape {
   /**
@@ -36,6 +36,22 @@ interface Shape {
   /** Base tilt towards the camera, radians */
   tilt: number
   card: number
+  /** Cards keep their spot and the whole shape turns about its axis (radians per card of flow) instead of flowing along the path */
+  spin?: number
+  /** Cards always face the camera instead of facing outward */
+  billboard?: boolean
+  /** Opens by bursting out of the centre, gathering into one card, then spreading over the shape */
+  intro?: boolean
+  /** A card in the middle that cycles through every image */
+  heart?: boolean
+  /** Sideways lean, radians (default LEAN) */
+  lean?: number
+  /** How far the far side sinks into the background, 0–1 (default 0.78) */
+  fog?: number
+  /** Ripple and curl of the cards, 0–1 (default 1) */
+  wobble?: number
+  /** Sits on --color-paper instead of --color-ink */
+  light?: boolean
 }
 
 // Fibonacci sphere: card t of count sits at an even-area height, turning by the golden angle,
@@ -117,6 +133,28 @@ const SHAPES: Record<OrbitShape, Shape> = {
     tilt: 0.95,
     card: 0.72,
   },
+  // Gionatan Nese's cloud: small cards hold their spot on a sphere that turns as one, always facing you,
+  // with a slideshow card in the middle, on the light paper colour
+  globe: {
+    place: (t, count, pos, normal) => {
+      // Half a step off, so no card sits exactly on a pole
+      onSphere(t + 0.5, count, normal)
+      pos.copy(normal).multiplyScalar(3.4)
+    },
+    fade: 0,
+    width: 10.5,
+    height: 10.5,
+    tilt: 0.18,
+    card: 0.5,
+    spin: 0.6,
+    billboard: true,
+    intro: true,
+    heart: true,
+    lean: 0,
+    fog: 0.2,
+    wobble: 0,
+    light: true,
+  },
 }
 
 // Scratch objects reused every frame
@@ -127,12 +165,23 @@ const _x = new THREE.Vector3()
 const _y = new THREE.Vector3()
 const _basis = new THREE.Matrix4()
 const _quat = new THREE.Quaternion()
+const _start = new THREE.Vector3()
+
+// Size of the centre card (and of the stack the intro gathers into), relative to the other cards
+const HEART = 1.25
+// How long the centre card shows each image, seconds
+const HEART_STEP = 0.55
+
+const easeOut = (x: number) => 1 - (1 - x) ** 3
+const easeOut4 = (x: number) => 1 - (1 - x) ** 4
+const easeInOut = (x: number) => (x < 0.5 ? 4 * x ** 3 : 1 - (-2 * x + 2) ** 3 / 2)
 
 const vertexShader = /* glsl */ `
   uniform float uTime;
   uniform float uBend;
   uniform float uPhase;
   uniform float uHover;
+  uniform float uWobble;
   varying vec2 vUv;
   varying float vDepth;
 
@@ -141,8 +190,8 @@ const vertexShader = /* glsl */ `
     vec3 p = position;
     float xn = uv.x * 2.0 - 1.0;
     // Cards curl with spin velocity, and ripple gently at rest
-    p.z -= (1.0 - xn * xn) * uBend;
-    p.z += sin(uTime * 1.4 + uPhase + p.x * 3.0) * sin(uTime * 1.1 + uPhase + p.y * 3.0) * 0.04 * (1.0 - uHover);
+    p.z -= (1.0 - xn * xn) * uBend * uWobble;
+    p.z += sin(uTime * 1.4 + uPhase + p.x * 3.0) * sin(uTime * 1.1 + uPhase + p.y * 3.0) * 0.04 * (1.0 - uHover) * uWobble;
     vec4 mv = modelViewMatrix * vec4(p, 1.0);
     vDepth = -mv.z;
     gl_Position = projectionMatrix * mv;
@@ -154,6 +203,8 @@ const fragmentShader = /* glsl */ `
   uniform float uFade;
   uniform float uDim;
   uniform float uEdge;
+  uniform float uFog;
+  uniform vec3 uBg;
   varying vec2 vUv;
   varying float vDepth;
 
@@ -166,10 +217,10 @@ const fragmentShader = /* glsl */ `
     vec3 color = texture2D(uMap, vUv).rgb;
     // Backs of the far cards would show the image mirrored, so render them as dark, muted shadows
     if (!gl_FrontFacing) color = mix(vec3(dot(color, vec3(0.299, 0.587, 0.114))), color, 0.3) * 0.28;
-    // Cards on the far side of the shape sink into the dark
+    // Cards on the far side of the shape sink into the background
     float fog = smoothstep(9.5, 15.5, vDepth);
-    color = mix(color, vec3(0.004), fog * 0.78);
-    color = mix(vec3(0.004), color, uFade * uDim * uEdge);
+    color = mix(color, uBg, fog * uFog);
+    color = mix(uBg, color, uFade * uDim * uEdge);
     gl_FragColor = vec4(color, 1.0);
     #include <colorspace_fragment>
   }
@@ -191,6 +242,7 @@ const damp = THREE.MathUtils.damp
 interface SwirlProps {
   cards: OrbitItem[]
   shape: Shape
+  background: string
   offsetX: number
   speed: number
   highlight: React.RefObject<string | null>
@@ -198,7 +250,7 @@ interface SwirlProps {
   onOpen?: (item: OrbitItem) => void
 }
 
-function Swirl({ cards, shape, offsetX, speed, highlight, onHover, onOpen }: SwirlProps) {
+function Swirl({ cards, shape, background, offsetX, speed, highlight, onHover, onOpen }: SwirlProps) {
   const COUNT = cards.length
   const textures = useLoader(
     THREE.TextureLoader,
@@ -210,7 +262,28 @@ function Swirl({ cards, shape, offsetX, speed, highlight, onHover, onOpen }: Swi
   const motion = useRef({ flow: 0, vel: 0, timeScale: 1, hovered: -1, flying: -1, dragging: false, lastX: 0, moved: 0 })
   const reduced = useMemo(() => prefersReducedMotion(), [])
 
-  const shared = useMemo(() => ({ uTime: { value: 0 }, uBend: { value: 0 } }), [])
+  const shared = useMemo(
+    () => ({ uTime: { value: 0 }, uBend: { value: 0 }, uFog: { value: 0.78 }, uWobble: { value: 1 }, uBg: { value: new THREE.Color() } }),
+    [],
+  )
+  const heart = useRef<THREE.Mesh>(null)
+  // Intro progress: burst out, gather into one card, spread over the shape (each 0→1)
+  const intro = useRef({ active: false, started: false, burst: 0, gather: 0, spread: 0, tl: null as gsap.core.Timeline | null })
+
+  useEffect(() => {
+    const [r, g, b] = toRgb(background)
+    shared.uBg.value.setRGB(r, g, b, THREE.SRGBColorSpace)
+  }, [background, shared])
+
+  // Play the intro whenever the gallery opens on (or switches to) a shape that has one
+  useEffect(() => {
+    const ip = intro.current
+    ip.tl?.kill()
+    Object.assign(ip, { active: !!shape.intro && !reduced, started: false, burst: 0, gather: 0, spread: 0, tl: null })
+    return () => {
+      ip.tl?.kill()
+    }
+  }, [shape, reduced])
   const geometry = useMemo(() => new THREE.PlaneGeometry(1, 4 / 3, 12, 8), [])
 
   const items = useMemo(() => {
@@ -221,6 +294,9 @@ function Swirl({ cards, shape, offsetX, speed, highlight, onHover, onOpen }: Swi
       push: 0,
       lastT: -1,
       phase: rand() * Math.PI * 2,
+      // Where the card bursts to in the intro, and how far behind the others it moves
+      scatter: new THREE.Vector3((rand() - 0.5) * 5.4, (rand() - 0.5) * 4, (rand() - 0.5) * 1.5),
+      lag: rand() * 0.3,
     }))
   }, [COUNT, cards])
 
@@ -244,11 +320,21 @@ function Swirl({ cards, shape, offsetX, speed, highlight, onHover, onOpen }: Swi
             uPhase: { value: item.phase },
             uTime: shared.uTime,
             uBend: shared.uBend,
+            uFog: shared.uFog,
+            uWobble: shared.uWobble,
+            uBg: shared.uBg,
           },
         })
       }),
     [items, textures, shared],
   )
+
+  // The centre card: its own copy of the material, so its image can change
+  const heartMaterial = useMemo(() => {
+    const mat = materials[0].clone()
+    Object.assign(mat.uniforms, { uTime: shared.uTime, uBend: shared.uBend, uFog: shared.uFog, uWobble: shared.uWobble, uBg: shared.uBg })
+    return mat
+  }, [materials, shared])
 
   // Drag to spin (horizontal), leaving vertical touch scrolling to the page
   useEffect(() => {
@@ -279,7 +365,7 @@ function Swirl({ cards, shape, offsetX, speed, highlight, onHover, onOpen }: Swi
 
   const setHovered = (k: number) => {
     const m = motion.current
-    if (m.flying >= 0) return
+    if (m.flying >= 0 || intro.current.active) return
     m.hovered = k
     onHover(k >= 0 ? items[k].card : null)
     // The custom cursor switches to its hover hand over role="button"
@@ -289,7 +375,7 @@ function Swirl({ cards, shape, offsetX, speed, highlight, onHover, onOpen }: Swi
 
   const open = (k: number) => {
     const m = motion.current
-    if (m.moved > 6 || m.flying >= 0) return
+    if (m.moved > 6 || m.flying >= 0 || intro.current.active) return
     const mesh = meshes.current[k]
     const card = items[k].card
     m.flying = k
@@ -330,6 +416,18 @@ function Swirl({ cards, shape, offsetX, speed, highlight, onHover, onOpen }: Swi
   useFrame((state, delta) => {
     const dt = Math.min(delta, 1 / 30)
     const m = motion.current
+    const ip = intro.current
+    // Start the intro on the first frame actually drawn, so it isn't spent off screen
+    if (ip.active && !ip.started) {
+      ip.started = true
+      ip.tl = gsap
+        .timeline({ onComplete: () => (ip.active = false) })
+        .to(ip, { burst: 1, duration: 1, ease: 'none' })
+        .to(ip, { gather: 1, duration: 0.7, ease: 'none' }, 0.95)
+        .to(ip, { spread: 1, duration: 1.6, ease: 'none' }, 1.9)
+    }
+    shared.uFog.value = shape.fog ?? 0.78
+    shared.uWobble.value = shape.wobble ?? 1
 
     if (!reduced) {
       // Page scroll and dragging push the cards along the path (in cards per second)
@@ -345,7 +443,9 @@ function Swirl({ cards, shape, offsetX, speed, highlight, onHover, onOpen }: Swi
     // Lean the shape a little and let the pointer tilt it, so you can look around
     group.current.rotation.x = damp(group.current.rotation.x, shape.tilt - state.pointer.y * 0.12, 3, dt)
     group.current.rotation.y = damp(group.current.rotation.y, state.pointer.x * 0.25, 3, dt)
-    group.current.rotation.z = LEAN
+    group.current.rotation.z = shape.lean ?? LEAN
+    const spin = shape.spin ? m.flow * shape.spin : 0
+    const size = CARD * shape.card
 
     meshes.current.forEach((mesh, k) => {
       const mat = materials[k]
@@ -357,18 +457,48 @@ function Swirl({ cards, shape, offsetX, speed, highlight, onHover, onOpen }: Swi
       mat.uniforms.uDim.value = damp(mat.uniforms.uDim.value, lit ? 1 : 0.18, 6, dt)
       if (k === m.flying) return
 
-      // Position along the shape's (periodic) path, flowing forward over time
-      const t = (((item.seq + m.flow) % COUNT) + COUNT) % COUNT
+      // Position along the shape's (periodic) path, flowing forward over time; spinning shapes turn instead
+      const t = shape.spin ? item.seq : (((item.seq + m.flow) % COUNT) + COUNT) % COUNT
       _x.set(0, 0, 0)
       shape.place(t, COUNT, _pos, _normal, _x)
+      if (spin) {
+        _pos.applyAxisAngle(UP, spin)
+        _normal.applyAxisAngle(UP, spin)
+      }
       item.push = damp(item.push, isHovered ? 0.7 : 0, 8, dt)
       _pos.addScaledVector(_normal, item.push)
-      // Face outward; unless the shape says otherwise, x runs along the horizon so cards stay upright
-      if (_x.lengthSq() === 0) _x.crossVectors(UP, _normal)
-      if (_x.lengthSq() < 1e-6) _x.set(1, 0, 0)
-      _x.normalize()
-      _y.crossVectors(_normal, _x)
-      _quat.setFromRotationMatrix(_basis.makeBasis(_x, _y, _normal))
+      if (shape.billboard) {
+        // Cancel the group's rotation so the card faces the camera
+        _quat.copy(group.current.quaternion).invert()
+      } else {
+        // Face outward; unless the shape says otherwise, x runs along the horizon so cards stay upright
+        if (_x.lengthSq() === 0) _x.crossVectors(UP, _normal)
+        if (_x.lengthSq() < 1e-6) _x.set(1, 0, 0)
+        _x.normalize()
+        _y.crossVectors(_normal, _x)
+        _quat.setFromRotationMatrix(_basis.makeBasis(_x, _y, _normal))
+      }
+
+      // Open shapes fade out at both ends so the wrap is invisible
+      mat.uniforms.uEdge.value = shape.fade ? THREE.MathUtils.smoothstep(COUNT / 2 - Math.abs(t - COUNT / 2), 0, shape.fade) : 1
+
+      if (ip.active) {
+        // Out to a scattered spot as a tiny thumbnail, back into one stack in the middle, then out to the shape
+        const local = (v: number) => clamp((v - item.lag) / 0.7, 0, 1)
+        const gather = easeInOut(ip.gather)
+        const spread = easeOut4(local(ip.spread))
+        _start.copy(item.scatter).multiplyScalar(easeOut(local(ip.burst)) * (1 - gather))
+        // A hair apart in depth, so the stack doesn't flicker
+        _start.z += k * 0.002
+        mesh.position.lerpVectors(_start, _pos, spread)
+        mesh.quaternion.copy(_quat)
+        const stacked = THREE.MathUtils.lerp(0.35 * Math.min(1, ip.burst * 5), HEART, gather)
+        const s = size * THREE.MathUtils.lerp(stacked, 1, spread)
+        mesh.scale.set(s, s, 1)
+        item.lastT = t
+        return
+      }
+
       // Ease towards the spot, so switching shapes morphs; snap when a card wraps from one end to the other
       const wrapped = item.lastT < 0 || Math.abs(t - item.lastT) > COUNT / 2
       item.lastT = t
@@ -380,12 +510,23 @@ function Swirl({ cards, shape, offsetX, speed, highlight, onHover, onOpen }: Swi
         mesh.position.lerp(_pos, k)
         mesh.quaternion.slerp(_quat, k)
       }
-      // Open shapes fade out at both ends so the wrap is invisible
-      mat.uniforms.uEdge.value = shape.fade ? THREE.MathUtils.smoothstep(COUNT / 2 - Math.abs(t - COUNT / 2), 0, shape.fade) : 1
       const boost = isHovered ? 1.12 : highlight.current && lit ? 1.05 : 1
-      const s = damp(mesh.scale.x, CARD * shape.card * boost, 8, dt)
+      const s = damp(mesh.scale.x, size * boost, 8, dt)
       mesh.scale.set(s, s, 1)
     })
+
+    // The centre card steps through every image and grows in as the intro gathers
+    const h = heart.current
+    if (h) {
+      h.visible = !!shape.heart
+      if (shape.heart) {
+        heartMaterial.uniforms.uMap.value = textures[Math.floor(shared.uTime.value / HEART_STEP) % COUNT]
+        heartMaterial.uniforms.uFade.value = damp(heartMaterial.uniforms.uFade.value, m.flying >= 0 ? 0 : 1, 8, dt)
+        h.quaternion.copy(group.current.quaternion).invert()
+        const s = size * HEART * (ip.active ? easeInOut(ip.gather) : 1)
+        h.scale.set(s, s, 1)
+      }
+    }
   })
 
   // Fit the shape (plus a card's margin) into the container
@@ -394,6 +535,7 @@ function Swirl({ cards, shape, offsetX, speed, highlight, onHover, onOpen }: Swi
 
   return (
     <group ref={group} scale={fit} position={[offset, 0, 0]}>
+      <mesh ref={heart} geometry={geometry} material={heartMaterial} raycast={() => null} />
       {items.map((_, k) => (
         <mesh
           key={k}
@@ -433,8 +575,10 @@ export interface OrbitGalleryProps {
   speed?: number
   paused?: boolean
   hint?: string | null
+  /** Where the hovered card's label shows: a pill trailing the cursor, or a two-face caption at the bottom (the globe's default) */
+  caption?: 'cursor' | 'bottom'
   className?: string
-  /** Canvas colour; defaults to the theme's --color-ink */
+  /** Canvas colour; defaults to the theme's --color-ink, or --color-paper for the globe */
   background?: string
 }
 
@@ -447,9 +591,12 @@ export default function OrbitGallery({
   speed = 1,
   paused = false,
   hint = 'Drag to spin · Click a card',
+  caption,
   className = '',
   background,
 }: OrbitGalleryProps) {
+  const light = SHAPES[shape].light
+  const where = caption ?? (light ? 'bottom' : 'cursor')
   const wrap = useRef<HTMLDivElement>(null)
   const label = useRef<HTMLDivElement>(null)
   const pill = useRef<HTMLDivElement>(null)
@@ -464,8 +611,12 @@ export default function OrbitGallery({
   }, [highlight])
 
   useEffect(() => {
-    setBg(background ?? readToken('--color-ink', '#0c0c0c', wrap.current!))
-  }, [background])
+    setBg(background ?? (light ? readToken('--color-paper', '#ffffff', wrap.current!) : readToken('--color-ink', '#0c0c0c', wrap.current!)))
+  }, [background, light])
+  // Text over the canvas follows how light the background is
+  const [r, g, b] = toRgb(bg)
+  const onLight = 0.2126 * r + 0.7152 * g + 0.0722 * b > 0.5
+  const [name, ...rest] = (lastHovered?.label ?? '').split(' — ')
 
   // Only render while on screen
   useEffect(() => {
@@ -511,6 +662,7 @@ export default function OrbitGallery({
             key={items.map(i => i.id).join()}
             cards={items}
             shape={SHAPES[shape]}
+            background={bg}
             offsetX={offsetX}
             speed={speed}
             highlight={highlightRef}
@@ -521,18 +673,38 @@ export default function OrbitGallery({
       </Canvas>
 
       <div ref={label} className="pointer-events-none absolute top-0 left-0 z-10">
-        <div
-          ref={pill}
-          style={{ translate: '48px 36px' }}
-          className={`caption rounded-full bg-accent px-3 py-1.5 whitespace-nowrap text-ink transition-[opacity,scale] duration-300 ease-out-expo ${
-            hovered && lastHovered?.label ? 'scale-100 opacity-100' : 'scale-75 opacity-0'
-          }`}
-        >
-          {lastHovered?.label}
-        </div>
+        {where === 'cursor' && (
+          <div
+            ref={pill}
+            style={{ translate: '48px 36px' }}
+            className={`caption rounded-full bg-accent px-3 py-1.5 whitespace-nowrap text-ink transition-[opacity,scale] duration-300 ease-out-expo ${
+              hovered && lastHovered?.label ? 'scale-100 opacity-100' : 'scale-75 opacity-0'
+            }`}
+          >
+            {lastHovered?.label}
+          </div>
+        )}
       </div>
 
-      {hint && <p className="caption pointer-events-none absolute right-4 bottom-4 z-10 text-paper/60">{hint}</p>}
+      {where === 'bottom' && (
+        // Rises out of a mask at the bottom centre: the name in the sans, the rest in the display face
+        <div className="pointer-events-none absolute inset-x-0 bottom-5 z-10 flex justify-center overflow-hidden px-4">
+          <p
+            className={`flex gap-[0.4em] text-[15px] leading-[1.4] whitespace-nowrap transition-[translate,opacity] duration-500 ease-out-expo ${onLight ? 'text-ink' : 'text-paper'} ${
+              hovered && lastHovered?.label ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+            }`}
+          >
+            <span className="font-sans font-medium">{name}</span>
+            {rest.length > 0 && <span className="font-display">{rest.join(' — ')}</span>}
+          </p>
+        </div>
+      )}
+
+      {hint && (
+        <p className={`caption pointer-events-none absolute right-4 z-10 ${where === 'bottom' ? 'top-4' : 'bottom-4'} ${onLight ? 'text-ink/50' : 'text-paper/60'}`}>
+          {hint}
+        </p>
+      )}
     </div>
   )
 }

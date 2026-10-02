@@ -4,7 +4,7 @@ import { demoCards, demoProjects } from '@site/data/demo'
 import OrbitGallery, { type OrbitItem, type OrbitShape } from './OrbitGallery'
 
 export const controls: Control[] = [
-  { name: 'shape', label: 'Shape', type: 'select', options: ['spiral', 'cone', 'sphere', 'ellipsoid', 'torus'], default: 'spiral' },
+  { name: 'shape', label: 'Shape', type: 'select', options: ['spiral', 'cone', 'sphere', 'ellipsoid', 'torus', 'globe'], default: 'spiral' },
   { name: 'speed', label: 'Flow speed', type: 'range', min: 0, max: 3, step: 0.25, default: 1 },
   { name: 'highlight', label: 'Highlight group', type: 'select', options: ['none', ...demoProjects.map(p => p.id)], default: 'none' },
 ]
