@@ -1,0 +1,13 @@
+{
+  "id": "lib-gn",
+  "title": "Gionatan Nese — a portfolio as a slowly turning cloud of objects",
+  "note": "The home page has no scroll and no headline: about 25 small cutouts (product renders, logos, posters on #F0F0F0 tiles) float on a sphere in the middle of a white screen, with the name in a grotesk on the far left and the role in a serif on the far right, both 14px on the centre line. Everything else is a 15px nav of frosted pills at the top. Built in Next.js with GSAP and one fullscreen Three.js r184 canvas; the DOM only holds an sr-only copy of the content for SEO. Worth reusing: the restraint. Tiny type, pure #000 on #fff, and the work shown as small objects rather than big hero images.",
+  "url": "https://www.gionatannese.com/",
+  "kind": "site",
+  "section": "Overall",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/gn-concept.jpg",
+  "added": 1790977185789
+}

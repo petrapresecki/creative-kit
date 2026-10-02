@@ -1,0 +1,13 @@
+{
+  "id": "lib-gn-projects",
+  "title": "Gionatan Nese — projects grid and pages on a sideways track",
+  "note": "Projects is a 3-column grid of tall images with 4px gutters, a centred grotesk + serif header, and a two-face caption under each image (name in the grotesk 13px, disciplines in Teodor). Hovering shows a \"View\" label at the cursor; unfinished ones get a small \"Coming Soon\" tag pill top left. Pages live in a flex row of 100vw page roots (data-page-root): on navigation the new page slides in from the right while the old one stays, and the nav pill and loader counter run again. Case pages are a stack of full-bleed images with a \"Project Info\" pill top left. Worth reusing: the sideways page track and the tag pills in the same frosted style as the nav.",
+  "url": "https://www.gionatannese.com/projects",
+  "kind": "shot",
+  "section": "Pages",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/gn-projects.jpg",
+  "added": 1790977545789
+}
