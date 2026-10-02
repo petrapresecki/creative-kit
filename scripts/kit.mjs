@@ -2,6 +2,7 @@
 // creative-kit command line: new, add, theme, list. No dependencies beyond Node.
 import fs from 'node:fs'
 import path from 'node:path'
+import os from 'node:os'
 import { execSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 import { themeCss, googleFontsUrl } from '../themes/theme.mjs'
@@ -11,6 +12,7 @@ const BLOCKS = path.join(ROOT, 'registry/blocks')
 const LIB = path.join(ROOT, 'registry/lib')
 const THEMES = path.join(ROOT, 'themes')
 const STARTER = path.join(ROOT, 'templates/starter')
+const SKILLS = path.join(ROOT, 'skills')
 
 const c = { dim: s => `\x1b[2m${s}\x1b[0m`, bold: s => `\x1b[1m${s}\x1b[0m`, green: s => `\x1b[32m${s}\x1b[0m`, red: s => `\x1b[31m${s}\x1b[0m` }
 const fail = msg => {
@@ -208,7 +210,31 @@ function create() {
   console.log(`Next:\n  cd ${path.relative(process.cwd(), dir) || '.'}\n  ${flags.install ? '' : 'pnpm install && '}pnpm dev\n`)
 }
 
-const commands = { list, add: () => add(), theme: () => theme(), new: create }
+/** Link the kit's shareable Claude Code skills into ~/.claude/skills, so every repo can use them. */
+function skills() {
+  const target = path.join(os.homedir(), '.claude/skills')
+  fs.mkdirSync(target, { recursive: true })
+  console.log(c.bold(`\nLinking skills into ${target}`))
+  for (const name of fs.readdirSync(SKILLS).filter(d => fs.existsSync(path.join(SKILLS, d, 'SKILL.md')))) {
+    const src = path.join(SKILLS, name)
+    const dest = path.join(target, name)
+    const current = fs.lstatSync(dest, { throwIfNoEntry: false })
+    if (current?.isSymbolicLink() && fs.realpathSync(dest) === src) {
+      console.log(c.dim(`  ok    ${name} (already linked)`))
+      continue
+    }
+    if (current && !flags.force) {
+      console.log(c.dim(`  skip  ${name} (${dest} exists — use --force to replace it)`))
+      continue
+    }
+    if (current) fs.rmSync(dest, { recursive: true, force: true })
+    fs.symlinkSync(src, dest, 'dir')
+    console.log(`  ${c.green('link')}  ${name}`)
+  }
+  console.log(c.green('\n✓ Done.') + c.dim(' They stay in sync with this repo. Restart Claude Code sessions to pick up new skills.\n'))
+}
+
+const commands = { list, add: () => add(), theme: () => theme(), new: create, skills }
 if (!commands[command]) {
   console.log(`
 ${c.bold('creative-kit')}
@@ -217,6 +243,7 @@ ${c.bold('creative-kit')}
   pnpm kit new <folder> [--theme graphite] [--blocks a,b] [--install]
   pnpm kit add <block...> --to <project> [--install] [--force] [--dir src/components/kit]
   pnpm kit theme <theme> --to <project>
+  pnpm kit skills [--force]                      Link the kit's skills into ~/.claude/skills
 `)
   process.exit(command ? 1 : 0)
 }

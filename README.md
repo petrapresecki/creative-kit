@@ -23,6 +23,14 @@ pnpm kit new ../my-site --theme graphite --blocks melt-text,orbit-gallery --inst
 cd ../my-site && pnpm dev
 ```
 
+## Come up with a concept
+
+```sh
+pnpm kit skills   # once: links the kit's skills into ~/.claude/skills
+```
+
+Then, in any repo, ask Claude Code for a concept for the new site (the `site-concept` skill). It goes through the whole kit, the galleries and ABC Dinamo, proposes 2–3 concepts on a visual board and turns the one you pick into `concept/CONCEPT.md`: idea, visual system, pages, motion, and what to take from the kit and how to change it.
+
 ## Add blocks to an existing site
 
 ```sh
@@ -50,4 +58,5 @@ The list lives in `content/sources.json` and shows on the site's Inspo page.
 | `themes/` | Themes as JSON (colours, fonts, type scale, easing, radius) |
 | `content/inspo/` | Inspiration pins + screenshots |
 | `templates/starter/` | New-site template |
+| `skills/` | Claude Code skills for other repos (`pnpm kit skills` links them) |
 | `apps/site/` | The showcase website |
