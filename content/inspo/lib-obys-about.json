@@ -1,0 +1,13 @@
+{
+  "id": "lib-obys-about",
+  "title": "Obys — about page ends on a full-width wordmark",
+  "note": "The about page is 11px text in a few columns (awards, talks, links, \"Typography: OTF Obys NG by Obys\"), and its lines reveal one at a time behind a mask as they scroll in. The page ends with the OBYS® wordmark set the full width of the screen (about 500px tall), so the logo becomes the footer. Worth reusing: a whisper-small body with a single huge typographic full stop at the end.",
+  "url": "https://obys.agency/",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "kind": "shot",
+  "section": "Footer",
+  "image": "images/obys-about.jpg",
+  "added": 1790980324820
+}

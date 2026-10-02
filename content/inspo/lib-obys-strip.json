@@ -1,0 +1,13 @@
+{
+  "id": "lib-obys-strip",
+  "title": "Obys — greyscale strip under a viewfinder, the framed one in colour",
+  "note": "Thumbnails of different shapes (about 130–200px wide) stack in a column with 5px gaps and scroll with the wheel, looping. All of them are greyscale with lowered contrast, except the one between the brackets: it's in full colour and about 1.3× bigger, and its neighbours move apart to make room rather than being covered. Scrolling eases and settles with the current image centred. The brackets are two halves of a lens: a box with bevelled outer corners and a big circular bite out of the inner side, so each half has thick tips and a thin spine. They sit about 430px apart at 130px tall. Worth reusing as a whole: it's the kit's viewfinder-strip block.",
+  "url": "https://obys.agency/",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "kind": "shot",
+  "section": "Hero",
+  "image": "images/obys-strip.jpg",
+  "added": 1790979964820
+}
