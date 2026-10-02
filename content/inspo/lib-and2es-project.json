@@ -1,0 +1,13 @@
+{
+  "id": "lib-and2es-project",
+  "title": "AND2ES — case page: one image at a time, a pill bar of facts",
+  "note": "A project page shows one image centred at about 60% of the screen height. Each wheel notch swaps it for the next (a cut, with no visible scroll), so the case plays like a slideshow. The facts sit in a row of pills bottom left (Daniel Caesar · Asia / Australia World Tour · Design · Music · 2023 · Expand), and the nav's Work pill turns grey to show where you are. Arriving from the home ring, the canvas fades to white and the first image rises in. Worth reusing for case pages when the images are strong enough to stand alone.",
+  "url": "https://www.and2es.com/",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "kind": "shot",
+  "section": "Pages",
+  "image": "images/and2es-project.jpg",
+  "added": 1790979568080
+}
