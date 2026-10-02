@@ -123,6 +123,15 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="px-4 pt-20 md:px-5">
+        <h2 className="border-b border-ink pb-6 text-headline">Manifesto</h2>
+        <div className="grid max-w-[60ch] gap-6 pt-6 text-lead">
+          <p>Most of what’s in here started on someone else’s website. The exception is everything from Iva’s portfolio, which I built myself.</p>
+          <p>None of it is here to be copied as it is. These are things I like, kept as inspiration. When one of them goes into a new site, the job is to improve it and reshape it to fit that site’s vibe, vision and context.</p>
+          <p>The hope is that one day every animation, block and theme in here gets replaced by our own version of it, made while building new sites.</p>
+        </div>
+      </section>
+
       <footer className="mt-24 border-t border-ink px-4 py-10 md:px-5">
         <ScrambleText text="creative-kit" className="text-display" />
         <p className="caption mt-6 text-muted">Built from the iva-v2 redesign · grows with every site</p>

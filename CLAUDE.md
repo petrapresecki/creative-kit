@@ -2,6 +2,8 @@
 
 Petra's library of building blocks for creative / style websites: motion and effect components, themes (design tokens), grids, a starter template, and an inspiration library. The showcase website in `apps/site` renders all of it.
 
+Most blocks and themes start from other sites (Iva's portfolio is Petra's own work). They are inspiration, not finished pieces: when one goes into a new site, rework it to fit that site rather than dropping it in unchanged (see the Manifesto in `README.md`).
+
 ## Commands
 - `pnpm dev` — showcase site (Vite, root `apps/site`). Restart it after adding a new block folder; new folders outside the site root are not picked up live
 - `pnpm build` — type-check + build the site to `dist/`
