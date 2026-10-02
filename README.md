@@ -29,7 +29,7 @@ cd ../my-site && pnpm dev
 pnpm kit skills   # once: links the kit's skills into ~/.claude/skills
 ```
 
-Then, in any repo, ask Claude Code for a concept for the new site (the `site-concept` skill). It goes through the whole kit, the galleries and ABC Dinamo, proposes 2–3 concepts on a visual board and turns the one you pick into `concept/CONCEPT.md`: idea, visual system, pages, motion, and what to take from the kit and how to change it.
+Then, in any repo, ask Claude Code for a concept for the new site (the `site-concept` skill). It goes through the whole kit, the galleries and ABC Dinamo, proposes 2–3 concepts on a visual board (each showing the inspo pins it grows from, and any blocks, themes or grids it builds on), prototypes the signature moment of the one you pick as a small working page, and then turns it into `concept/CONCEPT.md`: idea, visual system, pages, motion, and what to take from the kit and how to change it.
 
 ## Add blocks to an existing site
 

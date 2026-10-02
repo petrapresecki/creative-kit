@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Render site concepts as one static HTML board: per concept its idea, palette as swatches,
-// type set in the free stand-in fonts, the signature moment, sections, what it takes from
-// the kit and how it changes it, and reference images with captions.
+// type set in the free stand-in fonts, the signature moment, sections, a row of the kit pieces
+// it uses (block previews, theme swatches, grid columns, pin shots) with what each becomes,
+// reference images with captions and, once one is built, the signature-moment prototype.
 // Images are copied next to the page, so the folder can be opened, zipped or shared as it is.
 //
 // Usage:
@@ -10,6 +11,17 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { execSync } from 'node:child_process'
+import { fileURLToPath } from 'node:url'
+
+// The kit, found from this script's real location like digest.mjs (CREATIVE_KIT overrides)
+const KIT = process.env.CREATIVE_KIT
+  ? path.resolve(process.env.CREATIVE_KIT)
+  : path.resolve(path.dirname(fs.realpathSync(fileURLToPath(import.meta.url))), '../../..')
+const kitFile = rel => path.join(KIT, rel)
+const kitJson = rel => (fs.existsSync(kitFile(rel)) ? JSON.parse(fs.readFileSync(kitFile(rel), 'utf8')) : null)
+const grids = fs.existsSync(kitFile('apps/site/src/pages/Grids.tsx'))
+  ? [...fs.readFileSync(kitFile('apps/site/src/pages/Grids.tsx'), 'utf8').matchAll(/name: '([^']+)', spec: '([^']+)'/g)].map(m => ({ name: m[1], spec: m[2] }))
+  : []
 
 const args = process.argv.slice(2)
 const flag = name => {
@@ -31,13 +43,54 @@ const slug = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^
 
 // Copy every image next to the page; skip (and report) the ones that don't exist
 const missing = []
-const image = (src, prefix) => {
+const image = (src, prefix, base = path.dirname(input)) => {
   if (/^https?:/.test(src)) return src
-  const file = path.resolve(path.dirname(input), src)
+  const file = path.resolve(base, src)
   if (!fs.existsSync(file)) return missing.push(src), null
   const name = `${prefix}-${path.basename(file)}`
   fs.copyFileSync(file, path.join(OUT, 'images', name))
   return `images/${name}`
+}
+
+// Pins first: they're where a concept starts; blocks, themes and grids build on them
+const KINDS = ['pin', 'block', 'theme', 'grid']
+const DEPTH = { base: 'Base: its code, reshaped', reworked: 'Reworked: its technique, a new piece', principle: 'Principle only' }
+
+/** One kit piece as a card: what it looks like in the kit, then what it becomes here. */
+function kitCard(k, prefix) {
+  if (!k.kind) return `<div class="kit-card"><div class="kit-body"><code>${esc(k.from)}</code><p>${esc(k.to)}</p></div></div>`
+  let thumb = ''
+  let title = k.id
+  if (!k.id) title = `No kit ${k.kind}`
+  else if (k.kind === 'block') {
+    const meta = kitJson(`registry/blocks/${k.id}/meta.json`)
+    title = meta?.title ?? k.id
+    const src = image(`apps/site/src/assets/previews/${k.id}.jpg`, prefix, KIT)
+    if (src) thumb = `<img src="${esc(src)}" alt="" />`
+  } else if (k.kind === 'theme') {
+    const t = kitJson(`themes/${k.id}.json`)
+    title = t?.name ?? k.id
+    if (t) thumb = `<div class="kit-theme" style="background:${esc(t.colors.paper)};color:${esc(t.colors.ink)}"><span style="font-family:'${esc(t.fonts.display?.family ?? t.fonts.sans.family)}',sans-serif">Aa</span><div>${Object.values(t.colors).map(v => `<i style="background:${esc(v)}"></i>`).join('')}</div></div>`
+    for (const f of Object.values(t?.fonts ?? {})) if (f?.google) families.add(f.google)
+  } else if (k.kind === 'grid') {
+    const g = grids.find(g => g.name.toLowerCase() === String(k.id).toLowerCase())
+    const cols = Number(g?.spec.match(/(\d+) columns/)?.[1] ?? 12)
+    thumb = `<div class="kit-grid" style="grid-template-columns:repeat(${cols},1fr)">${'<i></i>'.repeat(cols)}</div>`
+    title = g ? `${g.name} · ${g.spec}` : k.id
+  } else if (k.kind === 'pin') {
+    const pin = kitJson(`content/inspo/${k.id}.json`)
+    title = pin?.title ?? k.id
+    const src = pin?.image && image(`content/inspo/${pin.image}`, prefix, KIT)
+    if (src) thumb = `<img src="${esc(src)}" alt="" />`
+  }
+  return `<div class="kit-card${k.id ? '' : ' kit-none'}">
+    ${thumb ? `<div class="kit-thumb">${thumb}</div>` : ''}
+    <div class="kit-body">
+      <div class="caption">${esc(k.kind)}${k.id ? ` · ${esc(k.id)}` : ''}${k.depth ? ` · ${esc(DEPTH[k.depth] ?? k.depth)}` : ''}</div>
+      <strong>${esc(title)}</strong>
+      <p>${esc(k.to)}</p>
+    </div>
+  </div>`
 }
 
 const families = new Set()
@@ -55,12 +108,13 @@ const concepts = data.concepts.map((c, n) => {
     )
     .join('')
   const kit = (c.kit ?? [])
-    .map(k => `<tr><td><code>${esc(k.from)}</code></td><td>${esc(k.to)}</td></tr>`)
+    .toSorted((a, b) => (KINDS.indexOf(a.kind) >>> 0) - (KINDS.indexOf(b.kind) >>> 0))
+    .map(k => kitCard(k, id))
     .join('')
   const images = (c.images ?? [])
     .map(img => {
       const src = image(img.src, id)
-      return src ? `<figure><img src="${esc(src)}" alt="" loading="lazy" /><figcaption>${esc(img.caption)}</figcaption></figure>` : ''
+      return src ? `<figure><img src="${esc(src)}" alt="" /><figcaption>${esc(img.caption)}</figcaption></figure>` : ''
     })
     .join('')
   return `<section class="concept" id="${id}">
@@ -77,10 +131,11 @@ const concepts = data.concepts.map((c, n) => {
       ${fonts ? `<div class="block"><h3>Type</h3>${fonts}</div>` : ''}
       ${c.motion ? `<div class="block"><h3>Motion</h3><p>${esc(c.motion)}</p></div>` : ''}
       ${c.sections?.length ? `<div class="block"><h3>Pages and sections</h3>${list(c.sections)}</div>` : ''}
-      ${kit ? `<div class="block"><h3>From the kit, reworked</h3><table>${kit}</table></div>` : ''}
       ${c.new?.length ? `<div class="block"><h3>New for this site</h3>${list(c.new)}</div>` : ''}
       ${c.risks?.length ? `<div class="block"><h3>Watch out</h3>${list(c.risks)}</div>` : ''}
     </div>
+    ${kit ? `<div class="kit"><h3>From the kit</h3><div class="kit-cards">${kit}</div></div>` : ''}
+    ${c.prototype ? `<div class="proto"><h3>Signature moment, prototype · <a href="${esc(path.relative(OUT, path.resolve(path.dirname(input), c.prototype)))}" target="_blank">open full screen</a></h3><iframe src="${esc(path.relative(OUT, path.resolve(path.dirname(input), c.prototype)))}" title="Prototype"></iframe></div>` : ''}
     ${images ? `<div class="refs">${images}</div>` : ''}
   </section>`
 })
@@ -120,8 +175,21 @@ ${fontsUrl ? `<link rel="stylesheet" href="${fontsUrl}" />` : ''}
   .swatch code { color: var(--muted); }
   .font + .font { margin-top: 18px; } .font-meta span { text-transform: none; }
   .font-sample { margin-top: 6px; overflow-wrap: anywhere; }
-  table { border-collapse: collapse; width: 100%; } td { padding: 8px 0; border-top: 1px solid var(--rule); vertical-align: top; }
-  td:first-child { padding-right: 16px; white-space: nowrap; } tr:first-child td { border-top: 0; }
+  .kit, .proto { padding: 20px clamp(20px, 3vw, 40px) 28px; border-top: 1px solid var(--rule); }
+  .kit h3, .proto h3 { margin: 0 0 14px; font: 11px/1.3 ui-monospace, 'SF Mono', Menlo, monospace; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 400; }
+  .proto a { color: inherit; }
+  .kit-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); gap: 16px; }
+  .kit-card { border: 1px solid var(--rule); display: grid; grid-template-rows: auto 1fr; min-width: 0; }
+  .kit-none { border-style: dashed; }
+  .kit-thumb { aspect-ratio: 16 / 10; overflow: hidden; border-bottom: 1px solid var(--rule); }
+  .kit-thumb img { border: 0; height: 100%; }
+  .kit-theme { height: 100%; display: grid; align-content: space-between; padding: 12px; }
+  .kit-theme span { font-size: 56px; line-height: 1; }
+  .kit-theme div { display: flex; gap: 4px; } .kit-theme i { width: 22px; height: 22px; border-radius: 50%; box-shadow: 0 0 0 1px rgba(127, 127, 127, 0.35); }
+  .kit-grid { height: 100%; display: grid; gap: 4px; padding: 12px; } .kit-grid i { background: color-mix(in srgb, var(--ink) 10%, transparent); }
+  .kit-body { padding: 12px 14px 16px; display: grid; gap: 6px; align-content: start; }
+  .kit-body strong { font-weight: 500; } .kit-body p { margin: 0; font-size: 14px; }
+  .proto iframe { display: block; width: 100%; height: min(80vh, 760px); border: 1px solid var(--rule); background: #fff; }
   code { font: 12px ui-monospace, 'SF Mono', Menlo, monospace; }
   .refs { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 16px; padding: 20px clamp(20px, 3vw, 40px) 32px; border-top: 1px solid var(--rule); }
   figure { margin: 0; } img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border: 1px solid var(--rule); }
