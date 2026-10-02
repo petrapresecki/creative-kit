@@ -12,7 +12,7 @@ Petra's library of building blocks for creative / style websites: motion and eff
 - `registry/blocks/<slug>/` — one folder per block: component file(s), `demo.tsx` (site only, never copied), `meta.json`
 - `registry/lib/` — shared helpers copied into projects as `src/lib/kit/*` (`gsap.ts`, `lenis.ts`, `tokens.ts`, `use-text-scramble.ts`, `kit.css`). `demo.ts` is site-only
 - `themes/<id>.json` + `themes/theme.mjs` (shared by CLI and site: `themeVars`, `themeCss`, `googleFontsUrl`). Themes are named after a material or substance they look like (Graphite, Cinnabar, Neon, Marzipan, Vinyl, Quartz), never after the source site or a person; add new ids to `order` in `apps/site/src/data/themes.ts`
-- `content/inspo/<id>.json` + `content/inspo/images/` — one pin per file; `content/projects.json` lists projects (`library` = general)
+- `content/inspo/<id>.json` + `content/inspo/images/` — one pin per file; `content/projects.json` lists projects (`library` = general); `content/sources.json` lists inspo galleries (minimal.gallery is Petra's favourite) and font foundries (ABC Dinamo)
 - `templates/starter/` — what `kit new` copies (it has its own CLAUDE.md)
 - `apps/site/` — the showcase; `@kit` → registry, `@site` → apps/site/src, `@content`, `@themes`
 

@@ -7,6 +7,8 @@ description: Add a website or idea to creative-kit. Research it in a real browse
 
 Petra shares a site (or several) and says what she likes about it. You turn it into kit material: **pins** (always), and when it earns it a **theme** and **blocks**. The repo rules in `CLAUDE.md` still apply. This skill adds the workflow, and the lessons that aren't obvious from the code.
 
+Looking for sites yourself (Petra asks for inspo without a URL)? Start with the galleries in `content/sources.json`, minimal.gallery first. For fonts, ABC Dinamo is her pick; its faces are paid, so a theme still uses the closest Google font and puts the Dinamo face first in `fallback` when it's the one she'd license.
+
 Shortcuts: "make a theme from <pins/site>" or "build a block from <pin>" skips the research when the pins already exist. Read those pins and their images, then go to step 3.
 
 ## 1. Research the site

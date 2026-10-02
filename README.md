@@ -24,6 +24,15 @@ pnpm kit theme cinnabar --to ../my-site
 
 Blocks are copied in as source (into `src/components/kit/`), so each site can change them freely.
 
+## Where to look
+
+Galleries with good website inspo (especially **[minimal.gallery](https://minimal.gallery/websites/)**):
+[minimal.gallery](https://minimal.gallery/websites/) · [Godly](https://godly.website/) · [Httpster](https://httpster.net) · [Mindsparkle Mag](https://mindsparklemag.com/websites) · [Woo-hu](https://woo-hu.com/)
+
+Fonts: [ABC Dinamo](https://abcdinamo.com/) (paid, with trial fonts for mockups).
+
+The list lives in `content/sources.json` and shows on the site's Inspo page.
+
 ## What's inside
 
 | Folder | What |
