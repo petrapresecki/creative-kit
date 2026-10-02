@@ -16,5 +16,8 @@ Started from **creative-kit** (`~/projects/creative-kit`), Petra's library of bu
 ## Adding blocks
 From the kit folder: `pnpm kit add <block...> --to <this folder> --install`. See the kit's site (`pnpm dev` in creative-kit) for every block with live demos.
 
+## Concept
+If `concept/CONCEPT.md` exists, it's the site's direction (made with the kit's `site-concept` skill). Follow its principles and kit map, and rework kit blocks the way it says rather than using them as they are.
+
 ## Inspiration
 Decisions, references and rejected ideas for this site belong in creative-kit's inspo library: `content/inspo/` with a project entry in `content/projects.json`.

@@ -8,7 +8,7 @@ Most blocks and themes start from other sites (Iva's portfolio is Petra's own wo
 - `pnpm dev` — showcase site (Vite, root `apps/site`). Restart it after adding a new block folder; new folders outside the site root are not picked up live
 - `pnpm build` — type-check + build the site to `dist/`
 - `pnpm lint`
-- `pnpm kit list | new | add | theme` — see `scripts/kit.mjs`
+- `pnpm kit list | new | add | theme | skills` — see `scripts/kit.mjs`
 
 ## Layout
 - `registry/blocks/<slug>/` — one folder per block: component file(s), `demo.tsx` (site only, never copied), `meta.json`
@@ -16,6 +16,7 @@ Most blocks and themes start from other sites (Iva's portfolio is Petra's own wo
 - `themes/<id>.json` + `themes/theme.mjs` (shared by CLI and site: `themeVars`, `themeCss`, `googleFontsUrl`). Themes are named after a material or substance they look like (Graphite, Cinnabar, Neon, Marzipan, Vinyl, Quartz), never after the source site or a person; add new ids to `order` in `apps/site/src/data/themes.ts`
 - `content/inspo/<id>.json` + `content/inspo/images/` — one pin per file; `content/projects.json` lists projects (`library` = general); `content/sources.json` lists inspo galleries (minimal.gallery is Petra's favourite) and font foundries (ABC Dinamo)
 - `templates/starter/` — what `kit new` copies (it has its own CLAUDE.md)
+- `skills/<name>/` — Claude Code skills for any repo, symlinked into `~/.claude/skills` by `pnpm kit skills` (`site-concept`: concepts for a new site from the kit). Kit-only skills live in `.claude/skills/` (`add-to-kit`). Skill scripts find the kit from their own real path, so they work from any folder
 - `apps/site/` — the showcase; `@kit` → registry, `@site` → apps/site/src, `@content`, `@themes`
 
 ## Block rules
