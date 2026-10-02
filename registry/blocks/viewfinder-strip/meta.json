@@ -1,0 +1,11 @@
+{
+  "title": "Viewfinder strip",
+  "description": "A looping column of greyscale thumbnails that scrolls under two fixed brackets. Whatever sits between them turns to colour and grows, pushing its neighbours apart, while a project list beside it turns along so the current title, its category, detail and number stay on the centre line. Snaps on release, opens as a closed lens that splits into the brackets while the strip rises in.",
+  "category": "Interaction",
+  "files": ["ViewfinderStrip.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap", "@gsap/react"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-obys", "lib-obys-strip", "lib-obys-list", "lib-obys-preloader"],
+  "usedIn": []
+}
