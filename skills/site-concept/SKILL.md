@@ -12,16 +12,16 @@ The kit is the main source, in this order:
 2. **Blocks, themes and grids,** when the concept needs them: they're tested, working versions of things in those pins.
 3. **Galleries and fonts,** to fill the gaps the kit doesn't cover.
 
-Each concept should be clearly made from her pins, reworked for the new site. Read the rules below before you look at any of it.
+Each concept should be clearly made from her pins, grown into the new site. Read the rules below before you look at any of it.
 
 ## The rules (from the kit's manifesto)
 
-Most of the kit started on other people's websites. Petra wants it used, but reworked: new sites that take what was good and make it their own, never a copy.
+Most of the kit started on other people's websites. Petra wants it used, motion and all: new sites that bring in what was good and let it grow into something of their own along the way.
 
 - **The idea comes from the site; the pins are where you look first.** Each concept's organising idea grows from the new site's own world: its subject, content, people and use. If it would work just as well for any other client, it's not a concept yet. To shape it, go to Petra's pins before anything else: her loved sites, the details she pinned, her ideas and decisions. Each concept should grow from a handful of pins, and you should be able to say which ones.
 - **Then blocks, themes and grids, if the concept needs them.** Once you know which pins a concept grows from, check whether the kit already has a working version: a block built from those pins, a theme, a grid system. Reshaping one beats starting from zero. They're optional, though. Use them where they serve the concept and leave them out where they don't. A quiet site may need no blocks at all.
-- **Three depths, all reworked.** `base`: start from the piece's code and reshape it (new content, new form, tuned motion). `reworked`: take its technique to make a different piece. `principle`: only the idea under it. Pins are usually `principle` or `reworked`; blocks, themes and grids are usually `base` or `reworked`.
-- **Every kit piece gets a "from → to".** Say what it was, what it becomes here and why it fits this site. The copy test: put the result next to the source site. If people would think it's the same thing, rework it more. Petra's own lesson (pin `lib-idea-mix`): borrow the technique, not the look. The Aspen dither trail only worked once it printed Iva's own projects.
+- **Three depths.** `base`: start from the piece's working code, animations included, and shape it to the site (its content, form and timing). `reworked`: take its technique to make a different piece. `principle`: only the idea under it. Pins are usually `principle` or `reworked`; blocks, themes and grids are usually `base` or `reworked`.
+- **Every kit piece gets a "from → to".** Say what it was, what it becomes here and why it fits this site. A block's motion comes along by default; tune it to the site rather than dropping it. The copy test: put the result next to the source site. If people would think it's the same thing, give it more of the new site's own content and feel. Petra's own lesson (pin `lib-idea-mix`): borrow the technique, not the look. The Aspen dither trail only worked once it printed Iva's own projects.
 - **One thing per source site, at most.** Never take a source site's layout, type, palette and signature motion together. A kit theme or block counts as its source site's one thing. Mixing pieces from different sources, and adding something new, is what makes the result yours.
 - **Iva's portfolio is Petra's own work** (project `iva`), so there's nothing to copy there. It still gets reworked to fit the new site.
 - **Fonts are made to be licensed and used.** ABC Dinamo faces are paid. Name the Dinamo face you'd license, and give the closest Google font as a stand-in for building and mockups. Dinamo's trial fonts are for mockups only.

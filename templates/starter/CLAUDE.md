@@ -18,7 +18,7 @@ From the kit folder: `pnpm kit add <block...> --to <this folder> --install`. See
 
 ## Concept and design process
 This site follows creative-kit's design process (`~/projects/creative-kit/PROCESS.md`: brief → research → concept → content → visual system → layout → motion → build → critique → launch → look back). The `concept/` folder holds its decisions:
-- `CONCEPT.md` (site-concept skill): the idea, principles and kit map. Follow its principles and rework kit blocks the way it says rather than using them as they are
+- `CONCEPT.md` (site-concept skill): the idea, principles and kit map. Follow its principles, and build on the kit blocks it lists, animations included, shaping them the way it says
 - `CONTENT.md`, `theme.json`, `LAYOUT.md`, `wireframes/` (site-layout skill): pages, sections, real copy and the chosen layout per section at desktop and phone. Build to these: the wireframes' grid spans carry straight over
 - `reviews/<date>/REVIEW.md` (design-review skill): critiques with prioritised fixes; run one after each big change, and in launch mode before going live
 

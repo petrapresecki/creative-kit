@@ -4,7 +4,7 @@ Petra's library of building blocks for creative / style websites: motion and eff
 
 Petra is learning to design by building sites. When you help with design decisions, name the field guide principle behind them (Hierarchy, Space, Grid, Restraint…) in a sentence, so the vocabulary sticks. Don't lecture.
 
-Most blocks and themes start from other sites (Iva's portfolio is Petra's own work). They are inspiration, not finished pieces: when one goes into a new site, rework it to fit that site rather than dropping it in unchanged (see the Manifesto in `README.md`).
+Most blocks and themes start from other sites (Iva's portfolio is Petra's own work). They are starting points to build with: bring them into new sites with their animations, then shape them to fit that site's content and feel (see the Manifesto in `README.md`).
 
 Petra also wants to use **p5.js** sometimes, for generative and hand-drawn-feeling pieces (patterns, particles, drawing tools, type made of shapes). Suggest it when a piece is about drawing rather than moving DOM elements.
 

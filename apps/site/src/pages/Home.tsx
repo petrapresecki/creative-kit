@@ -132,7 +132,7 @@ export default function Home() {
         <h2 className="border-b border-ink pb-6 text-headline">Manifesto</h2>
         <div className="grid max-w-[60ch] gap-6 pt-6 text-lead">
           <p>Most of what’s in here started on someone else’s website. The exception is everything from Iva’s portfolio, which I built myself.</p>
-          <p>None of it is here to be copied as it is. These are things I like, kept as inspiration. When one of them goes into a new site, the job is to improve it and reshape it to fit that site’s vibe, vision and context.</p>
+          <p>These are things I like, collected to build with. Bring them into new sites, motion and all, and let each one grow into that site’s vibe, vision and context along the way.</p>
           <p>The hope is that one day every animation, block and theme in here gets replaced by our own version of it, made while building new sites.</p>
         </div>
       </section>
