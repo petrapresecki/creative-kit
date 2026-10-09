@@ -10,6 +10,10 @@ import Themes from '@site/pages/Themes'
 import Grids from '@site/pages/Grids'
 import Inspo from '@site/pages/Inspo'
 import Start from '@site/pages/Start'
+import Process from '@site/pages/Process'
+import FieldGuide from '@site/pages/FieldGuide'
+import Studies from '@site/pages/Studies'
+import StudyPage from '@site/pages/StudyPage'
 
 export default function App() {
   const path = usePath()
@@ -57,6 +61,9 @@ export default function App() {
         {route.page === 'grids' && <Grids />}
         {route.page === 'inspo' && <Inspo />}
         {route.page === 'start' && <Start />}
+        {route.page === 'process' && <Process />}
+        {route.page === 'guide' && <FieldGuide />}
+        {route.page === 'studies' && (route.slug ? <StudyPage slug={route.slug} /> : <Studies />)}
       </main>
     </>
   )

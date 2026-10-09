@@ -2,10 +2,13 @@ import RollText from '@kit/blocks/roll-text/RollText'
 import { linkProps, type Route } from '@site/lib/router'
 
 const items: { page: Route['page']; href: string; label: string }[] = [
+  { page: 'process', href: '/process', label: 'Process' },
+  { page: 'guide', href: '/guide', label: 'Field guide' },
   { page: 'blocks', href: '/blocks', label: 'Blocks' },
   { page: 'themes', href: '/themes', label: 'Themes' },
   { page: 'grids', href: '/grids', label: 'Grids' },
   { page: 'inspo', href: '/inspo', label: 'Inspo' },
+  { page: 'studies', href: '/studies', label: 'Studies' },
   { page: 'start', href: '/start', label: 'Start a site' },
 ]
 

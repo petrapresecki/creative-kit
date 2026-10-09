@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>One size, hierarchy by fill</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" />
+    <style>
+      :root { --paper: #ffffff; --ink: #232323; --accent: #a1ffcb; --mist: #e0e0e0; --muted: #7b7b7b; --sans: "Geist", 'Helvetica Neue', Arial, sans-serif; }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { min-height: 100%; background: var(--paper); color: var(--ink); font: 500 11px/1.3 var(--sans); }
+      body { display: grid; grid-template-rows: auto 1fr auto; min-height: 100vh; padding: 12px; gap: 24px; }
+      button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+
+      /* One size for everything. The reading order comes from the fill. */
+      .pill { display: inline-block; padding: 4px 4px; transition: background 0.4s, color 0.4s, font-size 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+      .first { background: var(--ink); color: var(--paper); }
+      .second { background: var(--mist); }
+      .third { color: var(--muted); }
+      sup { font-size: 0.75em; margin-left: 1px; }
+
+      header, .filters, footer { display: flex; flex-wrap: wrap; gap: 3px; align-items: start; }
+      header .clock { margin-left: auto; }
+      nav { display: flex; gap: 3px; }
+      nav .pill { min-width: 92px; }
+
+      main { display: grid; align-content: center; justify-items: center; gap: 24px; }
+      table { border-collapse: collapse; width: min(640px, 100%); }
+      td { padding: 0 6px; height: 21px; white-space: nowrap; transition: background 0.4s, font-size 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+      td:first-child { width: 36px; }
+      td:last-child { text-align: right; }
+      tr.current td { background: var(--mist); }
+      tr:hover td { background: var(--mist); }
+
+      /* Size only: no fills, the order comes from size instead */
+      [data-mode='size'] .first, [data-mode='size'] .second, [data-mode='size'] tr.current td, [data-mode='size'] tr:hover td { background: none; color: var(--ink); }
+      [data-mode='size'] .first { font-size: 44px; letter-spacing: -0.04em; line-height: 1; }
+      [data-mode='size'] .second, [data-mode='size'] tr.current td { font-size: 18px; letter-spacing: -0.02em; }
+      /* Neither: one size, no fills. Everything shouts the same, so nothing does */
+      [data-mode='none'] .first, [data-mode='none'] .second, [data-mode='none'] tr.current td, [data-mode='none'] tr:hover td { background: none; color: var(--ink); }
+      [data-mode='none'] .third { color: var(--ink); }
+
+      .switch { position: fixed; right: 12px; bottom: 12px; display: flex; gap: 3px; padding: 3px; background: var(--paper); outline: 1px solid var(--ink); }
+      .switch button { padding: 4px 8px; }
+      .switch [aria-pressed='true'] { background: var(--accent); }
+      @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+    </style>
+  </head>
+  <body data-mode="fill">
+    <header>
+      <span class="pill first">Field Studio</span>
+      <nav>
+        <a class="pill second">Work</a>
+        <a class="pill">Index</a>
+        <a class="pill">Information</a>
+      </nav>
+      <span class="pill third clock" id="clock"></span>
+    </header>
+
+    <main>
+      <div class="filters">
+        <button class="pill second">All<sup>8</sup></button>
+        <button class="pill third">Identity<sup>4</sup></button>
+        <button class="pill third">Books<sup>2</sup></button>
+        <button class="pill third">Web<sup>2</sup></button>
+      </div>
+      <table>
+        <tbody>
+          <tr><td class="third">01</td><td>Salt Works</td><td>Harbour signage</td><td class="third">Identity</td><td class="third">2026</td></tr>
+          <tr><td class="third">02</td><td>Orchard Press</td><td>Twelve Trees</td><td class="third">Books</td><td class="third">2026</td></tr>
+          <tr class="current"><td class="third">03</td><td>Kiln</td><td>Ceramics shop</td><td class="third">Web</td><td class="third">2025</td></tr>
+          <tr><td class="third">04</td><td>Night Ferry</td><td>Festival 2025</td><td class="third">Identity</td><td class="third">2025</td></tr>
+          <tr><td class="third">05</td><td>Field Notes</td><td>Issue 3</td><td class="third">Books</td><td class="third">2025</td></tr>
+          <tr><td class="third">06</td><td>Linden</td><td>Bakery</td><td class="third">Identity</td><td class="third">2024</td></tr>
+          <tr><td class="third">07</td><td>Assembly</td><td>Architects</td><td class="third">Web</td><td class="third">2024</td></tr>
+          <tr><td class="third">08</td><td>Tidewater</td><td>Wine label</td><td class="third">Identity</td><td class="third">2023</td></tr>
+        </tbody>
+      </table>
+    </main>
+
+    <footer>
+      <span class="pill first">Kiln</span>
+      <span class="pill second">View case</span>
+    </footer>
+
+    <div class="switch" role="group" aria-label="Hierarchy by">
+      <button data-set="fill" aria-pressed="true">Fill</button>
+      <button data-set="size" aria-pressed="false">Size</button>
+      <button data-set="none" aria-pressed="false">Neither</button>
+    </div>
+
+    <script>
+      // One page, three ways of making the reading order: fills at one size, sizes without fills, or neither.
+      const buttons = document.querySelectorAll('[data-set]')
+      buttons.forEach(b =>
+        b.addEventListener('click', () => {
+          document.body.dataset.mode = b.dataset.set
+          buttons.forEach(x => x.setAttribute('aria-pressed', String(x === b)))
+        }),
+      )
+      const clock = document.getElementById('clock')
+      const tick = () => (clock.textContent = new Date().toLocaleTimeString('en-GB') + ' ' + new Date().toDateString())
+      tick()
+      setInterval(tick, 1000)
+    </script>
+  </body>
+</html>

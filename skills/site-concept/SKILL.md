@@ -92,7 +92,7 @@ In chat, give each concept in 2–3 lines with the pins it grows from and any bl
 
 Before writing the full plan, prove the riskiest part works: build the picked concept's signature moment as a small working page. If it doesn't land, it's cheap to change course now.
 
-- **One self-contained file:** `concept/prototype/index.html`, opened straight from disk with no build. The concept's colours as CSS variables, its stand-in fonts from Google Fonts, and GSAP (plugins included) from `https://cdn.jsdelivr.net/npm/gsap@3/dist/`. Add Lenis or three.js the same way only when the moment needs them.
+- **One self-contained file:** `concept/prototype/index.html`, opened straight from disk with no build. The concept's colours as CSS variables, its stand-in fonts from Google Fonts, and GSAP (plugins included) from `https://cdn.jsdelivr.net/npm/gsap@3/dist/`. Add Lenis, three.js or p5.js (`https://cdn.jsdelivr.net/npm/p5@2/lib/p5.min.js`) the same way only when the moment needs them. Petra likes p5.js for generative or drawn moments, so consider it when a concept is about patterns, particles or mark-making.
 - **Only the moment,** plus enough page around it to judge it: the hero or the one section, with the real nav and type around it. Not the whole site.
 - **Real content:** the site's actual words, and its images or video by relative path from the repo when they exist (`../../public/…`). Otherwise use plain blocks sized like the real media.
 - **Built on the kit when the concept says so:** when the moment reworks a kit block, port the parts of its code you need (plain JS instead of React is fine) and make the changes the kit map describes. Don't rebuild from memory.
@@ -121,6 +121,7 @@ Re-render the board with only the chosen concept, its prototype and its fuller r
 
 Summarise the concept in a few lines and point to `concept/CONCEPT.md` and the board. Then offer the next steps. Don't do them without asking:
 
+- **Pages and layout (the usual next step):** the `site-layout` skill turns the concept into content and structure, a visual system tuned on the real copy, and wireframes with options at phone and desktop width (steps 4–6 of the kit's process, `<kit>/PROCESS.md`).
 - **Theme into the kit:** add `theme.json` to `<kit>/themes/` under a material name (the naming rules are in `<kit>/CLAUDE.md`), then apply it with `pnpm kit theme <id> --to <site>`. That's how the kit's themes get replaced by Petra's own over time.
 - **Scaffold:** `cd <kit> && pnpm kit new <site> --theme <id> --blocks <slugs> --install` for an empty folder, or `pnpm kit add <slugs> --to <site>` for an existing one. Copied blocks belong to the site from then on: rework them as the kit map says.
 - **Record it in the kit:** add the project to `<kit>/content/projects.json`, write a `decision` pin for the chosen concept and `idea` pins for the rejected ones (verdict `maybe`), and pin new gallery finds as library pins with the add-to-kit skill. Commit in the kit only when Petra says so (`content:` prefix, on `dev`).

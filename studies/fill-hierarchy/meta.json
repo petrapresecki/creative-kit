@@ -1,0 +1,9 @@
+{
+  "title": "One size, hierarchy by fill",
+  "prompt": "Set a whole page in one font size (11px) and make the reading order with fills only: black pills first, grey second, plain text last. Then switch the fills off and see the order disappear.",
+  "tool": "css",
+  "principles": ["hierarchy", "restraint"],
+  "pins": ["lib-and2es-pills", "lib-obys-list"],
+  "learned": "With one size, a single black fill is louder than any heading. The switch shows how much of the hierarchy the fills were carrying.",
+  "added": 1791561347440
+}

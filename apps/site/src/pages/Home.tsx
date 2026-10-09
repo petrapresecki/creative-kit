@@ -55,9 +55,14 @@ export default function Home() {
             <p className="text-lead">Start the next site from here:</p>
             <div className="grid gap-3">
               <Command>pnpm kit new ../my-site --theme graphite</Command>
-              <a {...linkProps('/start')} className="group caption w-fit border-b border-ink pb-0.5">
-                <RollText text="How it works →" />
-              </a>
+              <div className="flex flex-wrap gap-4">
+                <a {...linkProps('/process')} className="group caption w-fit border-b border-ink pb-0.5">
+                  <RollText text="The process →" />
+                </a>
+                <a {...linkProps('/start')} className="group caption w-fit border-b border-ink pb-0.5">
+                  <RollText text="How it works →" />
+                </a>
+              </div>
             </div>
           </Cell>
         </CellGrid>
