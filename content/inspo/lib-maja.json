@@ -1,0 +1,13 @@
+{
+  "id": "lib-maja",
+  "title": "Maja Bjeljac — the showreel is the whole homepage",
+  "note": "A photographer, filmmaker and musician's portfolio (Berlin) whose homepage is one muted, looping 12s showreel (1920×1080, object-fit: cover, about 1440×730 under the nav) and nothing else but an imprint link. All the motion is baked into the edit, not the code: hard cuts about every second, photo collages that build up frame by frame, a vertical split-screen, a soft circular iris showing a second photo inside the first. On phones it swaps to a portrait-cropped edit. Built in Readymag (a fixed 1024px canvas scaled up), no GSAP, no WebGL. Worth reusing: let the reel be the homepage and put the transitions in the edit. For a filmmaker it shows the grading better than any layout.",
+  "url": "https://majabjeljac.com/",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "kind": "site",
+  "section": "Overall",
+  "image": "images/maja-showreel.jpg",
+  "added": 1791895717162
+}
