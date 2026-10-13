@@ -1,0 +1,13 @@
+{
+  "id": "lib-gn-type",
+  "title": "Gionatan Nese — a grotesk and a serif at the same small size",
+  "note": "Two faces: LayGrotesk Medium (sans) for names, labels and section heads, and Teodor Regular (serif) for descriptions, nav labels and running text. They are paired on one line at nearly the same size: \"A Curated Selection of\" (grotesk 14px) + \"Branding and Digital Projects\" (Teodor 15px); \"Palm92\" + \"Brand Identity\"; \"Ch. One\" + \"Quality\". The only big type is the About heading, Teodor about 46px, leading 1.1, centred: \"Turning bold ideas into ambitious and ridiculously cool Stuff™ that actually sticks.\" No uppercase, no tracking, #000 only. Free stand-ins: Inter Tight for LayGrotesk, Newsreader for Teodor.",
+  "url": "https://www.gionatannese.com/",
+  "kind": "shot",
+  "section": "Type",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/gn-type.jpg",
+  "added": 1790977425789
+}

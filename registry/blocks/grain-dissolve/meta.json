@@ -1,0 +1,12 @@
+{
+  "title": "Grain dissolve",
+  "description": "Text or images break into stippled noise dots instead of fading: as they scroll in or out, on hover, or held at any amount. One SVG filter, no WebGL.",
+  "category": "Effects",
+  "files": ["GrainDissolve.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap", "@gsap/react"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-koko-grain", "lib-koko-hover"],
+  "usedIn": [],
+  "theme": "quartz"
+}

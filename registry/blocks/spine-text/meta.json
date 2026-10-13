@@ -1,0 +1,12 @@
+{
+  "title": "Spine text",
+  "description": "Text on a centre spine, left blocks right-aligned and right blocks left-aligned, with an object pinned in the middle. Every line that scrolls past the object is pushed sideways to clear it, so lists and paragraphs bend around it.",
+  "category": "Layout",
+  "files": ["SpineText.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap", "@gsap/react"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-gn-spine", "lib-gn-type"],
+  "usedIn": [],
+  "theme": "porcelain"
+}

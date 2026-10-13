@@ -9,12 +9,12 @@ const steps = [
   {
     title: 'Make a new site',
     text: 'Copies the starter (Vite, React, TypeScript, Tailwind, GSAP, Lenis) into a new folder with a theme already applied.',
-    cmd: 'pnpm kit new ../my-site --theme iva',
+    cmd: 'pnpm kit new ../my-site --theme graphite',
   },
   {
     title: 'Add blocks',
     text: 'Copies the block’s code into src/components/kit, plus any blocks and helpers it needs. It’s your code from then on: change anything.',
-    cmd: 'pnpm kit add spiral-gallery work-index melt-text --to ../my-site',
+    cmd: 'pnpm kit add orbit-gallery work-index melt-text --to ../my-site',
   },
   {
     title: 'Install what the blocks list',
@@ -24,12 +24,17 @@ const steps = [
   {
     title: 'Swap or tweak the theme',
     text: 'Rewrites src/styles/theme.css. Start from a theme here, then edit the colours and fonts in the new site.',
-    cmd: 'pnpm kit theme ledger --to ../my-site',
+    cmd: 'pnpm kit theme cinnabar --to ../my-site',
   },
   {
     title: 'See what’s in the kit',
     text: 'Lists every block and theme by category.',
     cmd: 'pnpm kit list',
+  },
+  {
+    title: 'Start a study',
+    text: 'A small practice piece in studies/, as one HTML file. Name it after a field guide principle to get its exercise as the brief; add --p5 for a p5.js sketch.',
+    cmd: 'pnpm kit study hierarchy',
   },
 ]
 
@@ -80,8 +85,12 @@ export default function Start() {
           {file('registry/lib/', 'Shared helpers: GSAP setup, Lenis smooth scroll, theme token reader, scramble hook, base CSS.')}
           {file('themes/<name>.json', 'Colours, fonts, type scale, easing and radius. theme.mjs turns one into Tailwind CSS.')}
           {file('content/inspo/', 'One JSON file per pin, screenshots in images/. Projects are listed in content/projects.json.')}
+          {file('content/process.json', 'The design process, step by step. Shown on the Process page; pnpm kit docs writes PROCESS.md from it.')}
+          {file('content/field-guide.json', 'Design principles with my pins as examples. Shown on the Field guide page and in FIELD-GUIDE.md.')}
+          {file('studies/<name>/', 'Practice pieces: one HTML file (GSAP or p5.js) and a meta.json.')}
+          {file('skills/', 'Claude Code skills for any repo: site-concept, site-layout, design-review.')}
           {file('templates/starter/', 'The new-site template the kit copies.')}
-          {file('scripts/kit.mjs', 'The kit command: new, add, theme, list.')}
+          {file('scripts/kit.mjs', 'The kit command: new, add, theme, list, skills, study, docs.')}
           {file('apps/site/', 'This website.')}
         </ul>
       </section>

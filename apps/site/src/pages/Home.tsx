@@ -1,6 +1,6 @@
 import MeltText from '@kit/blocks/melt-text/MeltText'
 import Marquee from '@kit/blocks/marquee/Marquee'
-import SpiralGallery from '@kit/blocks/spiral-gallery/SpiralGallery'
+import OrbitGallery from '@kit/blocks/orbit-gallery/OrbitGallery'
 import DitherTrail from '@kit/blocks/dither-trail/DitherTrail'
 import ScrambleText from '@kit/blocks/scramble-text/ScrambleText'
 import RollText from '@kit/blocks/roll-text/RollText'
@@ -45,7 +45,7 @@ export default function Home() {
             </div>
           </Cell>
           <Cell colSpan={2} rowSpan={2} tone="ink" className="!p-0">
-            <SpiralGallery items={demoCards} onOpen={() => navigate('/blocks/spiral-gallery')} className="h-[70svh] md:h-full" hint="Spiral gallery · drag, hover, click" />
+            <OrbitGallery items={demoCards} onOpen={() => navigate('/blocks/orbit-gallery')} className="h-[70svh] md:h-full" hint="Orbit gallery · drag, hover, click" />
           </Cell>
           <Cell tone="window">
             <span />
@@ -54,10 +54,15 @@ export default function Home() {
           <Cell tone="accent">
             <p className="text-lead">Start the next site from here:</p>
             <div className="grid gap-3">
-              <Command>pnpm kit new ../my-site --theme iva</Command>
-              <a {...linkProps('/start')} className="group caption w-fit border-b border-ink pb-0.5">
-                <RollText text="How it works →" />
-              </a>
+              <Command>pnpm kit new ../my-site --theme graphite</Command>
+              <div className="flex flex-wrap gap-4">
+                <a {...linkProps('/process')} className="group caption w-fit border-b border-ink pb-0.5">
+                  <RollText text="The process →" />
+                </a>
+                <a {...linkProps('/start')} className="group caption w-fit border-b border-ink pb-0.5">
+                  <RollText text="How it works →" />
+                </a>
+              </div>
             </div>
           </Cell>
         </CellGrid>
@@ -120,6 +125,15 @@ export default function Home() {
           {pins.filter(p => p.image && p.kind === 'site').slice(0, 8).map(p => (
             <PinCard key={p.id} pin={p} />
           ))}
+        </div>
+      </section>
+
+      <section className="px-4 pt-20 md:px-5">
+        <h2 className="border-b border-ink pb-6 text-headline">Manifesto</h2>
+        <div className="grid max-w-[60ch] gap-6 pt-6 text-lead">
+          <p>Most of what’s in here started on someone else’s website. The exception is everything from Iva’s portfolio, which I built myself.</p>
+          <p>These are things I like, collected to build with. Bring them into new sites, motion and all, and let each one grow into that site’s vibe, vision and context along the way.</p>
+          <p>The hope is that one day every animation, block and theme in here gets replaced by our own version of it, made while building new sites.</p>
         </div>
       </section>
 

@@ -1,0 +1,13 @@
+{
+  "id": "lib-gn-spine",
+  "title": "Gionatan Nese — About text on a centre spine, bending around a chrome figure",
+  "note": "The About page is one long column on the vertical centre line. Each block alternates sides: left-hand text is right-aligned against the spine, right-hand text left-aligned, so the page zig-zags (Digital Design list left, Branding right, Print left…). Chapter heads put a grotesk label on each side of a big Teodor Roman numeral (\"Ch. One  I  Quality\"). A chrome 3D character with a blue glow (#1112A0) stays pinned in the middle while you scroll, and every line that passes it is pushed sideways away from it, more the closer it is, so lists come out as curved staircases (\"Email / Instagram / Twitter / Linkedin / Cosmos\" drifting left). All of it, text included, is drawn in the Three.js canvas, with the sr-only DOM copy for SEO. Worth reusing in DOM: split text into lines and give each line an x offset from its distance to a moving obstacle.",
+  "url": "https://www.gionatannese.com/about",
+  "kind": "shot",
+  "section": "Layout",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/gn-spine.jpg",
+  "added": 1790977485789
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Pill nav",
+  "description": "Frosted pills where only the current page shows its name, in the serif with a superscript number; the others shrink to just the number and open on hover. The label slides in behind the pill's edge instead of squashing.",
+  "category": "Navigation",
+  "files": ["PillNav.tsx"],
+  "lib": [],
+  "dependencies": [],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-gn-nav", "lib-gn-type"],
+  "usedIn": [],
+  "theme": "porcelain"
+}

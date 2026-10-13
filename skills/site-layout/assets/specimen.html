@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Visual system</title>
+    <link id="fonts" rel="stylesheet" href="" />
+    <style>
+      /* The page chrome stays neutral (system UI, greys) so only the samples show the theme */
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body { background: #f4f4f2; color: #1d1d1d; font: 13px/1.4 system-ui, -apple-system, sans-serif; padding: 0 16px 80px; }
+      h2 { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #777; font-weight: 600; margin: 48px 0 12px; }
+      header { position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; padding: 12px 0; background: #f4f4f2; border-bottom: 1px solid #d6d6d2; }
+      header b { font-size: 15px; }
+      button { font: inherit; cursor: pointer; border: 1px solid #1d1d1d; background: #1d1d1d; color: #fff; padding: 6px 12px; border-radius: 999px; }
+      button.quiet { background: #fff; color: #1d1d1d; }
+      input[type='text'] { font: 12px ui-monospace, Menlo, monospace; border: 1px solid #ccc; border-radius: 4px; padding: 3px 5px; width: 100%; background: #fff; }
+      input[type='color'] { width: 100%; height: 72px; border: 0; padding: 0; background: none; cursor: pointer; }
+      .grid { display: grid; gap: 12px; }
+      .card { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; }
+      .muted { color: #777; }
+      .badge { display: inline-block; font: 600 10px/1 system-ui; padding: 3px 6px; border-radius: 999px; }
+      .pass { background: #d9f5df; color: #0f5b22; }
+      .fail { background: #ffdcd6; color: #8a1a0a; }
+      table { border-collapse: collapse; width: 100%; }
+      td, th { text-align: left; padding: 6px 8px; border-top: 1px solid #e3e3e0; vertical-align: middle; }
+      th { font-weight: 500; color: #777; font-size: 11px; }
+
+      /* Samples use the theme */
+      .sample { background: var(--color-paper); color: var(--color-ink); font-family: var(--font-sans); border-radius: 8px; overflow: hidden; }
+      .step { display: grid; grid-template-columns: 220px 1fr; gap: 16px; padding: 16px; border-top: 1px solid #e3e3e0; background: #fff; }
+      .step .controls { display: grid; grid-template-columns: auto 1fr; gap: 4px 8px; align-items: center; font-size: 11px; color: #777; align-content: start; }
+      .step .text { min-width: 0; overflow-wrap: anywhere; text-wrap: balance; }
+      .caption-sample { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.02em; }
+      .page { padding: clamp(16px, 3vw, 40px); display: grid; gap: 24px; }
+      .swatch-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+      .space { display: flex; align-items: end; gap: 10px; flex-wrap: wrap; }
+      .space div { background: var(--color-accent); border: 1px solid var(--color-ink); }
+      .cols { display: grid; height: 120px; }
+      .cols span { background: color-mix(in srgb, var(--color-accent) 60%, transparent); }
+      .ease { position: relative; height: 40px; background: var(--color-mist); border-radius: var(--radius-kit); }
+      .ease i { position: absolute; top: 8px; left: 8px; width: 24px; height: 24px; border-radius: 50%; background: var(--color-ink); }
+      @media (max-width: 760px) { .step { grid-template-columns: 1fr; } }
+      #toast { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); background: #1d1d1d; color: #fff; padding: 8px 12px; border-radius: 6px; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div><b id="title"></b> <span class="muted" id="subtitle"></span></div>
+      <div style="display: flex; gap: 6px">
+        <button class="quiet" id="reset">Reset</button>
+        <button id="copy">Copy theme.json</button>
+      </div>
+    </header>
+
+    <h2>Colour roles</h2>
+    <div class="swatch-row" id="swatches"></div>
+    <div class="card" style="margin-top: 12px">
+      <table id="contrast"></table>
+      <p class="muted" style="margin-top: 8px">Body text needs 4.5:1. Big display text can go down to 3:1. accent and mist must carry ink text, because blocks use them as backgrounds.</p>
+    </div>
+
+    <h2>Fonts</h2>
+    <div class="grid" id="fontsEditor" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))"></div>
+
+    <h2>Type scale on the real copy</h2>
+    <p class="muted" id="ratio" style="margin-bottom: 8px"></p>
+    <div class="card" style="padding: 0; overflow: hidden" id="scale"></div>
+
+    <h2>Together</h2>
+    <div class="sample page" id="together"></div>
+
+    <h2>Spacing scale</h2>
+    <div class="card">
+      <div class="space" id="space"></div>
+      <p class="muted" style="margin-top: 8px">Use only these values for padding, margins and gaps. Small steps group things, big steps separate sections.</p>
+    </div>
+
+    <h2>Grid</h2>
+    <div class="card"><div class="cols" id="cols"></div><p class="muted" id="gridText" style="margin-top: 8px"></p></div>
+
+    <h2>Radius and easing</h2>
+    <div class="card grid" id="ease"></div>
+
+    <div id="toast"></div>
+    <script>
+      const DATA = /*DATA*/ {}
+      const original = JSON.parse(JSON.stringify(DATA.theme))
+      let theme = JSON.parse(JSON.stringify(DATA.theme))
+      const copy = DATA.copy || {}
+      const $ = id => document.getElementById(id)
+      const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
+
+      // ---------- contrast ----------
+      const rgb = hex => {
+        const h = hex.replace('#', '')
+        const full = h.length === 3 ? [...h].map(c => c + c).join('') : h.slice(0, 6)
+        return [0, 2, 4].map(i => parseInt(full.slice(i, i + 2), 16) / 255)
+      }
+      const lum = hex => {
+        const [r, g, b] = rgb(hex).map(c => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4))
+        return 0.2126 * r + 0.7152 * g + 0.0722 * b
+      }
+      const ratio = (a, b) => {
+        const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m)
+        return (x + 0.05) / (y + 0.05)
+      }
+
+      // ---------- clamp() at a given screen width ----------
+      const at = (value, width) => {
+        const one = v => {
+          v = v.trim()
+          if (v.endsWith('vw')) return (parseFloat(v) * width) / 100
+          if (v.endsWith('rem')) return parseFloat(v) * 16
+          return parseFloat(v)
+        }
+        const m = String(value).match(/^clamp\((.*)\)$/)
+        if (!m) return one(String(value))
+        const [lo, mid, hi] = m[1].split(',').map(one)
+        return Math.min(Math.max(lo, mid), hi)
+      }
+
+      // ---------- apply the theme to the samples ----------
+      const stack = f => (f ? `"${f.family}", ${f.fallback}` : '')
+      function applyVars() {
+        const r = document.documentElement.style
+        for (const [k, v] of Object.entries(theme.colors)) r.setProperty(`--color-${k}`, v)
+        const { sans, display = sans, mono = sans } = theme.fonts
+        r.setProperty('--font-sans', stack(sans))
+        r.setProperty('--font-display', stack(display))
+        r.setProperty('--font-mono', stack(mono))
+        r.setProperty('--radius-kit', theme.radius)
+        const families = [...new Set(Object.values(theme.fonts).map(f => f && f.google).filter(Boolean))]
+        $('fonts').href = families.length ? `https://fonts.googleapis.com/css2?${families.map(f => `family=${f}`).join('&')}&display=swap` : ''
+      }
+
+      function renderColors() {
+        renderSwatches()
+        renderContrast()
+      }
+      function renderSwatches() {
+        $('swatches').innerHTML = Object.entries(theme.colors)
+          .map(
+            ([k, v]) => `<label class="card grid" style="gap:6px"><input type="color" data-color="${k}" value="${v}" />
+              <b>${k}</b><input type="text" data-hex="${k}" value="${v}" /></label>`,
+          )
+          .join('')
+      }
+      function renderContrast() {
+        const c = theme.colors
+        const pairs = [
+          ['ink on paper', c.ink, c.paper, 4.5, 'Body text'],
+          ['muted on paper', c.muted, c.paper, 4.5, 'Captions, secondary text'],
+          ['ink on accent', c.ink, c.accent, 4.5, 'Text on accent blocks'],
+          ['ink on mist', c.ink, c.mist, 4.5, 'Text on quiet fills'],
+          ['paper on ink', c.paper, c.ink, 4.5, 'Inverted sections'],
+          ['accent on paper', c.accent, c.paper, 3, 'Only for big type or shapes'],
+        ]
+        $('contrast').innerHTML =
+          '<tr><th>Pair</th><th>Sample</th><th>Ratio</th><th>Needs</th><th>Used for</th></tr>' +
+          pairs
+            .map(([name, fg, bg, need, use]) => {
+              const r = ratio(fg, bg)
+              return `<tr><td>${name}</td><td><span style="background:${bg};color:${fg};padding:3px 8px;border-radius:4px;font-family:var(--font-sans)">Aa ${esc(
+                (copy.body || 'Sample text').slice(0, 24),
+              )}</span></td><td><b>${r.toFixed(2)}:1</b></td><td><span class="badge ${r >= need ? 'pass' : 'fail'}">${r >= need ? 'pass' : 'fail'} ${need}:1</span></td><td class="muted">${use}</td></tr>`
+            })
+            .join('')
+      }
+
+      function renderFonts() {
+        $('fontsEditor').innerHTML = ['sans', 'display', 'mono']
+          .map(role => {
+            const f = theme.fonts[role]
+            return `<div class="card grid" style="gap:6px"><b>${role}</b>
+              <span style="font-family:${f ? 'var(--font-' + role + ')' : 'inherit'};font-size:44px;line-height:1">Aa Gg 12</span>
+              <span class="muted">Google Fonts spec ${role === 'sans' ? '' : '(empty = use sans)'}</span>
+              <input type="text" data-font="${role}" value="${f && f.google ? esc(f.google) : ''}" placeholder="Inter+Tight:wght@400;500" />
+              <span class="muted">${f ? esc(f.family) + ' · stands in for ' + esc(f.fallback.split(',')[0]) : 'not set'}</span></div>`
+          })
+          .join('')
+      }
+
+      function renderScale() {
+        const w = innerWidth
+        $('scale').innerHTML = theme.type
+          .map((t, i) => {
+            const text = copy[t.name] || t.name
+            const font = t.font ? `var(--font-${t.font})` : t.name === 'display' || t.name === 'headline' ? 'var(--font-display)' : 'var(--font-sans)'
+            return `<div class="step"><div class="controls">
+                <b style="grid-column:1/-1;color:#1d1d1d;font-size:13px">${t.name}</b>
+                size <input type="text" data-step="${i}" data-key="size" value="${esc(t.size)}" />
+                leading <input type="text" data-step="${i}" data-key="leading" value="${esc(t.leading)}" />
+                tracking <input type="text" data-step="${i}" data-key="tracking" value="${esc(t.tracking)}" />
+                weight <input type="text" data-step="${i}" data-key="weight" value="${esc(t.weight)}" />
+                <span style="grid-column:1/-1">phone ${Math.round(at(t.size, 390))}px · desktop ${Math.round(at(t.size, 1440))}px · here ${Math.round(at(t.size, w))}px</span>
+              </div>
+              <div class="sample text" style="padding:8px;font-family:${font};font-size:${t.size};line-height:${t.leading};letter-spacing:${t.tracking};font-weight:${t.weight}">${esc(text)}</div></div>`
+          })
+          .join('')
+        if (copy.caption) $('scale').insertAdjacentHTML('beforeend', `<div class="step"><div class="controls"><b style="grid-column:1/-1;color:#1d1d1d;font-size:13px">caption</b><span style="grid-column:1/-1">mono, 11px, uppercase</span></div><div class="sample text caption-sample" style="padding:8px">${esc(copy.caption)}</div></div>`)
+        const big = theme.type[0] && at(theme.type[0].size, 1440)
+        const body = theme.type.find(t => t.name === 'body')
+        const r = big && body ? big / at(body.size, 1440) : 0
+        $('ratio').textContent = `${theme.type.length} sizes · biggest to body on desktop ${r.toFixed(1)}× ${r < 4 ? '(under 4×: may feel flat for a creative site)' : ''}`
+      }
+
+      function renderTogether() {
+        const t = name => theme.type.find(s => s.name === name)
+        const style = (name, font) => {
+          const s = t(name)
+          return s ? `font-size:${s.size};line-height:${s.leading};letter-spacing:${s.tracking};font-weight:${s.weight};font-family:var(--font-${font})` : ''
+        }
+        $('together').innerHTML = `
+          ${copy.caption ? `<p class="caption-sample" style="color:var(--color-muted)">${esc(copy.caption)}</p>` : ''}
+          <h1 style="${style('headline', 'display')};text-wrap:balance">${esc(copy.headline || copy.display || '')}</h1>
+          <p style="${style('lead', 'sans')};max-width:32ch">${esc(copy.lead || '')}</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+            <p style="${style('body', 'sans')};max-width:60ch">${esc(copy.body || '')}</p>
+            <div style="background:var(--color-accent);padding:16px;border-radius:var(--radius-kit)"><p style="${style('title', 'display')}">${esc(copy.title || '')}</p></div>
+            <div style="background:var(--color-ink);color:var(--color-paper);padding:16px;border-radius:var(--radius-kit)"><p style="${style('body', 'sans')}">${esc((copy.body || '').slice(0, 90))}</p></div>
+          </div>`
+      }
+
+      function renderSystem() {
+        $('space').innerHTML = [4, 8, 12, 16, 24, 32, 48, 64, 96, 128].map(n => `<div style="width:${n}px;height:${n}px" title="${n}px"></div><span class="muted">${n}</span>`).join('')
+        const g = DATA.grid
+        const phone = innerWidth < 768
+        const cols = phone ? g.colsM : g.cols
+        $('cols').style.cssText = `grid-template-columns:repeat(${cols},1fr);column-gap:${phone ? g.gutterM : g.gutter}px;padding-inline:${phone ? g.marginM : g.margin}px`
+        $('cols').innerHTML = '<span></span>'.repeat(cols)
+        $('gridText').textContent = `Desktop ${g.cols} columns, ${g.gutter}px gutter, ${g.margin}px margin · phone ${g.colsM} columns, ${g.gutterM}px gutter, ${g.marginM}px margin`
+        $('ease').innerHTML =
+          `<p>radius <input type="text" data-radius value="${esc(theme.radius)}" style="width:80px" /></p>` +
+          Object.entries(theme.ease)
+            .map(([k, v]) => `<div><p class="muted" style="margin-bottom:4px">${k} · ${v} <button class="quiet" data-play="${k}" style="padding:2px 8px">play</button></p><div class="ease"><i data-dot="${k}"></i></div></div>`)
+            .join('')
+      }
+
+      function renderAll() {
+        applyVars()
+        $('title').textContent = DATA.site || 'Visual system'
+        $('subtitle').textContent = `· ${theme.name}`
+        renderColors()
+        renderFonts()
+        renderScale()
+        renderTogether()
+        renderSystem()
+      }
+
+      // ---------- editing ----------
+      document.addEventListener('input', e => {
+        const el = e.target
+        if (el.dataset.color) {
+          // Don't re-render the swatches: that would close the colour picker being dragged
+          theme.colors[el.dataset.color] = el.value
+          document.querySelector(`[data-hex="${el.dataset.color}"]`).value = el.value
+          applyVars()
+          renderContrast()
+          renderTogether()
+        }
+      })
+      document.addEventListener('change', e => {
+        const el = e.target
+        if (el.dataset.hex && /^#[0-9a-f]{3,8}$/i.test(el.value)) theme.colors[el.dataset.hex] = el.value
+        if (el.dataset.step) theme.type[el.dataset.step][el.dataset.key] = el.dataset.key === 'weight' ? Number(el.value) : el.value
+        if (el.dataset.radius !== undefined) theme.radius = el.value
+        if (el.dataset.font) {
+          const role = el.dataset.font
+          const spec = el.value.trim()
+          if (!spec) {
+            if (role !== 'sans') delete theme.fonts[role]
+          } else {
+            const family = decodeURIComponent(spec.split(':')[0]).replace(/\+/g, ' ')
+            const old = theme.fonts[role]
+            theme.fonts[role] = { family, fallback: old ? old.fallback : role === 'mono' ? 'ui-monospace, Menlo, monospace' : "'Helvetica Neue', Arial, sans-serif", google: spec }
+          }
+        }
+        renderAll()
+      })
+      document.addEventListener('click', e => {
+        const k = e.target.dataset && e.target.dataset.play
+        if (!k) return
+        const dot = document.querySelector(`[data-dot="${k}"]`)
+        const travel = dot.parentElement.clientWidth - 40
+        dot.animate([{ transform: 'translateX(0)' }, { transform: `translateX(${travel}px)` }], { duration: 1100, easing: theme.ease[k], fill: 'forwards' })
+      })
+      $('reset').onclick = () => {
+        theme = JSON.parse(JSON.stringify(original))
+        renderAll()
+      }
+      $('copy').onclick = async () => {
+        const text = JSON.stringify(theme, null, 2)
+        try {
+          await navigator.clipboard.writeText(text)
+          toast('Copied. Paste it into the chat, or over concept/theme.json')
+        } catch {
+          prompt('Copy this theme.json:', text)
+        }
+      }
+      const toast = text => {
+        $('toast').textContent = text
+        $('toast').style.opacity = 1
+        setTimeout(() => ($('toast').style.opacity = 0), 2200)
+      }
+      addEventListener('resize', () => {
+        renderScale()
+        renderSystem()
+      })
+      renderAll()
+    </script>
+  </body>
+</html>

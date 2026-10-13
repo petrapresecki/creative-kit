@@ -15,6 +15,8 @@ export interface BlockMeta {
   inspiredBy: string[]
   usedIn: string[]
   webgl?: boolean
+  /** Theme the demo opens in (defaults to the site's own look) */
+  theme?: string
 }
 
 export interface Block extends BlockMeta {

@@ -1,0 +1,13 @@
+{
+  "id": "lib-koko-split",
+  "title": "Kokopako — every letter cut between a serif and a sans",
+  "note": "Titles mix Cirka Light (serif) and F37 Beckett (sans) inside each glyph: each letter is cut horizontally at its own height, with the top in one face and the bottom in the other, so the words look stitched together. Every title ends on a big round dot. Black #0F0F0F on white with greys #BBBCC4, tiny Roboto Mono labels. You could build it in DOM with two stacked spans and clip-path insets per letter.",
+  "url": "https://kokopako.fr/work",
+  "kind": "shot",
+  "section": "Type",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/koko-split.jpg",
+  "added": 1790892840000
+}

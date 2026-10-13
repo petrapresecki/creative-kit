@@ -1,0 +1,13 @@
+{
+  "id": "lib-obys-horizontal",
+  "title": "Obys — the strip turns on its side, and titles reveal their image",
+  "note": "Choosing Horizontal rotates the whole strip from vertical through a diagonal to horizontal while the brackets stay put. In this view the projects become 80px titles. Hovering one opens its image at the screen centre with clip-path: inset(50%) → inset(0) over 0.8s while the image inside scales from 1.15 to 1 over 1.6s (both cubic-bezier(0.16, 1, 0.3, 1)). Worth reusing: the diagonal moment, where the layout change itself becomes the animation, and the inset reveal with a counter-scale.",
+  "url": "https://obys.agency/",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "kind": "shot",
+  "section": "Motion",
+  "image": "images/obys-horizontal.jpg",
+  "added": 1790980204820
+}

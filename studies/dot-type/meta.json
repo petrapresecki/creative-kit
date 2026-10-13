@@ -1,0 +1,9 @@
+{
+  "title": "Dot type",
+  "prompt": "Take the dither technique from the Aspen and Iva pins and make it print type instead of images. The pointer is a lens: inside it the letters open up and the paper grows accent dots.",
+  "tool": "p5",
+  "principles": ["borrow-technique", "signature"],
+  "pins": ["lib-aspen", "iva-d-reveal"],
+  "learned": "Sampling a word drawn off-screen gives the dot grid for free, and p5 has to wait for the web font before drawing it. A smoothstep on the distance makes the lens edge feel soft instead of mechanical.",
+  "added": 1791561287440
+}

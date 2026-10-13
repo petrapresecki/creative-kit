@@ -1,0 +1,13 @@
+{
+  "id": "lib-and2es",
+  "title": "AND2ES — a studio site that is almost only the work, on white",
+  "note": "A design studio (books, publications, identity) whose home page is just the work turning on a ring in the middle of a white screen, with a row of tiny black pills at the top and one caption pill at the bottom. There is no headline and no hero copy: the one line about the studio only shows as the preloader. Built with Nuxt, Three.js r183 and GSAP 3.15; one fullscreen canvas and a few DOM pills. Colours are #ffffff, #000000 and #e6e6e6, and every bit of text is Helvetica Neue 500 at 11px. Worth reusing: letting the images carry the whole page and keeping the type tiny and uniform so it never competes.",
+  "url": "https://www.and2es.com/",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "kind": "site",
+  "image": "images/and2es-concept.jpg",
+  "added": 1790979208080,
+  "section": "Overall"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "lib-and2es-pills",
+  "title": "AND2ES — everything set in 11px black pills",
+  "note": "All interface text is Helvetica Neue 500, 11px, letter-spacing 0.132px, white on solid #000 rectangles with only 3px of side padding and about 7px top and bottom (line-height 0, so the padding sets the height). The nav pills (Work, Index, Information) have a fixed width of about 100px, so they read as tabs. The current page's pill turns #e6e6e6 with black text. A live clock pill (\"15:01:15 (PST) Friday October 2 2026\") sits next to the logo pill. Meta pills pair a value with a 7px grey label set right after it (\"Travis Scott Client\", \"Design Music Categories\"), and filter pills carry superscript counts (\"Design⁽⁹⁾\"). Worth reusing: one tiny size for everything, with hierarchy coming only from the black or grey fill.",
+  "url": "https://www.and2es.com/",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "kind": "shot",
+  "section": "Type",
+  "image": "images/and2es-pills.jpg",
+  "added": 1790979388080
+}

@@ -1,0 +1,13 @@
+{
+  "id": "lib-gass-cig",
+  "title": "GASS Records — a cigarette that burns down as you scroll",
+  "note": "A fixed cigarette on the right edge works as the scroll-progress bar. It is two PNG slices, and the top slice slides down into the filter (translateY clamp 0–70%), so it gets shorter as you read. Two blurred smoke SVGs (mix-blend-screen) change opacity and skew with scroll speed. Swap the object and it is a fun, on-brand progress meter.",
+  "url": "https://www.gass.zone/",
+  "kind": "idea",
+  "section": "Interaction",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/gass-cig.jpg",
+  "added": 1790892600000
+}

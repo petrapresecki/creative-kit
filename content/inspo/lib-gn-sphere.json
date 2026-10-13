@@ -1,0 +1,13 @@
+{
+  "id": "lib-gn-sphere",
+  "title": "Gionatan Nese — sphere of billboard cards with a caption at the bottom",
+  "note": "The cards sit on a sphere about 480px across and always face the camera, so the sphere reads as a flat cloud with depth from size and overlap. It turns on its own; wheel and drag push it, and it eases back. Hovering a card turns the cursor into a pointer and slides up a caption at the bottom centre: the name in LayGrotesk 14px and the category in Teodor 15px, side by side (\"Palm92  Brand Identity\"). The card nearest the centre swaps its image every few frames, a little slideshow inside the cloud. Close to the kit's orbit-gallery sphere shape; the bottom caption and the centre slideshow are the parts it lacks.",
+  "url": "https://www.gionatannese.com/",
+  "kind": "shot",
+  "section": "Interaction",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/gn-sphere.jpg",
+  "added": 1790977245789
+}

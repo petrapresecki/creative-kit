@@ -1,0 +1,12 @@
+{
+  "title": "Portal card",
+  "description": "A rounded card that is a window onto a second world fixed behind the page. Click it and the window grows until that world fills the screen; Escape or a click shrinks it back.",
+  "category": "Interaction",
+  "files": ["PortalCard.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap", "@gsap/react"],
+  "registryDependencies": ["cut-type"],
+  "inspiredBy": ["lib-koko-portal"],
+  "usedIn": [],
+  "theme": "quartz"
+}

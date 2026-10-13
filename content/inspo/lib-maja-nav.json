@@ -1,0 +1,13 @@
+{
+  "id": "lib-maja-nav",
+  "title": "Maja Bjeljac — difference nav with a yellow underline",
+  "note": "The wordmark top left and FOTO / VIDEO / VISUALS / INFO top right are white with mix-blend-mode: difference, so they read black on white and invert over the reel. Hover adds a 2px underline with no transition, drawn as a background gradient (linear-gradient(#FAEE11,#FAEE11) 0 100% / 1px 2px repeat-x), so through the blend it shows yellow on dark and blue on light. FOTO and VIDEO open small white tooltip boxes with three uppercase mono sub-links. Worth reusing: the underline trick, whose colour changes through the blend. It pairs with the kit's blend-nav block.",
+  "url": "https://majabjeljac.com/",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "kind": "shot",
+  "section": "Navigation",
+  "image": "images/maja-nav.jpg",
+  "added": 1791895957162
+}

@@ -1,0 +1,13 @@
+{
+  "id": "lib-and2es-work",
+  "title": "AND2ES — work page: numbered rows of meta pills over image strips",
+  "note": "Each project gets one row: a P01-style number pill in a narrow left column, then a line of meta pills (client, category, title) and under it a strip of 3–6 images at the same height (about 145px), butted together with 3px gaps. The strips run to the right edge and are cut off there. Filter pills at the top (All⁽¹⁰⁾, Design⁽⁹⁾…) re-flow the list, and the rows fade and translate in with GSAP. Soft white gradients at the top and bottom edges of the viewport fade the rows as they scroll under the nav. Worth reusing: a dense contact-sheet overview that still reads as tidy because every row has the same rhythm.",
+  "url": "https://www.and2es.com/",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "kind": "shot",
+  "section": "Work",
+  "image": "images/and2es-work.jpg",
+  "added": 1790979448080
+}

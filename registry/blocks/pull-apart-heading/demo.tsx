@@ -12,7 +12,7 @@ export default function Demo({ values }: DemoProps) {
   return (
     <div ref={scroller} data-lenis-prevent className="h-[480px] overflow-y-auto">
       <p className="caption p-4">Scroll inside this frame</p>
-      <div className="px-6 pt-[42vh] pb-[50vh] md:px-12">
+      <div className="px-6 pt-[460px] pb-[50vh] md:px-12">
         <PullApartHeading key={`${values.left}${values.right}`} scroller={scroller} left={String(values.left)} right={String(values.right)} className="text-headline" />
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { gsap, useGSAP } from '@kit/lib/gsap'
+import { gsap, useGSAP, useScroller } from '@kit/lib/gsap'
 import LazyVideo from '@kit/blocks/lazy-video/LazyVideo'
 
 export interface ParallaxWindowProps {
@@ -15,20 +15,22 @@ export interface ParallaxWindowProps {
 /** Donut-studio window: a rounded frame with the media drifting inside it as you scroll. */
 export default function ParallaxWindow({ src, type = 'image', alt = '', className = '', amount = 0.14, scroller }: ParallaxWindowProps) {
   const frame = useRef<HTMLDivElement>(null)
+  const scrollerEl = useScroller(scroller)
 
   useGSAP(
     () => {
+      if (scrollerEl === undefined) return
       gsap.fromTo(
         '[data-inner]',
         { yPercent: -amount * 100 },
         {
           yPercent: amount * 100,
           ease: 'none',
-          scrollTrigger: { trigger: frame.current, start: 'top bottom', end: 'bottom top', scrub: true, scroller: scroller?.current ?? undefined },
+          scrollTrigger: { trigger: frame.current, start: 'top bottom', end: 'bottom top', scrub: true, scroller: scrollerEl ?? undefined },
         },
       )
     },
-    { scope: frame, dependencies: [amount] },
+    { scope: frame, dependencies: [amount, scrollerEl] },
   )
 
   return (

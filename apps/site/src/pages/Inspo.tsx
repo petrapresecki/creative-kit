@@ -1,9 +1,30 @@
 import { useMemo, useState } from 'react'
 import MeltText from '@kit/blocks/melt-text/MeltText'
-import { pins, projects, SECTIONS, SITE_TYPES, VERDICTS, type Pin, type Verdict } from '@site/data/inspo'
+import { pins, projects, sources, SECTIONS, SITE_TYPES, VERDICTS, type Pin, type Source, type Verdict } from '@site/data/inspo'
 import Chips from '@site/components/Chips'
 import PinCard from '@site/components/PinCard'
 import Lightbox from '@site/components/Lightbox'
+
+function SourceList({ title, items }: { title: string; items: Source[] }) {
+  return (
+    <div>
+      <h2 className="caption mb-3 text-muted">{title}</h2>
+      <ul className="border-t border-ink/15">
+        {items.map(s => (
+          <li key={s.url} className="border-b border-ink/15">
+            <a href={s.url} target="_blank" rel="noreferrer" className="group flex items-baseline justify-between gap-4 py-2.5">
+              <span className="shrink-0 text-body font-medium whitespace-nowrap group-hover:underline">
+                {s.name}
+                {s.favourite && <span className="caption ml-2 rounded-full bg-accent px-2 py-0.5 text-ink">Favourite</span>}
+              </span>
+              {s.note && <span className="text-right text-[13px] text-muted">{s.note}</span>}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
 
 const groups: [Verdict, string][] = [
   ['love', 'Love'],
@@ -43,6 +64,10 @@ export default function Inspo() {
         <p className="mt-6 max-w-[56ch] text-lead text-ink/80">
           Sites, screenshots, ideas and decisions. Reusable inspiration lives in the general library; each site I build gets its own project with what I loved and what I said no to.
         </p>
+        <div className="mt-10 grid gap-8 md:grid-cols-2 md:gap-10">
+          <SourceList title="Where to find sites" items={sources.galleries} />
+          <SourceList title="Where to find fonts" items={sources.fonts} />
+        </div>
       </div>
 
       <div className="sticky top-[57px] z-30 grid gap-3 border-y border-ink bg-paper/95 px-4 py-3 backdrop-blur md:px-5">

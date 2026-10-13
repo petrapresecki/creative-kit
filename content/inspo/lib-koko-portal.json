@@ -1,0 +1,13 @@
+{
+  "id": "lib-koko-portal",
+  "title": "Kokopako — the card is a window into a dark world",
+  "note": "On the white pages the card shows a second scene: dark rendered rocks, fog and stars, the same meshes that float as wireframes outside. Click it and the window grows to fill the screen, so the site flips from white to that dark world (About) and the type turns white. Light and dark are one 3D scene in two render styles, and the page transition just pulls you through.",
+  "url": "https://kokopako.fr/work",
+  "kind": "site",
+  "section": "Overall",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/koko-portal.jpg",
+  "added": 1790893020000
+}

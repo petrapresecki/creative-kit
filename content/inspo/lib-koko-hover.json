@@ -1,0 +1,13 @@
+{
+  "id": "lib-koko-hover",
+  "title": "Kokopako — hover a title, the card stretches to it",
+  "note": "A small dark rounded card sits mid-screen. Hover a project title and it stretches and slides over behind the title, filling with that project's cover. Where the title overlaps the image the letters turn to grain, and the card corners break up into grain as well. A black \"1 / 12\" counter bubble sticks to the end of the title and a \"Client / Type\" caption follows. Cursor-aware 3D wireframes react around it.",
+  "url": "https://kokopako.fr/work",
+  "kind": "site",
+  "section": "Interaction",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/koko-hover.jpg",
+  "added": 1790892960000
+}

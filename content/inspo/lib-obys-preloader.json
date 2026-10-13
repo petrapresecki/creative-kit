@@ -1,0 +1,13 @@
+{
+  "id": "lib-obys-preloader",
+  "title": "Obys — lens preloader: draw, fill, flick, split",
+  "note": "On black, the lens mark draws itself as a thin white outline (two arcs). It fills into a white square with a round hole while a counter at the right edge runs 0→100. Project images flick inside the hole, the strip slides up through it from below, and then the page flips from black to white. Because the mark uses mix-blend-mode: difference, it turns black on white with no extra code. Finally the lens splits into its two halves, which move apart (1s, cubic-bezier(0.16, 1, 0.3, 1)) to become the viewfinder brackets. Worth reusing: the logo itself becomes the main UI element, so the loading screen leads straight into the page. The viewfinder-strip block has the split-open part as its intro.",
+  "url": "https://obys.agency/",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "kind": "shot",
+  "section": "Motion",
+  "image": "images/obys-preloader.jpg",
+  "added": 1790980024820
+}

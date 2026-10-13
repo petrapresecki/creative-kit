@@ -21,7 +21,10 @@ export default function BlockPage({ slug }: { slug: string }) {
   const block = getBlock(slug)
   const [demo, setDemo] = useState<{ Demo: ComponentType<DemoProps>; controls: Control[] } | null>(null)
   const [values, setValues] = useState<DemoValues>({})
-  const [themeId, setThemeId] = useState('iva')
+  // Demos open in the site's own look, or in the theme a block was made for; picking a chip overrides that for this block only
+  const [picked, setPicked] = useState<{ slug: string; id: string } | null>(null)
+  const themeId = picked?.slug === slug ? picked.id : (block?.theme ?? 'site')
+  const setThemeId = (id: string) => setPicked({ slug, id })
   const [zoom, setZoom] = useState<Pin | null>(null)
 
   useEffect(() => {
@@ -77,7 +80,7 @@ export default function BlockPage({ slug }: { slug: string }) {
       <section className="mt-10 border-y border-ink">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-ink px-4 py-3 md:px-5">
           <p className="caption">Live demo</p>
-          <Chips label="Preview theme" value={themeId} onChange={setThemeId} options={themes.map(t => ({ value: t.id, label: t.name }))} />
+          <Chips label="Preview theme" value={themeId} onChange={setThemeId} options={[{ value: 'site', label: 'Site' }, ...themes.map(t => ({ value: t.id, label: t.name }))]} />
         </div>
         <div className="grid md:grid-cols-[1fr_300px]">
           <ThemeScope key={themeId} theme={theme} className="relative min-h-[320px] overflow-hidden md:border-r md:border-ink">

@@ -1,4 +1,5 @@
 import projectsJson from '@content/projects.json'
+import sourcesJson from '@content/sources.json'
 
 export type Verdict = 'love' | 'maybe' | 'nope'
 
@@ -48,3 +49,13 @@ export const KINDS: Record<Pin['kind'], string> = {
 export const SECTIONS = ['Overall', 'Hero', 'Navigation', 'Work', 'Layout', 'Type', 'Color', 'Motion', 'Interaction', 'Pages', 'Footer']
 export const SITE_TYPES = ['Creative', 'Product / service', 'Portfolio', 'Webshop']
 export const VERDICTS: Record<Verdict, string> = { love: 'Love', maybe: 'Maybe', nope: 'Nope' }
+
+export interface Source {
+  name: string
+  url: string
+  note?: string
+  favourite?: boolean
+}
+
+/** Where to go looking: site galleries and type foundries */
+export const sources = sourcesJson as { galleries: Source[]; fonts: Source[] }

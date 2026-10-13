@@ -1,0 +1,35 @@
+{
+  "title": "Orbit gallery",
+  "description": "Cards over a 3D shape: a spiral staircase, a cone, a sphere, an ellipsoid, a torus, or a globe that faces you, bursts open from the centre and keeps a slideshow card in the middle. Cards either flow along the shape or hold still while it turns (the sphere, ellipsoid and globe turn by default). Scroll speeds it up, drag pushes it, hover slows it and shows a label, click flies the card to the camera.",
+  "category": "3D",
+  "files": [
+    "OrbitGallery.tsx"
+  ],
+  "lib": [
+    "gsap",
+    "lenis",
+    "tokens"
+  ],
+  "dependencies": [
+    "three",
+    "@react-three/fiber",
+    "gsap",
+    "lenis"
+  ],
+  "devDependencies": [
+    "@types/three"
+  ],
+  "registryDependencies": [],
+  "inspiredBy": [
+    "iva-d-spiral",
+    "iva-showcase",
+    "lib-k95",
+    "lib-k95-hover",
+    "lib-gn-sphere",
+    "lib-gn-intro"
+  ],
+  "usedIn": [
+    "iva"
+  ],
+  "webgl": true
+}

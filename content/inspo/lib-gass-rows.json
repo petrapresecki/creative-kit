@@ -1,0 +1,13 @@
+{
+  "id": "lib-gass-rows",
+  "title": "GASS Records — stacked marquee rows, out of sync",
+  "note": "Every news item is a full-width band: a thin ruled caption bar (LINK | ARTIST — TITLE) over a huge marquee of the title with a rounded peach pill badge (blackletter \"LINK\", blocky 3D \"RELEASE\"). Each row is a CSS marquee with its own random 10–20s duration, so the bands drift against each other. Hovering a row switches it to lilac. The header enters with a translateY + skewY pop.",
+  "url": "https://www.gass.zone/",
+  "kind": "site",
+  "section": "Motion",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/gass-rows.jpg",
+  "added": 1790892660000
+}

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dot type</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;800&family=Geist+Mono:wght@400;500&display=swap" />
+    <style>
+      :root { --paper: #ffffff; --ink: #232323; --accent: #a1ffcb; --mist: #e0e0e0; --muted: #7b7b7b; --sans: "Geist", 'Helvetica Neue', Arial, sans-serif; --mono: "Geist Mono", ui-monospace, monospace; }
+      * { box-sizing: border-box; margin: 0; }
+      html, body { height: 100%; overflow: hidden; background: var(--paper); color: var(--ink); font-family: var(--sans); }
+      p { position: fixed; left: 16px; bottom: 14px; font: 500 11px/1.3 var(--mono); text-transform: uppercase; letter-spacing: 0.02em; color: var(--muted); }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@2/lib/p5.min.js"></script>
+  </head>
+  <body>
+    <p>Dot type · move the pointer through the letters (or drag on touch)</p>
+    <script>
+      // A word printed as a grid of dots, like a halftone. Near the pointer the letters open up
+      // (their dots shrink) and the empty paper grows dots in the accent colour, so the pointer
+      // reads as a lens that turns the type inside out. Technique from the Aspen / Iva dither pins,
+      // reworked: here it prints type instead of images.
+      const WORD = 'dots'
+      const css = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim()
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
+
+      let cells = []
+      let step = 14
+      let lens = { x: 0, y: 0 }
+      let lastMove = -Infinity
+      let colors
+
+      function setup() {
+        createCanvas(windowWidth, windowHeight)
+        noStroke()
+        colors = { paper: css('--paper'), ink: css('--ink'), accent: css('--accent'), muted: css('--muted') }
+        lens = { x: width / 2, y: height / 2 }
+        build()
+        // The canvas can't draw a web font before it has loaded: build again once it has
+        document.fonts.ready.then(build)
+        if (reduce) noLoop()
+      }
+
+      /** Draw the word off-screen once, then sample it on the dot grid. */
+      function build() {
+        step = max(10, floor(min(width, height) / 60))
+        const pg = createGraphics(width, height)
+        pg.pixelDensity(1)
+        pg.background(0)
+        pg.fill(255)
+        pg.textFont('Geist')
+        pg.textStyle(BOLD)
+        pg.textAlign(CENTER, CENTER)
+        let size = height * 0.7
+        pg.textSize(size)
+        while (pg.textWidth(WORD) > width * 0.86) pg.textSize((size *= 0.95))
+        pg.text(WORD, width / 2, height / 2 - size * 0.06)
+        pg.loadPixels()
+        cells = []
+        for (let y = step / 2; y < height; y += step) {
+          for (let x = step / 2; x < width; x += step) {
+            const i = 4 * (floor(y) * pg.width + floor(x))
+            cells.push({ x, y, inside: pg.pixels[i] > 128 })
+          }
+        }
+        pg.remove()
+        redraw()
+      }
+
+      function draw() {
+        background(colors.paper)
+        // Follow the pointer; when it rests, the lens drifts on its own so the idea still shows
+        const idle = millis() - lastMove > 2500
+        const t = millis() / 1000
+        const target = idle ? { x: width / 2 + cos(t * 0.6) * width * 0.3, y: height / 2 + sin(t * 1.1) * height * 0.18 } : { x: mouseX, y: mouseY }
+        lens.x += (target.x - lens.x) * 0.12
+        lens.y += (target.y - lens.y) * 0.12
+
+        const radius = min(width, height) * 0.32
+        for (const c of cells) {
+          let near = 1 - constrain(dist(c.x, c.y, lens.x, lens.y) / radius, 0, 1)
+          near = near * near * (3 - 2 * near) // smoothstep, so the lens edge is soft
+          if (c.inside) {
+            fill(colors.ink)
+            circle(c.x, c.y, step * (0.9 - 0.75 * near))
+          } else if (near > 0.02) {
+            fill(colors.accent)
+            circle(c.x, c.y, step * 0.85 * near)
+          }
+        }
+      }
+
+      function mouseMoved() {
+        lastMove = millis()
+      }
+      function touchMoved() {
+        lastMove = millis()
+        return false
+      }
+
+      function windowResized() {
+        resizeCanvas(windowWidth, windowHeight)
+        build()
+      }
+    </script>
+  </body>
+</html>

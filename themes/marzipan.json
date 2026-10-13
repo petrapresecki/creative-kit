@@ -1,0 +1,27 @@
+{
+  "id": "marzipan",
+  "name": "Marzipan",
+  "description": "Warm off-white with plum ink, apricot accent and soft colour blocks; a blobby display face and typewriter text.",
+  "inspiredBy": ["lib-sapo", "lib-sapo-sticky"],
+  "colors": { "paper": "#fbf4ea", "ink": "#5b1236", "accent": "#ffab5e", "mist": "#f2e4d3", "muted": "#9a6a7e" },
+  "palette": [
+    { "name": "Apricot", "value": "#ffab5e" },
+    { "name": "Olive", "value": "#a3a243" },
+    { "name": "Blush", "value": "#f6bcd2" },
+    { "name": "Sky", "value": "#a9d4f5" }
+  ],
+  "fonts": {
+    "sans": { "family": "DM Sans", "fallback": "'Helvetica Neue', Arial, sans-serif", "google": "DM+Sans:wght@400;500;700" },
+    "display": { "family": "Bagel Fat One", "fallback": "'Arial Rounded MT Bold', sans-serif", "google": "Bagel+Fat+One" },
+    "mono": { "family": "Courier Prime", "fallback": "'Courier New', monospace", "google": "Courier+Prime:wght@400;700" }
+  },
+  "type": [
+    { "name": "display", "size": "clamp(64px, 12vw, 230px)", "leading": "0.88", "tracking": "-0.02em", "weight": 400, "font": "display" },
+    { "name": "headline", "size": "clamp(40px, 6vw, 108px)", "leading": "0.95", "tracking": "-0.01em", "weight": 400, "font": "display" },
+    { "name": "title", "size": "clamp(26px, 2.8vw, 44px)", "leading": "1.08", "tracking": "-0.02em", "weight": 700 },
+    { "name": "lead", "size": "clamp(17px, 1.4vw, 22px)", "leading": "1.35", "tracking": "0", "weight": 400, "font": "mono" },
+    { "name": "body", "size": "16px", "leading": "1.5", "tracking": "0", "weight": 400 }
+  ],
+  "radius": "24px",
+  "ease": { "out-expo": "cubic-bezier(0.16, 1, 0.3, 1)", "in-out-quart": "cubic-bezier(0.65, 0, 0.35, 1)" }
+}

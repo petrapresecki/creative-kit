@@ -1,0 +1,13 @@
+{
+  "id": "lib-gn-intro",
+  "title": "Gionatan Nese — counter, masked words, cards burst then gather",
+  "note": "On load: \"GN .D\" in the centre, and a Teodor counter 001→100 at the bottom centre that rolls up out of an overflow-hidden box (translateY 16px → 0). The side words (\"Gionatan\" \"Nese\", \"Multi-Disciplinary\" \"Designer\") each slide up from translateY(100%) inside their own overflow-hidden span. The cards burst out of the centre as tiny thumbnails, gather into a single card, then spread into the sphere. Last, the logo flies from the centre to its slot in the nav: an invisible \"GN .D\" placeholder holds the space and the real logo is a fixed element moved with translate3d (a FLIP). The same loader runs between pages (it shows \"097\" before /projects). Worth reusing: the logo-into-nav FLIP and the per-word masks.",
+  "url": "https://www.gionatannese.com/",
+  "kind": "shot",
+  "section": "Motion",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/gn-intro.jpg",
+  "added": 1790977305789
+}

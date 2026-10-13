@@ -1,0 +1,13 @@
+{
+  "id": "lib-gn-nav",
+  "title": "Gionatan Nese — pill nav where only the current page has a name",
+  "note": "Three pills, rgba(237,237,237,0.5) with backdrop-blur-2xl, 4px radius, centred at the top. The current page shows its label in Teodor 15px plus a superscript number in the grotesk 11px; the other pages shrink to just the number. Built with a spacer div whose width is tweened (0 → the label width, e.g. 94px), and the label sits absolutely positioned and slides in from the left (left: -64px → 12px) inside overflow:hidden, so the text is never squashed. Padding goes from 7px to 12px. The GN .D logo is mix-blend-exclusion and follows the group as it resizes. Worth reusing: the nav that only names where you are, and the spacer + sliding label trick.",
+  "url": "https://www.gionatannese.com/",
+  "kind": "shot",
+  "section": "Navigation",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/gn-nav.jpg",
+  "added": 1790977365789
+}

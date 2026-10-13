@@ -1,0 +1,21 @@
+{
+  "id": "cinnabar",
+  "name": "Cinnabar",
+  "description": "A catalogue on flat safety orange: black hairlines, condensed display type, mono meta, white info cards.",
+  "inspiredBy": ["lib-muller", "lib-muller-mosaic"],
+  "colors": { "paper": "#ff4a00", "ink": "#000000", "accent": "#ffffff", "mist": "#ff7a3d", "muted": "#7a2400" },
+  "fonts": {
+    "sans": { "family": "Inter", "fallback": "'Helvetica Neue', Arial, sans-serif", "google": "Inter:wght@400;500;600" },
+    "display": { "family": "Barlow Condensed", "fallback": "'Arial Narrow', sans-serif", "google": "Barlow+Condensed:wght@600;800" },
+    "mono": { "family": "IBM Plex Mono", "fallback": "ui-monospace, Menlo, monospace", "google": "IBM+Plex+Mono:wght@400;500" }
+  },
+  "type": [
+    { "name": "display", "size": "clamp(72px, 14vw, 260px)", "leading": "0.82", "tracking": "-0.01em", "weight": 800, "font": "display" },
+    { "name": "headline", "size": "clamp(44px, 7vw, 128px)", "leading": "0.88", "tracking": "0", "weight": 800, "font": "display" },
+    { "name": "title", "size": "clamp(26px, 2.8vw, 44px)", "leading": "1.05", "tracking": "-0.02em", "weight": 600 },
+    { "name": "lead", "size": "clamp(18px, 1.6vw, 24px)", "leading": "1.25", "tracking": "-0.01em", "weight": 400 },
+    { "name": "body", "size": "15px", "leading": "1.45", "tracking": "0", "weight": 400 }
+  ],
+  "radius": "0px",
+  "ease": { "out-expo": "cubic-bezier(0.16, 1, 0.3, 1)", "in-out-quart": "cubic-bezier(0.76, 0, 0.24, 1)" }
+}

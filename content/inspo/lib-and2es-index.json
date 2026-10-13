@@ -1,0 +1,13 @@
+{
+  "id": "lib-and2es-index",
+  "title": "AND2ES — index table with an image strip that slides up on hover",
+  "note": "A centred table (no. / client / title / category / year) in 11px with 21px rows and no rules. Hovering a row fills it with a #e6e6e6 bar, and that project's images slide up as a strip of four tiles (about 200×140, on #f7f7f7 mats) pinned to the bottom centre of the screen, swapping as you move down the list. The list stays put and only the strip changes. Worth reusing: a hover preview that never covers the list, unlike a cursor-follow image.",
+  "url": "https://www.and2es.com/",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "kind": "shot",
+  "section": "Interaction",
+  "image": "images/and2es-index.jpg",
+  "added": 1790979508080
+}

@@ -16,5 +16,13 @@ Started from **creative-kit** (`~/projects/creative-kit`), Petra's library of bu
 ## Adding blocks
 From the kit folder: `pnpm kit add <block...> --to <this folder> --install`. See the kit's site (`pnpm dev` in creative-kit) for every block with live demos.
 
+## Concept and design process
+This site follows creative-kit's design process (`~/projects/creative-kit/PROCESS.md`: brief → research → concept → content → visual system → layout → motion → build → critique → launch → look back). The `concept/` folder holds its decisions:
+- `CONCEPT.md` (site-concept skill): the idea, principles and kit map. Follow its principles, and build on the kit blocks it lists, animations included, shaping them the way it says
+- `CONTENT.md`, `theme.json`, `LAYOUT.md`, `wireframes/` (site-layout skill): pages, sections, real copy and the chosen layout per section at desktop and phone. Build to these: the wireframes' grid spans carry straight over
+- `reviews/<date>/REVIEW.md` (design-review skill): critiques with prioritised fixes; run one after each big change, and in launch mode before going live
+
+Petra is learning to design: when you make a design decision, name the principle from the kit's field guide (`FIELD-GUIDE.md`) in a sentence.
+
 ## Inspiration
 Decisions, references and rejected ideas for this site belong in creative-kit's inspo library: `content/inspo/` with a project entry in `content/projects.json`.

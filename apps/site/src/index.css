@@ -4,7 +4,7 @@
 /* Blocks live outside the site folder; make sure their classes are generated */
 @source "../../../registry";
 
-/* The site's own chrome uses the Iva theme, with a mono face for captions */
+/* The site's own chrome (and the "Site" preview in block demos): white, near-black and neon green, with a mono face for captions */
 @theme {
   --color-paper: #ffffff;
   --color-ink: #0c0c0c;
