@@ -7,6 +7,16 @@
     { "name": "Woo-hu", "url": "https://woo-hu.com/", "note": "Curated web and design inspiration" }
   ],
   "fonts": [
-    { "name": "ABC Dinamo", "url": "https://abcdinamo.com/", "note": "Really good grotesks, monos and serifs (Diatype, Favorit, Monument Grotesk…). Paid licences, with trial fonts for mockups" }
+    { "name": "ABC Dinamo", "url": "https://abcdinamo.com/", "note": "Really good grotesks, monos and serifs (Diatype, Favorit, Monument Grotesk…). Paid licences, with trial fonts for mockups" },
+    { "name": "Fontshare", "url": "https://www.fontshare.com/", "note": "Indian Type Foundry's free fonts (Satoshi, General Sans, Clash Display, Cabinet Grotesk, Switzer, Erode). Free for commercial use, with a hosted CSS API. The closest free match to Dinamo" },
+    { "name": "Velvetyne", "url": "https://velvetyne.fr/", "note": "French libre foundry. Experimental, characterful display type, all OFL" },
+    { "name": "Collletttivo", "url": "https://www.collletttivo.it/", "note": "Italian open-source type collective (Apfel Grotezk). Quirky grotesks" },
+    { "name": "Uncut", "url": "https://uncut.wtf/", "note": "Curated catalogue of contemporary free and libre typefaces. Good for browsing" },
+    { "name": "Open Foundry", "url": "https://open-foundry.com/", "note": "Hand-picked open-source fonts with nice specimens" },
+    { "name": "Badass Libre Fonts by Womxn", "url": "https://www.badasslibrefonts.com/", "note": "Libre fonts by women and non-binary designers. Strong display faces" },
+    { "name": "Tunera Type Foundry", "url": "https://www.tunera.xyz/", "note": "Small libre foundry with expressive serifs and display faces" },
+    { "name": "Google Fonts", "url": "https://fonts.google.com/", "note": "What theme.mjs loads from. The good ones: Instrument Serif, Fraunces, Bricolage Grotesque, Space Grotesk, Geist, Geist Mono, Inter" },
+    { "name": "Atipo Foundry", "url": "https://www.atipofoundry.com/", "note": "Pay what you want, including nothing" },
+    { "name": "Pangram Pangram", "url": "https://pangrampangram.com/", "note": "Neue Montreal, Editorial New. Free trials for mockups only; commercial use needs a paid licence" }
   ]
 }
