@@ -1,0 +1,12 @@
+{
+  "title": "Block menu",
+  "description": "A full-screen menu with the main sections stacked as colour blocks and huge links, next to a dark panel of secondary links and a footer slot. Fades in while the type rises; pauses smooth scroll and closes on Escape.",
+  "category": "Navigation",
+  "files": ["BlockMenu.tsx"],
+  "lib": ["gsap", "lenis"],
+  "dependencies": ["gsap", "lenis"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-horst-menu", "lib-horst"],
+  "usedIn": [],
+  "theme": "gouache"
+}

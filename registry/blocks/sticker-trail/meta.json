@@ -1,0 +1,12 @@
+{
+  "title": "Sticker trail",
+  "description": "A cut-out sticker follows the pointer and leaves a chain of fading copies that fan out on fast moves and collapse when it stops. Click to swap the sticker. Ships with an orange slice, cherries and a star.",
+  "category": "Interaction",
+  "files": ["StickerTrail.tsx", "orange.svg", "cherries.svg", "star.svg"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-horst-trail"],
+  "usedIn": [],
+  "theme": "gouache"
+}

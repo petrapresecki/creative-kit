@@ -1,0 +1,12 @@
+{
+  "title": "Poster word",
+  "description": "One word fitted edge to edge as SVG text with a fill, a stroke and a hard offset shadow, over a flat colour or a photo. It picks a random colourway on each visit; click to move on to the next.",
+  "category": "Text",
+  "files": ["PosterWord.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-horst-wordmark"],
+  "usedIn": [],
+  "theme": "gouache"
+}

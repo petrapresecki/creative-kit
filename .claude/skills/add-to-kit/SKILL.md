@@ -46,7 +46,7 @@ Recommend from what Petra said she likes (typography, colour, animation…). If 
 - `added` is `Date.now()`, plus 60000 per pin so they sort in order. `verdict` is what Petra said, `love` by default for sites she shared.
 
 ### Themes (`themes/<id>.json`)
-- **Naming:** name each theme after a material or substance it looks like: one short English word, id = lowercase name. Never use the source site's name or a person's name. Current themes are **Graphite, Cinnabar, Neon, Marzipan, Vinyl, Quartz**. Pick a new name that sits well with these and is clearly different from them.
+- **Naming:** name each theme after a material or substance it looks like: one short English word, id = lowercase name. Never use the source site's name or a person's name. Current themes are **Graphite, Cinnabar, Neon, Marzipan, Vinyl, Quartz, Porcelain, Gouache**. Pick a new name that sits well with these and is clearly different from them.
 - Add the id to `order` in `apps/site/src/data/themes.ts`, or it sorts first.
 - **Colour roles:** `paper` and `ink` must read as body text (aim for 4.5:1). `accent` and `mist` are used as cell backgrounds with `ink` text on top, so they must carry ink. `muted` is secondary text on `paper`. Extra brand colours go in `palette`.
 - **Fonts:** Google Fonts only. Pick the closest free face and put the original first in `fallback` (e.g. `"'Neue Haas Grotesk Display', 'Helvetica Neue', Arial, sans-serif"`). Check the CSS URL returns 200. `display` is what `font-display` headlines use; `mono` is what `.caption` uses. Leave `mono` out to make captions use the sans.

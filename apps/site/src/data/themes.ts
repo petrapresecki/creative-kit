@@ -28,7 +28,7 @@ export interface Theme {
 }
 
 const files = import.meta.glob<Theme>('../../../../themes/*.json', { eager: true, import: 'default' })
-const order = ['graphite', 'cinnabar', 'neon', 'marzipan', 'vinyl', 'quartz', 'porcelain']
+const order = ['graphite', 'cinnabar', 'neon', 'marzipan', 'vinyl', 'quartz', 'porcelain', 'gouache']
 
 export const themes: Theme[] = Object.values(files).sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id))
 export const getTheme = (id?: string) => themes.find(t => t.id === id)
