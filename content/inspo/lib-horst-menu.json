@@ -1,0 +1,13 @@
+{
+  "id": "lib-horst-menu",
+  "title": "Horst — the menu as four stacked colour blocks",
+  "note": "MENU (a white pill top right, which turns into CLOSE) opens a full-screen panel under the black header. The left half is the four programmes stacked as equal colour blocks, each a big link at about 144px: Festival violet #6A2ED4, Club grey #A3A3A1, Atelier red #EA3323, Park pink #ED82D1. Hovering one underlines it with a thick rule. The right half is black, split by a 1px grey rule: secondary links at 35px (About, Archive, Club Stories, Editorial, FAQ, Shop), then smaller links, outlined social pills, a search field and a newsletter form. It fades in over about 0.5s while the type rises roughly 30px into place (the frame is caught mid-fade, with the cursor trail crossing the header). Worth reusing: the section colours turn into the navigation, so the menu doubles as a map of the site.",
+  "url": "https://www.horstartsandmusic.com/",
+  "kind": "shot",
+  "section": "Navigation",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/horst-menu.jpg",
+  "added": 1792453154969
+}

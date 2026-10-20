@@ -1,0 +1,13 @@
+{
+  "id": "lib-horst-trail",
+  "title": "Horst — a sticker cursor that leaves a trail of copies",
+  "note": "The cursor drags a cut-out PNG sticker (a flip-flop, a passion fruit, a starfish; one is picked at random per page view). It is not one image but 40 copies of the same img, each absolutely positioned with translate3d and a descending z-index. Every copy eases toward the one in front of it, so a fast move draws a dense chain of stickers about 30px apart; when the pointer stops they all slide into one. Copies at the back fade out (opacity from 1 down to about 0.3) and the chain stays on top of everything with pointer-events: none. The system cursor stays visible. Plain DOM, about 90×80px stickers. Worth reusing: an object cursor that feels physical and playful, cheap to build, and the images can be anything from the brand.",
+  "url": "https://www.horstartsandmusic.com/",
+  "kind": "shot",
+  "section": "Interaction",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/horst-trail.jpg",
+  "added": 1792453094969
+}

@@ -1,0 +1,13 @@
+{
+  "id": "lib-horst-wordmark",
+  "title": "Horst — a full-width wordmark with a hard shadow, new colourway on every load",
+  "note": "The home hero is one word, 'Horst', in Helvetica at 780 SVG units, so it spans the full 1440px width and bleeds slightly off both edges. It is inline SVG text: a fill, a stroke (5-8 units) and a filter that offsets SourceAlpha by 10/10 and floods it black (feOffset + feFlood + feComposite) to give a hard drop shadow without blur. On each load the page picks one of four colourways: yellow #FAFF00 with a red stroke over a sky photo, red with a yellow stroke on flat green, blue #1557E1 with no stroke on cyan, blue on a grainy orange-to-red sunrise gradient. Below it, the 56px statement sits on white. Worth reusing: a single word as the whole hero, SVG text fitted to the width, and random colourways so every visit looks a bit different.",
+  "url": "https://www.horstartsandmusic.com/",
+  "kind": "shot",
+  "section": "Hero",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/horst-wordmark.jpg",
+  "added": 1792453034969
+}

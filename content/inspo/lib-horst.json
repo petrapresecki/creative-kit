@@ -1,0 +1,13 @@
+{
+  "id": "lib-horst",
+  "title": "Horst Arts & Music — flat colour blocks, one grotesk, black type",
+  "note": "A festival and club platform built as a grid of edge-to-edge colour blocks on black and white. Each programme has its own flat colour: Festival violet #6A2ED4, Club grey #A3A3A1, Atelier red #EA3323, Park pink #ED82D1, plus green #049D0A, cyan #00DBE3, blue #1457ED and olive #787D03 for stories, FAQ and Jobs. Every block is half the viewport wide, with a 88px title, 40px running text and an outlined pill button, all in black on the colour. Everything is set in one face at one weight: ABC Oracle Book (Dinamo), 16px for UI and uppercase labels, 40px with -1.2px tracking for text, 56px for the statement, 88-144px with about -0.045em for titles. The header is a black bar with a 60s CSS marquee of ticket news and pictogram glyphs (a custom Horstpicto font). Built with Webflow, GSAP, ScrollTrigger, SplitType and Lenis, no WebGL. Worth reusing: one face at one weight across every size, and one flat colour per section with ink on top, no tints or gradients.",
+  "url": "https://www.horstartsandmusic.com/",
+  "kind": "site",
+  "section": "Color",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/horst-blocks.jpg",
+  "added": 1792452974969
+}
