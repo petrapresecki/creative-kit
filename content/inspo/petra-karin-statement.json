@@ -1,0 +1,13 @@
+{
+  "id": "petra-karin-statement",
+  "title": "Karin Kiho: one-sentence intro with hand-drawn circles round the skills",
+  "note": "The homepage opens with one centred sentence in Google Sans Flex 300 at about 44px: 'I'm a multidisciplinary designer with 5+ years of experience, working across UI/UX for digital products, graphic design, front-end development, and interactive experiences.' Each skill is circled or underlined in a different hand-drawn SVG stroke (pink, blue, green, yellow wave). The nav sits in brackets '(Works)' with a little eye logo. Worth reusing: say who you are in one plain sentence, then let a hand-made mark add the personality. It reads instantly and doesn't look generated.",
+  "url": "https://karinkiho.com/en",
+  "kind": "site",
+  "section": "Hero",
+  "verdict": "maybe",
+  "project": "petra",
+  "siteType": "Portfolio",
+  "image": "images/karinkiho-statement.jpg",
+  "added": 1792532573748
+}

@@ -1,0 +1,13 @@
+{
+  "id": "petra-lynn-about",
+  "title": "Lynn Fisher: about page as a printed CV (press, interviews, talks with years)",
+  "note": "About is one narrow column in book type: a drop-cap bio with a small greyscale portrait, a pull quote, then SELECTED PRESS, INTERVIEWS and TALKS as plain lists with the year right-aligned on each row and hairline rules between. It is basically her CV, but set like a book appendix, so it reads as personality instead of a LinkedIn dump. The contents-page nav repeats at the bottom of every page. Worth reusing: experience as typeset lists with right-aligned years, and the same nav block closing every page.",
+  "url": "https://lynnandtonic.com/about",
+  "kind": "shot",
+  "section": "Pages",
+  "verdict": "maybe",
+  "project": "petra",
+  "siteType": "Portfolio",
+  "image": "images/lynnandtonic-about.jpg",
+  "added": 1792532213748
+}

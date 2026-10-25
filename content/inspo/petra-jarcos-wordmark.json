@@ -1,0 +1,13 @@
+{
+  "id": "petra-jarcos-wordmark",
+  "title": "JARCOS: giant wordmark with project images swapping inside the O",
+  "note": "A full-bleed 'JARCOS' wordmark (Inter Display 600, black on white) with a portrait image tile sitting over the 'CO', so the letters cut through it. Hovering the wordmark swaps the tile to another project image (Framer site; the cursor is a small dot with a difference blend). After that the page drops to black and the work is a plain 2-up grid with name left and discipline right in 12px. Worth reusing: one image moment locked into the type, instead of a reel of videos.",
+  "url": "https://jarcos.work/",
+  "kind": "site",
+  "section": "Hero",
+  "verdict": "maybe",
+  "project": "petra",
+  "siteType": "Portfolio",
+  "image": "images/jarcos-wordmark.jpg",
+  "added": 1792532453748
+}

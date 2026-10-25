@@ -1,0 +1,13 @@
+{
+  "id": "petra-rauno-strip",
+  "title": "Rauno Freiberg: homepage as a sideways row of poster cards",
+  "note": "A horizontal row of white cards on #ededed: an intro card ('Rauno Freiberg is an Estonian interaction designer working with Vercel and Devouring Details') with a big yellow circle behind the words, then cards with huge cropped Helvetica words ('DD', 'Craft', 'Proj…'), a pixel hand cursor and handwritten 'Rauno's Field Notes', each opening a section. Tiny labels sit above each card. Worth reusing: sections as posters you scroll past, so the index is the visual.",
+  "url": "https://rauno.me/",
+  "kind": "site",
+  "section": "Navigation",
+  "verdict": "maybe",
+  "project": "petra",
+  "siteType": "Portfolio",
+  "image": "images/rauno-home.jpg",
+  "added": 1792533173748
+}

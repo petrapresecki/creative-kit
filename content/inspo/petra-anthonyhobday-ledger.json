@@ -1,0 +1,13 @@
+{
+  "id": "petra-anthonyhobday-ledger",
+  "title": "Anthony Hobday: the whole site as a monospace ledger with counts",
+  "note": "One centred column in a monospace font. Name, two one-line 'I design…' statements with inline links, then sections (Paid service, Blog posts, Side projects, Appearances, Books, Case studies, Other projects), each with a count right-aligned in bold and rows with a quantity on the right ('68 clients', '970 words', '1,600+ games'). '[Show 17 more]' expands each list. No images, no motion. Worth reusing: real numbers on the right make it feel authored and honest. It's the opposite of AI-ish because nobody would generate this.",
+  "url": "https://anthonyhobday.com/",
+  "kind": "site",
+  "section": "Overall",
+  "verdict": "maybe",
+  "project": "petra",
+  "siteType": "Portfolio",
+  "image": "images/anthonyhobday-home.jpg",
+  "added": 1792532873748
+}

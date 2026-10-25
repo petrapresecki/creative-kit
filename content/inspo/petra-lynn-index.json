@@ -1,0 +1,13 @@
+{
+  "id": "petra-lynn-index",
+  "title": "Lynn Fisher: the homepage is a book's table of contents",
+  "note": "The whole homepage is a contents page: name set large in Hubano Rough, 'Designer for the Web' under it, then ABOUT · WORK · THOUGHTS · ARCHIVE · RSS · GIFS with dot leaders and roman numerals (I–VI), on a warm paper grey (#e4e2d7) with black ink. 'v. XIX' sits at the bottom because she redesigns the site every year. No images and no motion on the home, so you know where everything is straight away. Self-hosted fonts (Sydonia Atramentiqua serif plus Hubano Rough), plain static HTML and CSS. Worth reusing: navigation that is itself the design, and a version number that makes the site feel like an ongoing project instead of a template.",
+  "url": "https://lynnandtonic.com/",
+  "kind": "site",
+  "section": "Navigation",
+  "verdict": "maybe",
+  "project": "petra",
+  "siteType": "Portfolio",
+  "image": "images/lynnandtonic-index.jpg",
+  "added": 1792532153748
+}

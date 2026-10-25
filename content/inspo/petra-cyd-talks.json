@@ -1,0 +1,13 @@
+{
+  "id": "petra-cyd-talks",
+  "title": "Cyd Stumpel: talks and recognitions as tagged rows",
+  "note": "On About, 'Conferences & meetups' and 'Recognitions' are rows: small red pill tags (conference, meetup, city, date) above a 20px Instrument Serif title, a thin red rule, and a ticket button or + on the right to expand. Dense but very scannable, and the pills carry the colour instead of images. Worth reusing for an experience list: meta as small tags above a big, readable title, with details hidden behind a +.",
+  "url": "https://cydstumpel.nl/about/",
+  "kind": "shot",
+  "section": "Layout",
+  "verdict": "maybe",
+  "project": "petra",
+  "siteType": "Portfolio",
+  "image": "images/cydstumpel-talks.jpg",
+  "added": 1792532393748
+}

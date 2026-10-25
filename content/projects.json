@@ -7,5 +7,10 @@
     "id": "iva",
     "name": "Iva Presečki portfolio",
     "repo": "https://github.com/petrapresecki/iva-v2"
+  },
+  {
+    "id": "petra",
+    "name": "Petra Presečki portfolio",
+    "repo": "https://github.com/petrapresecki/petra-presecki-portfolio"
   }
 ]

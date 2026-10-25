@@ -1,0 +1,13 @@
+{
+  "id": "petra-ryanmulligan-toys",
+  "title": "Ryan Mulligan: a strip of little interactive CSS toys on top, plain text below",
+  "note": "A front-end dev's homepage. Across the top, a sideways-scrolling strip of small live demos (a skateboard, a blinking heart, a gnome, a weather card), each a real CSS/JS experiment, with an 'Unskew' and 'Disable preview' checkbox under it. Below that the page is plain and readable: a short bio, 'Most recent articles', 'The bit about myself' and 'Some personal joy' headings in a condensed display face. Worth reusing: put the playful things in one clearly bounded strip so the rest of the site can be calm.",
+  "url": "https://ryanmulligan.dev/",
+  "kind": "site",
+  "section": "Work",
+  "verdict": "maybe",
+  "project": "petra",
+  "siteType": "Portfolio",
+  "image": "images/ryanmulligan-home.jpg",
+  "added": 1792532993748
+}

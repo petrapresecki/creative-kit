@@ -1,0 +1,13 @@
+{
+  "id": "lib-rm-pangram",
+  "title": "Pangram Pangram: the template look, for comparison",
+  "note": "A good foundry whose home page still reads like a template: rounded hero cards with a stock-like photo, a centred title, a three-word tagline and two pill buttons (Explore font / Try for free), then a grid of rounded cards with NEW badges. Kept as a nope: this is the shape generated sites fall into.",
+  "url": "https://pangrampangram.com/",
+  "kind": "site",
+  "section": "Hero",
+  "verdict": "nope",
+  "project": "library",
+  "siteType": "Product / service",
+  "image": "images/rm-pangram.jpg",
+  "added": 1792956932694
+}
