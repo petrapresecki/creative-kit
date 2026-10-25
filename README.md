@@ -10,6 +10,8 @@ None of it is here to be copied as it is. These are things I like, kept as inspi
 
 The hope is that one day every animation, block and theme in here gets replaced by our own version of it, made while building new sites.
 
+What "made, not generated" means in practice, with dos, don'ts and a test for every page: [content/research/creative-sites.md](content/research/creative-sites.md).
+
 ```sh
 pnpm install
 pnpm dev          # the showcase site
@@ -43,7 +45,7 @@ Blocks are copied in as source (into `src/components/kit/`), so each site can ch
 ## Where to look
 
 Galleries with good website inspo (especially **[minimal.gallery](https://minimal.gallery/websites/)**):
-[minimal.gallery](https://minimal.gallery/websites/) · [Godly](https://godly.website/) · [Httpster](https://httpster.net) · [Mindsparkle Mag](https://mindsparklemag.com/websites) · [Woo-hu](https://woo-hu.com/)
+[minimal.gallery](https://minimal.gallery/websites/) · [Site of Sites](https://www.siteofsites.co/?p=1) · [Godly](https://godly.website/) · [Httpster](https://httpster.net) · [Mindsparkle Mag](https://mindsparklemag.com/websites) · [Woo-hu](https://woo-hu.com/)
 
 Fonts: [ABC Dinamo](https://abcdinamo.com/) (paid, with trial fonts for mockups).
 

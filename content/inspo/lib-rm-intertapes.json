@@ -1,0 +1,13 @@
+{
+  "id": "lib-rm-intertapes",
+  "title": "Intertapes: an archive of scanned cassettes in a plain grid",
+  "note": "A crowd-sourced archive of found audio tapes. Every tape is a slowly turning 3D scan sitting in one cell of a strict grid with hairline rules on dark grey, with its title and the city it was found in at the cell's bottom corners. The interface is tiny white Helvetica and white pill buttons. Readymag Websites of the Year 2023, interactivity winner. Worth taking: the real objects are the spectacle, so the frame around them can stay plain.",
+  "url": "https://intertapes.net/",
+  "kind": "site",
+  "section": "Work",
+  "verdict": "maybe",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/rm-intertapes.jpg",
+  "added": 1792956932694
+}

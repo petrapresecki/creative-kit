@@ -1,0 +1,13 @@
+{
+  "id": "lib-rm-portorocha",
+  "title": "Porto Rocha: a live clock and a news feed",
+  "note": "The sidebar shows the date and the time in New York and London, ticking. The rest is a plain feed of dated news posts with images: awards, talks, hires. Worth taking: real, current details make a studio feel alive.",
+  "url": "https://portorocha.com/",
+  "kind": "site",
+  "section": "Navigation",
+  "verdict": "maybe",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/rm-portorocha.jpg",
+  "added": 1792956932694
+}

@@ -1,0 +1,13 @@
+{
+  "id": "petra-joshuabaker-home",
+  "title": "Joshua Baker: an engineer's homepage that leads with years and outcomes",
+  "note": "A software engineer's site. Two sentences in about 28px: '20+ years of software engineering, design, and execution.' in ink, then a grey sentence on who he works with and what he delivers. Under it, a row of six still thumbnails that overlap slightly and shift on hover. Further down: client logos in a grid and one quote. Cream background (#fdfaf6), lots of empty space. Worth reusing: proof that an engineer's home can open with experience in plain words. On its own it is close to generic, so it needs a stronger visual idea.",
+  "url": "https://www.joshuabaker.com/",
+  "kind": "site",
+  "section": "Hero",
+  "verdict": "maybe",
+  "project": "petra",
+  "siteType": "Portfolio",
+  "image": "images/joshuabaker-home.jpg",
+  "added": 1792532813748
+}

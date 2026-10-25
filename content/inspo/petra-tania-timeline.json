@@ -1,0 +1,13 @@
+{
+  "id": "petra-tania-timeline",
+  "title": "Tania Rascia: career as a short prose timeline (chef → engineer)",
+  "note": "'A brief timeline' on the homepage: four rows with a mono date range on the left (1998–2006, 2007–2014, 2014–2020, 2021–now) and one sentence each, with the key phrase linked in magenta ('Professional chef', 'Career change', 'Principal software engineer'), ending on real numbers (177 posts, 20,000+ stars). An illustrated mascot sits beside it. Worth reusing: experience told as a few honest sentences with dates, not as job cards with bullet points.",
+  "url": "https://www.taniarascia.com/",
+  "kind": "shot",
+  "section": "Layout",
+  "verdict": "maybe",
+  "project": "petra",
+  "siteType": "Portfolio",
+  "image": "images/taniarascia-home.jpg",
+  "added": 1792532933748
+}

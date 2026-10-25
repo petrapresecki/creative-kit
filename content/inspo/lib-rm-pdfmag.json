@@ -1,0 +1,13 @@
+{
+  "id": "lib-rm-pdfmag",
+  "title": "PDF Magazine: flat colour bars as structure",
+  "note": "An indie magazine. Bars of flat yellow, sky blue and red do the work of rules and section labels: the issue number scrolls inside a blue bar, covers sit inside grey bands between red rules, and the order button is a small yellow tab. The text is tiny and centred. Worth taking: colour used as structure, not as decoration.",
+  "url": "https://pdf-mag.com/",
+  "kind": "site",
+  "section": "Layout",
+  "verdict": "maybe",
+  "project": "library",
+  "siteType": "Webshop",
+  "image": "images/rm-pdfmag.jpg",
+  "added": 1792956932694
+}

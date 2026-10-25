@@ -1,6 +1,7 @@
 {
   "galleries": [
     { "name": "minimal.gallery", "url": "https://minimal.gallery/websites/", "note": "Minimal, type-led sites. The best one to start with", "favourite": true },
+    { "name": "Site of Sites", "url": "https://www.siteofsites.co/?p=1", "note": "Big, up-to-date gallery (600+ sites) with lots of personal portfolios. Filter by industry, type and style" },
     { "name": "Godly", "url": "https://godly.website/", "note": "Web design inspiration with live previews" },
     { "name": "Httpster", "url": "https://httpster.net", "note": "Curated sites, filterable by type and style" },
     { "name": "Mindsparkle Mag", "url": "https://mindsparklemag.com/websites", "note": "A website of the day, with write-ups" },

@@ -1,0 +1,13 @@
+{
+  "id": "petra-jarcos-rows",
+  "title": "JARCOS: experience as a label/value ledger (capabilities, clients, collaborations)",
+  "note": "Below the intro, black sections split into two columns with 1px rgba(255,255,255,.15) rules: a 12px label on the left (Capabilities, Selected Clients, Collaborations, Recognition, Relevant projects) and plain lists on the right, with collaborator names linked to their studios. A 24px statement with '2012 — 26' sits above. All 12px Inter Display 600 apart from that statement. Worth reusing for Petra: Experience as a ledger where Polygon and Endava are linked names in a list, not cards.",
+  "url": "https://jarcos.work/",
+  "kind": "shot",
+  "section": "Layout",
+  "verdict": "maybe",
+  "project": "petra",
+  "siteType": "Portfolio",
+  "image": "images/jarcos-rows.jpg",
+  "added": 1792532513748
+}

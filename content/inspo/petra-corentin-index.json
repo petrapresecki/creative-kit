@@ -1,0 +1,13 @@
+{
+  "id": "petra-corentin-index",
+  "title": "Corentin Bernadou: giant initials, a 3D image cube and a project name column",
+  "note": "Black page with a pixel ruler on the edges, 'FW' in huge orange (#ff4d00) grotesk, small meta 'Corentin Bernadou / Freelance Developer / Issue N°003 / Coll. 2026 / Ref…' like a magazine colophon, a 3D cube of project images that turns as you scroll, and a long scrolling list of project names on the right. Worth noting as a creative-developer pattern, but it's the kind of 'too much motion, what am I looking at' Petra wants to move away from. The colophon-style meta is the part worth keeping.",
+  "url": "https://corentinbernadou.com/",
+  "kind": "site",
+  "section": "Hero",
+  "verdict": "maybe",
+  "project": "petra",
+  "siteType": "Portfolio",
+  "image": "images/corentinbernadou-home.jpg",
+  "added": 1792533233748
+}

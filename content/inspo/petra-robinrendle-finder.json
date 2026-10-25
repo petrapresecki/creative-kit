@@ -1,0 +1,13 @@
+{
+  "id": "petra-robinrendle-finder",
+  "title": "Robin Rendle: the whole site is a Finder window",
+  "note": "The site is laid out like a macOS Finder window: a sidebar tree of folders (years, Stories) with .webp file names, a thumbnail grid of photos on the right, a status bar with date, time and Email, plus a filter field and dark mode toggle. Essays open as documents. Worth reusing: one strong metaphor taken all the way. For Petra, a metaphor from her own world (a repo, a merge request list, a component library) could do the same job.",
+  "url": "https://robinrendle.com/",
+  "kind": "site",
+  "section": "Overall",
+  "verdict": "maybe",
+  "project": "petra",
+  "siteType": "Portfolio",
+  "image": "images/robinrendle-home.jpg",
+  "added": 1792533113748
+}

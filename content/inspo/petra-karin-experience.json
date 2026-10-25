@@ -1,0 +1,13 @@
+{
+  "id": "petra-karin-experience",
+  "title": "Karin Kiho: 'Where I come from?' experience list with linked companies",
+  "note": "About has a hand-drawn tag 'Where I come from?' on a string, then two columns, PROFESSIONAL and ACADEMIC. Each row: role (18px light), company name as a mustard link (#b59521) with a pin icon and country, and dates right-aligned, with a ⊕ to expand and dashed rules between rows. 'What I can do?' above is three cards (Design / Front-end / Interactive) with a different hand-cut pattern header each. Worth reusing: this is almost exactly what Petra's Endava → Polygon history needs, with company names as links out.",
+  "url": "https://karinkiho.com/en/about",
+  "kind": "shot",
+  "section": "Layout",
+  "verdict": "maybe",
+  "project": "petra",
+  "siteType": "Portfolio",
+  "image": "images/karinkiho-experience.jpg",
+  "added": 1792532633748
+}

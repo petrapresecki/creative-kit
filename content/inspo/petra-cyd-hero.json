@@ -1,0 +1,13 @@
+{
+  "id": "petra-cyd-hero",
+  "title": "Cyd Stumpel: creative developer homepage with a rotating role line",
+  "note": "A creative developer and teacher's site. A huge condensed name (Bueno, all caps, #d9533f on #fff5ee) scrolls sideways along the top. A cut-out portrait sits on a red half circle, and the role under the nav swaps through 'Freelance Developer → Creative Engineer → Conference Speaker → Front end Consultant' in Instrument Serif italic plus roman, about 64px. Sticker badges (Award winning developer, Motion web design, Accessibility) are dropped around the hero. Built on WordPress with GSAP, Lenis and swup page transitions, and a variable-font size animation on the title. The motion is all in the hero; the rest of the page is still cards and lists. Worth reusing: one playful, personal hero, then calm; and a role line that shows several hats without a bullet list.",
+  "url": "https://cydstumpel.nl/",
+  "kind": "site",
+  "section": "Hero",
+  "verdict": "maybe",
+  "project": "petra",
+  "siteType": "Portfolio",
+  "image": "images/cydstumpel-hero.jpg",
+  "added": 1792532333748
+}

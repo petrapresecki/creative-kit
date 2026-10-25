@@ -19,5 +19,8 @@ From the kit folder: `pnpm kit add <block...> --to <this folder> --install`. See
 ## Concept
 If `concept/CONCEPT.md` exists, it's the site's direction (made with the kit's `site-concept` skill). Follow its principles and kit map, and rework kit blocks the way it says rather than using them as they are.
 
+## Made, not generated
+Before designing or building any page, read the manifesto in the kit's `content/research/creative-sites.md` and run its test on screenshots of the result. In short: one loud thing per screen, real material, screens composed rather than stacked as sections, and no kit defaults (mono caps labels, grain, custom cursor, pills, fade-ups, interface hints) without a reason written down.
+
 ## Inspiration
 Decisions, references and rejected ideas for this site belong in creative-kit's inspo library: `content/inspo/` with a project entry in `content/projects.json`.

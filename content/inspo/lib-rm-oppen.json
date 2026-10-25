@@ -1,0 +1,13 @@
+{
+  "id": "lib-rm-oppen",
+  "title": "Öppen studios: images hang from one line, ragged at the bottom",
+  "note": "A design studio. Project images of different heights hang from one top line and scroll sideways, so the bottom edge is ragged. Text is four columns of tiny type at the top and bottom edges (studio address: based on Earth). Lots of empty white. Worth taking: aligning to one edge only and letting the other edge be uneven.",
+  "url": "https://oppenstudios.com/",
+  "kind": "site",
+  "section": "Layout",
+  "verdict": "maybe",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/rm-oppen.jpg",
+  "added": 1792956932694
+}

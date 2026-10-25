@@ -1,0 +1,13 @@
+{
+  "id": "lib-rm-baranceylan",
+  "title": "Baran Ceylan: each project is a row with its own strip of images",
+  "note": "Each project gets a ruled header row with four columns: name in caps, a one-sentence description, then two disciplines. Under it runs a sideways strip of that project's images at mixed widths and heights, bleeding off both edges. There are no cards, no rounded corners and no animation besides the strips. Featured in the Readymag Websites of the Year 2024 write-up. Worth taking: a list that turns into a gallery, labelled like an archive.",
+  "url": "https://www.baranceylan.co/",
+  "kind": "site",
+  "section": "Work",
+  "verdict": "maybe",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/rm-baranceylan.jpg",
+  "added": 1792956932694
+}

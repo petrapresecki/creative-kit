@@ -1,0 +1,13 @@
+{
+  "id": "petra-spencer-living-room",
+  "title": "Spencer Chang: a personal site that feels like a lived-in room",
+  "note": "Left sidebar with a little pixel 'window', the name, a coloured nav (welcome, describe, collaborate, create, write) and a 'Now & Upcoming' list. In the middle, a warm letter-like intro in a serif with tiny inline icons, a yellow 'NOW' sticky note (updated date) and a live status widget. On the right, a 2-column masonry of projects in glowing orange frames with small type tags (project, talks & teaching). Paper texture background, visitor count, webring in the footer. Worth reusing: small human details (Now note, updated date, visitor count) make it feel lived in. Too busy to copy whole.",
+  "url": "https://spencerchang.me/",
+  "kind": "site",
+  "section": "Overall",
+  "verdict": "maybe",
+  "project": "petra",
+  "siteType": "Portfolio",
+  "image": "images/spencerchang-home.jpg",
+  "added": 1792533053748
+}

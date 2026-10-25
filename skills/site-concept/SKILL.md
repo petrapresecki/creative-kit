@@ -24,6 +24,7 @@ Most of the kit started on other people's websites. Petra wants it used, but rew
 - **Every kit piece gets a "from → to".** Say what it was, what it becomes here and why it fits this site. The copy test: put the result next to the source site. If people would think it's the same thing, rework it more. Petra's own lesson (pin `lib-idea-mix`): borrow the technique, not the look. The Aspen dither trail only worked once it printed Iva's own projects.
 - **One thing per source site, at most.** Never take a source site's layout, type, palette and signature motion together. A kit theme or block counts as its source site's one thing. Mixing pieces from different sources, and adding something new, is what makes the result yours.
 - **Iva's portfolio is Petra's own work** (project `iva`), so there's nothing to copy there. It still gets reworked to fit the new site.
+- **Made, not generated.** Read `<kit>/content/research/creative-sites.md` (and `portfolios.md` for portfolios) before step 3. Its manifesto is the bar: one loud thing, real material, a composition rather than a stack of sections, and none of the kit's own defaults (mono caps micro-labels, grain, custom cursors, pills, interface hints, fade-ups) unless the concept gives a reason. Run its test before you show a board, a prototype or the plan.
 - **Fonts are made to be licensed and used.** ABC Dinamo faces are paid. Name the Dinamo face you'd license, and give the closest Google font as a stand-in for building and mockups. Dinamo's trial fonts are for mockups only.
 
 ## 0. Find the kit
@@ -47,6 +48,8 @@ Read what the current repo already says: README, CLAUDE.md, copy, content, brand
 - Site type (Creative, Product / service, Portfolio, Webshop) and limits: paid fonts OK, WebGL OK, who edits it later.
 
 If Petra gave a rich brief, don't make her repeat it. Write the brief back in 4–6 lines and get a yes before the deep dive.
+
+Then, at the top of `research.md`, write the **subject inventory** (8–12 things only this site has) and the **argument** (one claim per section, each with its proof), as `creative-sites.md` describes. Every concept's idea must point to an item on the inventory.
 
 ## 2. The deep dive
 
@@ -80,6 +83,8 @@ Each concept rests on **one organising idea** that comes from the site's world: 
 - **Kit pieces:** first the pins the concept grows from (usually 3–6), then any blocks, themes or grids it builds on. Each has a depth and a "to". The board shows them as cards (pin shots first, then block previews, theme swatches and grid columns), so Petra sees at a glance what each concept is made from. When a block is left out on purpose, an entry with `id: null` and the reason helps. Signature moments that rework a kit block are often strong, because the hard part already works.
 - Use the site's real words in samples and section names. Lorem ipsum hides whether an idea works.
 
+Before the board, run the test from `creative-sites.md` on each concept (swap test, defaults audit, one loud thing, the tell list) and fix or drop what fails. Each concept's `risks` names the tells it still leans on.
+
 Write `concept/concepts.json` (shape below), render the board and open it:
 
 ```bash
@@ -97,7 +102,7 @@ Before writing the full plan, prove the riskiest part works: build the picked co
 - **Real content:** the site's actual words, and its images or video by relative path from the repo when they exist (`../../public/…`). Otherwise use plain blocks sized like the real media.
 - **Built on the kit when the concept says so:** when the moment reworks a kit block, port the parts of its code you need (plain JS instead of React is fine) and make the changes the kit map describes. Don't rebuild from memory.
 - **Make it feel right:** easing and timing from the concept, a touch version (tap instead of hover) and `prefers-reduced-motion`.
-- **Check it yourself first:** `node <kit>/.claude/skills/add-to-kit/scripts/capture.mjs "file://$PWD/concept/prototype/index.html" proto --out <scratchpad>/proto [--click "<selector>"]`. Read the frames (load, scroll, hover, click) and fix whatever doesn't match the description. For anything specific, write a small Playwright script that drives the interaction and grabs frames every 100–250ms. Iterate until the frames show the moment.
+- **Check it yourself first:** `node <kit>/.claude/skills/add-to-kit/scripts/capture.mjs "file://$PWD/concept/prototype/index.html" proto --out <scratchpad>/proto [--click "<selector>"]`. Read the frames (load, scroll, hover, click) and fix whatever doesn't match the description. Then run the `creative-sites.md` test on the frames: put them next to `lib-rm-*` pin images and `lib-rm-pangram`, and remove every default that has no reason. For anything specific, write a small Playwright script that drives the interaction and grabs frames every 100–250ms. Iterate until the frames show the moment.
 
 Then add `"prototype": "prototype/index.html"` to the picked concept, re-render the board (it shows the prototype in a frame), open the prototype for Petra and ask how it feels: keep, tweak (what exactly), or it doesn't work (back to the concepts). Make tweaks in the prototype until she's happy. What you learn goes into the plan.
 
