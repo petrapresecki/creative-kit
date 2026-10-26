@@ -16,8 +16,13 @@ Started from **creative-kit** (`~/projects/creative-kit`), Petra's library of bu
 ## Adding blocks
 From the kit folder: `pnpm kit add <block...> --to <this folder> --install`. See the kit's site (`pnpm dev` in creative-kit) for every block with live demos.
 
-## Concept
-If `concept/CONCEPT.md` exists, it's the site's direction (made with the kit's `site-concept` skill). Follow its principles and kit map, and rework kit blocks the way it says rather than using them as they are.
+## Concept and design process
+This site follows creative-kit's design process (`~/projects/creative-kit/PROCESS.md`: brief → research → concept → content → visual system → layout → motion → build → critique → launch → look back). The `concept/` folder holds its decisions:
+- `CONCEPT.md` (site-concept skill): the idea, principles and kit map. Follow its principles, and build on the kit blocks it lists, animations included, shaping them the way it says
+- `CONTENT.md`, `theme.json`, `LAYOUT.md`, `wireframes/` (site-layout skill): pages, sections, real copy and the chosen layout per section at desktop and phone. Build to these: the wireframes' grid spans carry straight over
+- `reviews/<date>/REVIEW.md` (design-review skill): critiques with prioritised fixes; run one after each big change, and in launch mode before going live
+
+Petra is learning to design: when you make a design decision, name the principle from the kit's field guide (`FIELD-GUIDE.md`) in a sentence.
 
 ## Made, not generated
 Before designing or building any page, read the manifesto in the kit's `content/research/creative-sites.md` and run its test on screenshots of the result. In short: one loud thing per screen, real material, screens composed rather than stacked as sections, and no kit defaults (mono caps labels, grain, custom cursor, pills, fade-ups, interface hints) without a reason written down.

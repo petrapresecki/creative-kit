@@ -1,0 +1,13 @@
+{
+  "id": "lib-maja-tree",
+  "title": "Maja Bjeljac — the about page as a family tree",
+  "note": "Info is drawn as a diagram: a 1px vertical black spine with branches leading to each block. There's a portrait card with role labels, a handwritten 'started with a point-and-shoot…' note (an image), and a lime #C9FE65 KONTAKT box with a 2px black border and a solid blush #FBBCB3 offset shadow (about 6px down and right), with a yellow highlighter behind its label. A yellow #FFF148 circle holds publications, and the exhibitions list is mono year + underlined title. Static, and the tree still works on a phone. Worth reusing: a bio laid out as a diagram, and sticker-like boxes that give an about page personality.",
+  "url": "https://majabjeljac.com/",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "kind": "shot",
+  "section": "Pages",
+  "image": "images/maja-tree.jpg",
+  "added": 1791895897162
+}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{site}} · Home</title>
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="wire.css" />
+    <script src="wire.js" defer></script>
+  </head>
+  <!--
+    Wireframe vocabulary (wire.css):
+      .wf-grid                   12 columns on desktop, 4 on phone (numbers in theme.css)
+        child style="--span:6; --start:2; --span-m:4"   columns on desktop / phone
+      .wf-section[data-label]    a section, labelled in wire mode
+      .wf-options[data-name]     2–3 alternatives; children [data-option="A"][data-label="…"]
+      .wf-img / .wf-video        placeholders: style="--ratio: 16/9" data-label="What goes here"
+      .wf-stack .wf-row          vertical / horizontal groups, style="--gap: 24px"
+      .text-display .text-headline .text-title .text-lead .text-body .caption
+      .bg-ink .bg-accent .bg-mist .text-muted   colour roles (greys in wire mode)
+      .wf-note                   a note for Petra, hidden in styled mode
+    Real copy only. Put images in with <img> inside .wf-img when they exist.
+  -->
+  <body>
+    <header class="wf-grid wf-sticky" style="padding-block: 14px">
+      <a class="text-body" style="--span: 6; --span-m: 2; font-weight: 600">{{site}}</a>
+      <nav class="wf-row" style="--span: 6; --span-m: 2; --justify: flex-end">
+        <a>Work</a>
+        <a>About</a>
+        <a>Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="wf-options" data-name="Hero">
+        <section data-option="A" data-label="Big statement" class="wf-section wf-grid wf-screen" style="align-content: end">
+          <h1 class="text-display" style="--span: 10; --span-m: 4">The real first line of the site</h1>
+          <p class="text-lead" style="--start: 7; --span: 5; --span-m: 4">One or two real sentences that say who this is for and what they get.</p>
+          <span class="wf-note" style="--span: 4">Why this option: the type carries the page, the work comes right after.</span>
+        </section>
+        <section data-option="B" data-label="Work first" class="wf-section wf-grid">
+          <div class="wf-img" style="--span: 12; --ratio: 16 / 9" data-label="Signature moment"></div>
+          <p class="text-lead" style="--span: 6; --span-m: 4">One line of introduction under the work.</p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

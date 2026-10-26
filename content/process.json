@@ -1,0 +1,221 @@
+{
+  "intro": "How I design a site, from the first conversation to launch and back into the kit. Each step answers one question, says which skill or tool helps, and what I should have when it's done. Skip steps on small sites, but don't change the order: deciding what goes on the page comes before how it looks, and how it looks comes before how it moves.",
+  "steps": [
+    {
+      "id": "brief",
+      "phase": "Understand",
+      "title": "Brief",
+      "question": "What is this site, who is it for, and what should a visitor do or feel?",
+      "why": "Every later decision gets checked against the brief. Without one, the design follows whatever I saw last on a gallery.",
+      "do": [
+        "Write down what the site is, who it's for, and the one thing a visitor should do or feel",
+        "List the content that really exists: how many projects or products, photos, video, how much copy",
+        "Note the tone in a few words, plus sites or things outside the web it should feel like",
+        "Write the must-haves and the no-gos, and the limits (paid fonts, WebGL, who edits it later)"
+      ],
+      "tools": [{ "kind": "skill", "label": "site-concept", "note": "step 1 asks these questions and writes the brief back" }],
+      "output": "The brief in 4–6 lines, agreed",
+      "done": ["Someone else could read the brief and explain the site", "The content list has real numbers"],
+      "principles": ["content-first"]
+    },
+    {
+      "id": "research",
+      "phase": "Understand",
+      "title": "Research",
+      "question": "What have others done, and what do I already love that fits?",
+      "why": "Designers don't start from a blank page. They look at a lot of work and pick out ideas worth learning from: a principle, not a feature list.",
+      "do": [
+        "Go through my pins first: what fits this brief, and what would it become here?",
+        "Look for what the pins don't cover on the galleries (minimal.gallery first) and ABC Dinamo",
+        "Save good finds as pins, each with what to look at and why",
+        "Respect the nope pins: they are lessons"
+      ],
+      "tools": [
+        { "kind": "page", "label": "Inspo", "value": "/inspo" },
+        { "kind": "skill", "label": "add-to-kit", "note": "turns a site into pins (and maybe a theme or blocks)" },
+        { "kind": "skill", "label": "site-concept", "note": "step 2 walks every pin against the brief" }
+      ],
+      "output": "Pins for the project, and a research list of threads worth pulling",
+      "done": ["Every thread is backed by pins or a gallery site", "I can say why each one fits this brief"],
+      "principles": ["borrow-technique"]
+    },
+    {
+      "id": "concept",
+      "phase": "Define",
+      "title": "Concept",
+      "question": "What is the one idea this site is built on?",
+      "why": "The concept is what makes the site feel designed instead of assembled. It settles later questions for me: does this help the idea or not?",
+      "do": [
+        "Look at 2–3 concepts that differ in the idea itself, not in three palettes on one layout",
+        "Pick one (or mix), and prototype its signature moment before anything else",
+        "Turn it into a written plan: idea, principles, visual system, pages, motion, kit map"
+      ],
+      "tools": [{ "kind": "skill", "label": "site-concept", "note": "concepts on a board, the signature prototype, then CONCEPT.md" }],
+      "output": "concept/CONCEPT.md, the board and the signature prototype",
+      "done": ["The idea fits in one sentence", "The signature moment works in a real browser", "Every kit piece has a 'from → to'"],
+      "principles": ["one-idea", "signature", "borrow-technique", "decide-by-prototype"]
+    },
+    {
+      "id": "content",
+      "phase": "Structure",
+      "title": "Content and structure",
+      "question": "Which pages are there, what's on each, and in what order?",
+      "why": "This is the step beginners skip. Deciding what goes on the page before how it looks prevents layouts that don't fit the real copy, and it usually makes the site simpler.",
+      "do": [
+        "Write the sitemap: every page, and how people move between them",
+        "For each page, list the sections in order, with what each one has to say or show",
+        "Write the real copy (or a close draft) for every section, at its real length",
+        "Make the asset list: every image, video and file, what exists and what's missing"
+      ],
+      "tools": [{ "kind": "skill", "label": "site-layout", "note": "part 1 writes concept/CONTENT.md with the sitemap, sections, copy and assets" }],
+      "output": "concept/CONTENT.md: sitemap, sections, copy and asset list",
+      "done": ["No section is just 'some text here'", "The asset list says who supplies what"],
+      "principles": ["content-first", "hierarchy", "wayfinding"]
+    },
+    {
+      "id": "system",
+      "phase": "Structure",
+      "title": "Visual system",
+      "question": "Which type, colours, spacing and grid does every page share?",
+      "why": "A small system of type sizes, colour roles, a spacing scale and a grid is what makes a site feel consistent. Deciding it once means I don't decide it again on every page.",
+      "do": [
+        "Start from the concept's theme.json, or from a kit theme",
+        "Try the type scale on the real copy: the longest heading, the bio, a caption",
+        "Check every text colour against its background",
+        "Pick the grid (columns, gutter, margin) and how it changes on the phone"
+      ],
+      "tools": [
+        { "kind": "skill", "label": "site-layout", "note": "part 2 builds a specimen page to tune the system on the real copy" },
+        { "kind": "page", "label": "Themes", "value": "/themes" },
+        { "kind": "page", "label": "Grids", "value": "/grids" }
+      ],
+      "output": "concept/theme.json, and the specimen page in concept/system/",
+      "done": ["Five type sizes or fewer, all tested on real copy", "Every text colour passes contrast", "The grid is written down with numbers"],
+      "principles": ["type-voices", "colour-roles", "scale-contrast", "grid", "space"]
+    },
+    {
+      "id": "layout",
+      "phase": "Structure",
+      "title": "Layout",
+      "question": "How does each section sit on the grid, on a big screen and on a phone?",
+      "why": "Grey boxes first, so I judge the arrangement and not the colours. Two or three options per key section, compared side by side, beat polishing the first idea.",
+      "do": [
+        "Wireframe each page as grey boxes on the grid, with the real copy",
+        "Make 2–3 options for the sections that matter (hero, work, project page)",
+        "Look at every option at phone and desktop width, then pick",
+        "Switch the chosen wireframes to the visual system to check the styled version"
+      ],
+      "tools": [
+        { "kind": "skill", "label": "site-layout", "note": "part 3 builds switchable wireframes with phone and desktop views" },
+        { "kind": "link", "label": "Figma", "note": "optional, when a page is easier to compose by hand" }
+      ],
+      "output": "concept/wireframes/ and the chosen options in concept/LAYOUT.md",
+      "done": ["Every page has a chosen layout at both widths", "The squint test passes on every page"],
+      "principles": ["hierarchy", "grid", "space", "rhythm", "decide-by-prototype"]
+    },
+    {
+      "id": "motion",
+      "phase": "Make",
+      "title": "Motion and interaction",
+      "question": "What moves, when, and what does each movement tell the visitor?",
+      "why": "Motion comes after layout so it serves a page that already works. The signature moment is already proven; this step gives the rest of the site one calm motion language.",
+      "do": [
+        "Write the motion language: easings, durations, what scroll, hover and page changes do",
+        "Prototype anything risky as a small HTML page or a study before building it into the site",
+        "Design the touch version and the reduced-motion version of every interaction"
+      ],
+      "tools": [
+        { "kind": "page", "label": "Blocks", "value": "/blocks" },
+        { "kind": "page", "label": "Studies", "value": "/studies" },
+        { "kind": "cmd", "label": "pnpm kit study <slug> --p5", "note": "a new study, in GSAP or p5.js" }
+      ],
+      "output": "The motion section of CONCEPT.md, plus prototypes for anything new",
+      "done": ["Every animation has a job", "Touch and reduced-motion versions exist"],
+      "principles": ["motion-meaning", "signature", "for-everyone"]
+    },
+    {
+      "id": "build",
+      "phase": "Make",
+      "title": "Build",
+      "question": "How do I turn the plan into a real site?",
+      "why": "Build in the same order as the design: structure, then system, then motion. The site stays usable at every step, and problems show up early.",
+      "do": [
+        "Scaffold from the kit with the concept's theme and blocks",
+        "Build every page with real content and plain styling first",
+        "Port the signature moment from the prototype, then the other motion",
+        "Check the phone version as you go, not at the end",
+        "Rework every kit block as the kit map says, never leave it as it came"
+      ],
+      "tools": [
+        { "kind": "cmd", "label": "pnpm kit new ../my-site --theme <id> --blocks <a,b> --install" },
+        { "kind": "cmd", "label": "pnpm kit add <block> --to ../my-site --install" },
+        { "kind": "page", "label": "Start a site", "value": "/start" }
+      ],
+      "output": "A running site that follows CONCEPT.md and LAYOUT.md",
+      "done": ["Every page works on a phone", "No kit block is used unchanged"],
+      "principles": ["borrow-technique", "content-first"]
+    },
+    {
+      "id": "critique",
+      "phase": "Refine",
+      "title": "Critique",
+      "question": "What isn't working yet, and what should I fix first?",
+      "why": "Designers get their work looked at all the time. A review against the concept's principles and the basics finds the things I've stopped seeing, and explains why they matter.",
+      "do": [
+        "Run a design review after each big change, not only at the end",
+        "Fix the top notes first; ignore small things until the big ones are right",
+        "Turn anything I learn into an idea or decision pin"
+      ],
+      "tools": [{ "kind": "skill", "label": "design-review", "note": "screenshots at three widths, automatic checks and prioritised notes" }],
+      "output": "concept/reviews/<date>.md, and the fixes",
+      "done": ["No 'fix first' notes left", "The copy test passes for every kit piece"],
+      "principles": ["hierarchy", "scale-contrast", "space", "colour-roles", "restraint", "for-everyone"]
+    },
+    {
+      "id": "launch",
+      "phase": "Refine",
+      "title": "Launch",
+      "question": "Is it ready for real people, on real devices?",
+      "why": "The last 10% is what makes a site feel finished: the preview when someone shares the link, the tab icon, a 404 page, speed, and the details people only notice when they're missing.",
+      "do": ["Run the review in launch mode", "Go through the checklist below on a real phone too", "Deploy, then open the live site and share the link with yourself"],
+      "tools": [{ "kind": "skill", "label": "design-review", "note": "launch mode checks meta, preview image, favicon, 404 and weight" }],
+      "checklist": [
+        "Page title and description on every page",
+        "Preview image (og:image, 1200×630) and title for shared links",
+        "Favicon and Apple touch icon",
+        "A 404 page in the site's style",
+        "Every image has alt text; decorative ones have empty alt",
+        "Images exported at the right size (no 4000px photos shown at 600px) and in WebP or AVIF",
+        "Fonts licensed for the web (Dinamo trials are only for mockups)",
+        "Works with reduced motion, with the keyboard, and on a real phone",
+        "No console errors, nothing loads from localhost",
+        "Contact links and forms tested",
+        "Analytics, if wanted, and the domain set up"
+      ],
+      "output": "The live site",
+      "done": ["Every checklist item is ticked", "The link preview looks right in a chat app"],
+      "principles": ["for-everyone"]
+    },
+    {
+      "id": "look-back",
+      "phase": "Grow",
+      "title": "Look back",
+      "question": "What did this site teach me, and what goes back into the kit?",
+      "why": "This is how the kit becomes mine. Every site should leave behind its own theme, its reworked blocks and its lessons, so the next one starts further ahead.",
+      "do": [
+        "Add the site's theme to the kit under a material name",
+        "Bring reworked blocks back as new blocks (or new versions), with usedIn set to the project",
+        "Write decision pins for the big choices and idea pins for the lessons",
+        "Turn experiments that didn't make it into studies",
+        "Note which steps of this process helped and which I'd change"
+      ],
+      "tools": [
+        { "kind": "skill", "label": "add-to-kit", "note": "for new blocks and themes from the finished site" },
+        { "kind": "page", "label": "Field guide", "value": "/guide" }
+      ],
+      "output": "New theme, blocks, pins and studies in the kit",
+      "done": ["The project is in content/projects.json with its pins", "At least one kit piece is now my own version"],
+      "principles": ["borrow-technique", "decide-by-prototype"]
+    }
+  ]
+}

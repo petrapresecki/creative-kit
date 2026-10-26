@@ -12,16 +12,16 @@ The kit is the main source, in this order:
 2. **Blocks, themes and grids,** when the concept needs them: they're tested, working versions of things in those pins.
 3. **Galleries and fonts,** to fill the gaps the kit doesn't cover.
 
-Each concept should be clearly made from her pins, reworked for the new site. Read the rules below before you look at any of it.
+Each concept should be clearly made from her pins, grown into the new site. Read the rules below before you look at any of it.
 
 ## The rules (from the kit's manifesto)
 
-Most of the kit started on other people's websites. Petra wants it used, but reworked: new sites that take what was good and make it their own, never a copy.
+Most of the kit started on other people's websites. Petra wants it used, motion and all: new sites that bring in what was good and let it grow into something of their own along the way.
 
 - **The idea comes from the site; the pins are where you look first.** Each concept's organising idea grows from the new site's own world: its subject, content, people and use. If it would work just as well for any other client, it's not a concept yet. To shape it, go to Petra's pins before anything else: her loved sites, the details she pinned, her ideas and decisions. Each concept should grow from a handful of pins, and you should be able to say which ones.
 - **Then blocks, themes and grids, if the concept needs them.** Once you know which pins a concept grows from, check whether the kit already has a working version: a block built from those pins, a theme, a grid system. Reshaping one beats starting from zero. They're optional, though. Use them where they serve the concept and leave them out where they don't. A quiet site may need no blocks at all.
-- **Three depths, all reworked.** `base`: start from the piece's code and reshape it (new content, new form, tuned motion). `reworked`: take its technique to make a different piece. `principle`: only the idea under it. Pins are usually `principle` or `reworked`; blocks, themes and grids are usually `base` or `reworked`.
-- **Every kit piece gets a "from → to".** Say what it was, what it becomes here and why it fits this site. The copy test: put the result next to the source site. If people would think it's the same thing, rework it more. Petra's own lesson (pin `lib-idea-mix`): borrow the technique, not the look. The Aspen dither trail only worked once it printed Iva's own projects.
+- **Three depths.** `base`: start from the piece's working code, animations included, and shape it to the site (its content, form and timing). `reworked`: take its technique to make a different piece. `principle`: only the idea under it. Pins are usually `principle` or `reworked`; blocks, themes and grids are usually `base` or `reworked`.
+- **Every kit piece gets a "from → to".** Say what it was, what it becomes here and why it fits this site. A block's motion comes along by default; tune it to the site rather than dropping it. The copy test: put the result next to the source site. If people would think it's the same thing, give it more of the new site's own content and feel. Petra's own lesson (pin `lib-idea-mix`): borrow the technique, not the look. The Aspen dither trail only worked once it printed Iva's own projects.
 - **One thing per source site, at most.** Never take a source site's layout, type, palette and signature motion together. A kit theme or block counts as its source site's one thing. Mixing pieces from different sources, and adding something new, is what makes the result yours.
 - **Iva's portfolio is Petra's own work** (project `iva`), so there's nothing to copy there. It still gets reworked to fit the new site.
 - **Made, not generated.** Read `<kit>/content/research/creative-sites.md` (and `portfolios.md` for portfolios) before step 3. Its manifesto is the bar: one loud thing, real material, a composition rather than a stack of sections, and none of the kit's own defaults (mono caps micro-labels, grain, custom cursors, pills, interface hints, fade-ups) unless the concept gives a reason. Run its test before you show a board, a prototype or the plan.
@@ -97,7 +97,7 @@ In chat, give each concept in 2–3 lines with the pins it grows from and any bl
 
 Before writing the full plan, prove the riskiest part works: build the picked concept's signature moment as a small working page. If it doesn't land, it's cheap to change course now.
 
-- **One self-contained file:** `concept/prototype/index.html`, opened straight from disk with no build. The concept's colours as CSS variables, its stand-in fonts from Google Fonts, and GSAP (plugins included) from `https://cdn.jsdelivr.net/npm/gsap@3/dist/`. Add Lenis or three.js the same way only when the moment needs them.
+- **One self-contained file:** `concept/prototype/index.html`, opened straight from disk with no build. The concept's colours as CSS variables, its stand-in fonts from Google Fonts, and GSAP (plugins included) from `https://cdn.jsdelivr.net/npm/gsap@3/dist/`. Add Lenis, three.js or p5.js (`https://cdn.jsdelivr.net/npm/p5@2/lib/p5.min.js`) the same way only when the moment needs them. Petra likes p5.js for generative or drawn moments, so consider it when a concept is about patterns, particles or mark-making.
 - **Only the moment,** plus enough page around it to judge it: the hero or the one section, with the real nav and type around it. Not the whole site.
 - **Real content:** the site's actual words, and its images or video by relative path from the repo when they exist (`../../public/…`). Otherwise use plain blocks sized like the real media.
 - **Built on the kit when the concept says so:** when the moment reworks a kit block, port the parts of its code you need (plain JS instead of React is fine) and make the changes the kit map describes. Don't rebuild from memory.
@@ -126,6 +126,7 @@ Re-render the board with only the chosen concept, its prototype and its fuller r
 
 Summarise the concept in a few lines and point to `concept/CONCEPT.md` and the board. Then offer the next steps. Don't do them without asking:
 
+- **Pages and layout (the usual next step):** the `site-layout` skill turns the concept into content and structure, a visual system tuned on the real copy, and wireframes with options at phone and desktop width (steps 4–6 of the kit's process, `<kit>/PROCESS.md`).
 - **Theme into the kit:** add `theme.json` to `<kit>/themes/` under a material name (the naming rules are in `<kit>/CLAUDE.md`), then apply it with `pnpm kit theme <id> --to <site>`. That's how the kit's themes get replaced by Petra's own over time.
 - **Scaffold:** `cd <kit> && pnpm kit new <site> --theme <id> --blocks <slugs> --install` for an empty folder, or `pnpm kit add <slugs> --to <site>` for an existing one. Copied blocks belong to the site from then on: rework them as the kit map says.
 - **Record it in the kit:** add the project to `<kit>/content/projects.json`, write a `decision` pin for the chosen concept and `idea` pins for the rejected ones (verdict `maybe`), and pin new gallery finds as library pins with the add-to-kit skill. Commit in the kit only when Petra says so (`content:` prefix, on `dev`).

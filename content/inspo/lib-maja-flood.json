@@ -1,0 +1,13 @@
+{
+  "id": "lib-maja-flood",
+  "title": "Maja Bjeljac — hover a category and the page fills with it",
+  "note": "On /foto/ three square tiles sit in a row on white, each labelled in lowercase Druk Wide Bold (37–63px, white #F8F8F8, line-height 1.05) hanging off the tile's left edge. Hovering a tile's image fades in that category's own photos around it on opacity 0.2s, each in its own arrangement: 'artist photography' becomes one full-bleed concert photo, 'portrait' a 4-panel mosaic filling the screen, 'personal projects' a scattered overlapping collage. Worth reusing: preview the category itself rather than a thumbnail, with a different arrangement per category. Closest kit blocks are reach-index and work-index, but neither fills the whole page.",
+  "url": "https://majabjeljac.com/",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "kind": "shot",
+  "section": "Interaction",
+  "image": "images/maja-flood.jpg",
+  "added": 1791895777162
+}
