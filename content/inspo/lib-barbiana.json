@@ -1,0 +1,13 @@
+{
+  "id": "lib-barbiana",
+  "title": "Barbiana Liu — a cut-out figure among ASCII drawings, labels as nav",
+  "note": "One screen, no scroll. \"BARBIANA LIU\" in a condensed grotesk, 176px uppercase, -1.8px tracking, spans the top. In the middle a cut-out photo of her stands on white; around it two large drawings (a cherub, a cross on a chain) are made only of characters: $, +, |, / in tiny mono. The nav is four black boxes with white bracketed caps, [WORK] [CONTENT] [DESIGN BODEGA] [CONTACT ME], dropped on top of the drawings at slight offsets. Bottom corners hold the email and a live clock (\"Mon 03:18:46 AM\"). Body copy is a 17px sans at 600 with -0.8px tracking. Built in Readymag. Worth reusing: ASCII art as illustration that matches the type, and labels placed like stickers rather than in a bar.",
+  "url": "https://barbianaliu.com/",
+  "kind": "site",
+  "section": "Layout",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/barbiana-home.jpg",
+  "added": 1792982118827
+}

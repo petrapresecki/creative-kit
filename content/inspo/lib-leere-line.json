@@ -1,0 +1,13 @@
+{
+  "id": "lib-leere-line",
+  "title": "Die Leere zwischen den Zeilen — a loose thread the pointer drags",
+  "note": "A thin 1px grey line hangs down the page through the title. It behaves like a thread: it bends and lags behind the pointer, loops around the words and settles slowly when you stop, so the cover never looks the same twice. It is drawn as a polyline (Readymag, alongside Lottie masks), not a canvas. Worth reusing: a drawn hairline as cursor feedback. Quieter than a trail of images, and it literally draws lines between the words, which is the site's subject.",
+  "url": "https://dieleerezwischendenzeilen.xyz/",
+  "kind": "shot",
+  "section": "Interaction",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/leere-line.jpg",
+  "added": 1792982418827
+}

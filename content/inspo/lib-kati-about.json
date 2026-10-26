@@ -1,0 +1,13 @@
+{
+  "id": "lib-kati-about",
+  "title": "Kati Hermann — a centred CV in small type, ending on a warped name",
+  "note": "The about page is one narrow centred column at 14-18px: \"Born in Munich\", \"Raised between Turkey, Azerbaijan and Berlin\", lead words in bold, languages in italic (\"German // Native\"), section labels in square brackets ([Education], [Hard Skills]) and asides like \"[ In the process of unlocking Davinci Resolve ]\". It opens with a yellow (#EEFF36) pill \"aboutKati\" in the heavy display face and ends with a passport photo, \"Happy to hear from you!\", and a square black tile where \"KATI HERMANN\" is mesh-warped as if printed on a bulging CRT, then an outlined TOP pill. Worth reusing: brackets and slashes as the only ornament in a CV, and one distorted wordmark as the sign-off.",
+  "url": "https://readymag.website/u2918075572/katihermann/",
+  "kind": "shot",
+  "section": "Layout",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/kati-about.jpg",
+  "added": 1792982058827
+}

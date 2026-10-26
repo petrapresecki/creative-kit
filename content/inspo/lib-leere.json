@@ -1,0 +1,13 @@
+{
+  "id": "lib-leere",
+  "title": "Die Leere zwischen den Zeilen — a bitmap title and a live visitor count",
+  "note": "An essay site about online connection and loneliness. The title \"DIE LEERE ZWISCHEN DEN ZEILEN\" is set in a stepped pixel face (custom \"custom_170819\", about 95px, 700) whose strokes break into small offset slabs, like a low-resolution LCD. Everything else is a small pixel mono (\"cyty\", 16px, -1px tracking) in #1E1D1D on white: HOME, an outlined pill button \"WENN DU GERADE NICHT WEITERWEIẞT\" (when you don't know what to do next), and \"■ 24 PERSONEN AUCH HIER\", a live count of people reading right now, with a green #2ECC71 dot. \"Online connected / Offline\" and \"allein\" float under the title. Worth reusing: a presence counter as content, not a feature, and a bitmap display face paired with a pixel mono.",
+  "url": "https://dieleerezwischendenzeilen.xyz/",
+  "kind": "site",
+  "section": "Type",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/leere-title.jpg",
+  "added": 1792982358827
+}

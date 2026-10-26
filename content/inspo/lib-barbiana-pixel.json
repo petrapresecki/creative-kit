@@ -1,0 +1,13 @@
+{
+  "id": "lib-barbiana-pixel",
+  "title": "Barbiana Liu — the photo pixelates when you look away",
+  "note": "The cut-out portrait is drawn into a 2D canvas (3072×4096 backing, about 330×490 on screen). Left alone, it falls apart into big square pixels (about 16px blocks) like a censored image. Move the pointer onto it and it snaps sharp, and a thin yellow (#FFFF66) frame appears around her face with a small tag on top reading \"@designbarbiana\", like a face-detection box on a phone camera. Move away and the mosaic returns within a second. Worth reusing: attention as the trigger. The image rewards hovering instead of a trail or scroll, and the detection box is a cheap, witty way to label a person or object.",
+  "url": "https://barbianaliu.com/",
+  "kind": "shot",
+  "section": "Interaction",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/barbiana-pixel.jpg",
+  "added": 1792982178827
+}

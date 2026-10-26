@@ -1,0 +1,13 @@
+{
+  "id": "lib-menhart-posters",
+  "title": "Petr Menhart — project page as a red band and a pair of posters",
+  "note": "Each services word opens its own page. A thin full-width red #F42828 band at the top holds the wordmark in small, and the work below is shown as posters side by side at the same height on the warm grey, each with a bold 20px title (Drifter, Fireworks) and a 7px credit line (\"Czech poster for Drifter (2023) by Hannes Hirsch, Distributed by Queer Kino\"). No grid chrome, no hover. Worth reusing: posters treated like a gallery wall, and a coloured band as the only header.",
+  "url": "https://petrmenhart.xyz/",
+  "kind": "shot",
+  "section": "Layout",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/menhart-posters.jpg",
+  "added": 1792982298827
+}

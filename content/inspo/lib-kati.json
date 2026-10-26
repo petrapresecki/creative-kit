@@ -1,0 +1,13 @@
+{
+  "id": "lib-kati",
+  "title": "Kati Hermann — one fat word as the whole header, ruled list nav under it",
+  "note": "The page opens on \"Kati\" set in a heavy, wide, rounded grotesk (a Readymag custom upload, about 300px, black on white) running edge to edge. Under it the project list is plain: Posters, Editorial, ShortFilm, Book, VisualId, each a 12px mono label centred in its own row between 1px light-grey (#D6D6D6) rules. Above the word, a mono ticker crawls across the top in a 25s CSS animation: \"*Currently based in Berlin* // [ Contact: | email ] //\", with the address in default link blue. Built in Readymag, no WebGL. Worth reusing: let one short name do the branding at full width, and keep the nav as quiet as a table of contents.",
+  "url": "https://readymag.website/u2918075572/katihermann/",
+  "kind": "site",
+  "section": "Type",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/kati-wordmark.jpg",
+  "added": 1792981998827
+}

@@ -1,0 +1,13 @@
+{
+  "id": "lib-leere-echo",
+  "title": "Die Leere zwischen den Zeilen — lines that stutter into stacked echoes",
+  "note": "Some lines repeat themselves as you scroll past: \"Nähe überall sichtbar\" (closeness visible everywhere) piles up as about a dozen copies, each shifted a few pixels down and sideways, until it is a smudged block; \"Nach jedem Reel, hoffe ich\" does the same, and \"Moment.\" repeats down the page. The copies are plain text layers, scrubbed by scroll. Worth reusing: repetition as the effect, a cheap DOM trick that reads like doomscrolling or an echo, and works with any line of copy.",
+  "url": "https://dieleerezwischendenzeilen.xyz/",
+  "kind": "shot",
+  "section": "Motion",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/leere-echo.jpg",
+  "added": 1792982538827
+}
