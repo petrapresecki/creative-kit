@@ -4,7 +4,7 @@ The type tried on Petra's portfolio (petra-presecki-portfolio) in October 2026, 
 Coslovs, Petr Menhart, Sonya Akulshina, Die Leere zwischen den Zeilen, Kati Hermann, Barbiana Liu and A Noche Sone.
 The portfolio stayed on its original type (Host Grotesk + Reddit Mono), so this is where the rest lives.
 
-Every face is on Google Fonts unless it says it was built. Where the source site uses a paid or custom font, the
+Every face is on Google Fonts unless it says it was built. The reading faces, the portfolio's own included, are under Text faces. Where the source site uses a paid or custom font, the
 note says what it really is and why the free face was picked. Three treatments were built in code and are now blocks:
 `pixel-type`, `cut-letters` and `ruled-text`.
 
@@ -76,6 +76,31 @@ Read off their CSS and font files, so the substitutes below are informed guesses
 - **Climate Crisis** with its `YEAR` axis animated 1979 → 2048 (`font-variation-settings`), a name that melts and recovers on a loop. Kati Hermann's chunky wordmark.
 - **Archivo 62%** statements with **Courier Prime** for a typewriter ticker, black `[TAGS]` for labels: Kati and Barbiana.
 - **Antonio** condensed capitals: replaced by Pathway Extreme, which is closer to Sonya.
+
+## Text faces
+
+The faces for reading, under all of the above.
+
+### Host Grotesk + Reddit Mono, the portfolio's own (what it shipped with)
+- Paper `#f2f0ea`, ink `#151514`, one grey `#77746d`, hairlines `rgb(21 21 20 / 0.16)`; no accent colour.
+- Body: Host Grotesk 400, 14px, `line-height: 1.45`. Labels: 12px in the grey.
+- Statements: 300, `clamp(24px, 2.6vw, 40px)`, `line-height: 1.12`, `letter-spacing: -0.02em`, `text-wrap: pretty`.
+  The hello at the top reads as a sentence, not a headline: `clamp(20px, 1.8vw, 28px)`, `line-height: 1.25`, `letter-spacing: -0.01em`.
+- Reddit Mono only for code: 12px, `line-height: 1.5`, on the mist grey.
+- One grotesk at two weights carries the whole page; links underline only on hover.
+
+### Instrument Serif + Inter + JetBrains Mono (the portfolio's serif version)
+- A big Instrument Serif name, `clamp(64px, 11vw, 168px)`, `line-height: 0.88`, `letter-spacing: -0.025em`; headings in it at 400,
+  `line-height: 1.05`, `letter-spacing: -0.01em` (24–52px).
+- Inter for reading: 15px, `line-height: 1.5`; the intro at 19–22px, `line-height: 1.5`, about 46ch wide.
+- JetBrains Mono capitals for labels, nav and meta: 11px, `letter-spacing: 0.08em`, uppercase, with always-on underlines on links.
+- Paper `#f1eee6`, ink `#141413`, and one blue `#2b3bea` for section numbers.
+
+### Body text in the other looks
+- **Pathway Extreme at full width** (Haze): the same family as the condensed capitals, so labels and reading text match while only the width changes.
+- **Reddit Mono as body** (the pixel look): 13px, so the pixel display type sits on something that still reads as a screen.
+- **Archivo at 85% width** (the Kati and Barbiana look): 15px for reading, with statements at 62% width, 400, `letter-spacing: -0.035em`.
+- **Host Grotesk kept as body** under the blue-pool (Grenze Gotisch) and the first Haze looks: when the display face is loud, the reading face can stay the one you already have.
 
 ## Ruled lines under text (Coslovs)
 - `background-image: linear-gradient(to bottom, transparent calc(100% - 1px), var(--rule) calc(100% - 1px)); background-size: 100% 1lh;`
