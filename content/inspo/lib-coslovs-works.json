@@ -1,0 +1,13 @@
+{
+  "id": "lib-coslovs-works",
+  "title": "Coslovs: works as tables, the visual opens beside the row you point at",
+  "note": "Works are listed as tables with red column heads (Name, Description:, Services:, Visuals:, ↓↓) and 1px grey rules. Names are 50px thin; description and services are 14px grey. The Visuals column is empty until you hover a row: the name turns red, its details turn black, and a large rounded image (about 440 × 330 at 1440 wide) appears in the column at that row's top, on a red rectangle that only shows at the corners, hanging over the rows below. Between sections, a centred red banner in Pinyon Script between two red hairlines: '..◦:☆★All Works★☆:◦..'. Worth reusing: an index that stays pure type until you ask for a picture.",
+  "url": "https://coslovs.com/",
+  "kind": "shot",
+  "section": "Work",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/coslovs-works.jpg",
+  "added": 1793020623988
+}

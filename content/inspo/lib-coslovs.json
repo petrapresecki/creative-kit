@@ -1,0 +1,13 @@
+{
+  "id": "lib-coslovs",
+  "title": "Coslovs: a script and a thin condensed sans share every line, on ruled paper",
+  "note": "Elena Kozlova's portfolio (Readymag). White page, black type, one red #ff0000 for keys, the top bar and hairlines. Statements are a thin condensed grotesk (Typekit, 300, 50px, −0.5px, line-height ~1.06) with a few words set in Pinyon Script at about 1.2em ('Hi! (portrait) I'm Elena Kozlova — Art director.'), and every line of a statement sits on a pale grey rule, like ruled paper. Small text is the same sans at 14px; keys are red with a star ('Selected clients✦:'). Section heads are Pinyon Script at 60px ('Content:', 'Design:'). Worth reusing: two fonts doing everything, and the rules under each line (built as ruled-text).",
+  "url": "https://coslovs.com/",
+  "kind": "site",
+  "section": "Type",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/coslovs-type.jpg",
+  "added": 1793020563988
+}
