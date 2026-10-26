@@ -1,0 +1,12 @@
+{
+  "title": "Cut letters",
+  "description": "A name set as if every letter was cut out and pasted down by hand: hand-set mixed case, small tilts and drops, and edges roughened by one SVG filter. Fits its box on request.",
+  "category": "Text",
+  "files": ["CutLetters.tsx"],
+  "lib": [],
+  "dependencies": [],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-menhart", "lib-menhart-posters"],
+  "usedIn": [],
+  "theme": "linocut"
+}

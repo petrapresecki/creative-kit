@@ -1,0 +1,11 @@
+{
+  "title": "Ruled text",
+  "description": "A thin sans sentence on ruled lines with a few words set apart in a display face: script, a heavy blur, a tall italic, cut letters or pixel capitals. The rules sit just under each baseline.",
+  "category": "Text",
+  "files": ["RuledText.tsx"],
+  "lib": [],
+  "dependencies": [],
+  "registryDependencies": ["pixel-type"],
+  "inspiredBy": ["lib-coslovs", "lib-rm-blahblah"],
+  "usedIn": []
+}

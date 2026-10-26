@@ -1,0 +1,11 @@
+{
+  "title": "Pixel type",
+  "description": "A hand-drawn pixel face of tall, narrow capitals whose stems break into dashes, as an SVG that takes the text colour. Sits inline at the line's own size or fills its box.",
+  "category": "Text",
+  "files": ["PixelType.tsx"],
+  "lib": [],
+  "dependencies": [],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-leere", "lib-leere-line"],
+  "usedIn": []
+}
