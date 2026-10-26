@@ -1,0 +1,25 @@
+{
+  "id": "linocut",
+  "name": "Linocut",
+  "description": "Red ink on warm grey newsprint: a rough mixed-case uncial for names and titles, a tight bold grotesk for everything else, star-separated lists. One bright colour, no tints.",
+  "inspiredBy": ["lib-menhart", "lib-menhart-posters"],
+  "colors": { "paper": "#e1dedb", "ink": "#1a1a1a", "accent": "#f42828", "mist": "#cbc6c0", "muted": "#625c57" },
+  "palette": [
+    { "name": "Brush black", "value": "#282828" },
+    { "name": "Smudge", "value": "#9a948f" },
+    { "name": "Star yellow", "value": "#ffdd00" }
+  ],
+  "fonts": {
+    "sans": { "family": "Archivo", "fallback": "'Helvetica Neue', Arial, sans-serif", "google": "Archivo:wght@400;600;700" },
+    "display": { "family": "Uncial Antiqua", "fallback": "'Austin', Georgia, serif", "google": "Uncial+Antiqua" }
+  },
+  "type": [
+    { "name": "display", "size": "clamp(64px, 11vw, 200px)", "leading": "1.05", "tracking": "-0.02em", "weight": 400, "font": "display" },
+    { "name": "headline", "size": "clamp(40px, 6vw, 104px)", "leading": "1.05", "tracking": "-0.01em", "weight": 400, "font": "display" },
+    { "name": "title", "size": "clamp(24px, 2.4vw, 36px)", "leading": "1.05", "tracking": "-0.04em", "weight": 700 },
+    { "name": "lead", "size": "clamp(18px, 1.5vw, 22px)", "leading": "1.25", "tracking": "-0.04em", "weight": 600 },
+    { "name": "body", "size": "15px", "leading": "1.45", "tracking": "-0.01em", "weight": 400 }
+  ],
+  "radius": "0px",
+  "ease": { "out-expo": "cubic-bezier(0.16, 1, 0.3, 1)", "in-out-quart": "cubic-bezier(0.76, 0, 0.24, 1)" }
+}

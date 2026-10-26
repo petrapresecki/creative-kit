@@ -1,0 +1,11 @@
+{
+  "title": "Idle pixelate",
+  "description": "An image that breaks into big square pixels when left alone and snaps sharp under the pointer, with a camera-style detection box and @tag. Canvas 2D; tap to toggle on touch.",
+  "category": "Media",
+  "files": ["IdlePixelate.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-barbiana-pixel", "lib-barbiana"],
+  "usedIn": []
+}

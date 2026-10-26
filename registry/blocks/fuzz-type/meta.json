@@ -1,0 +1,11 @@
+{
+  "title": "Fuzz type",
+  "description": "Big type whose edges feather out like ink in blotting paper, with a soft halo and a slow simmer, for a name over film or photos. Live text through one SVG filter.",
+  "category": "Text",
+  "files": ["FuzzType.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-sonya"],
+  "usedIn": []
+}

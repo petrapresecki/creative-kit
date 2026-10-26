@@ -1,0 +1,12 @@
+{
+  "title": "Rope line",
+  "description": "A loose hairline hangs over the content and the pointer drags its free end around, so it loops between the words and settles slowly when you let go. Verlet rope drawn as one SVG polyline.",
+  "category": "Interaction",
+  "files": ["RopeLine.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-leere-line", "lib-leere"],
+  "usedIn": [],
+  "theme": "silicon"
+}

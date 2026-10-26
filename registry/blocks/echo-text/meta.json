@@ -1,0 +1,12 @@
+{
+  "title": "Echo text",
+  "description": "A line stutters into a pile of offset copies as it scrolls through, like an echo or a stuck feed, and can drift its letters apart. Plain DOM scrubbed by scroll.",
+  "category": "Text",
+  "files": ["EchoText.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap", "@gsap/react"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-leere-echo", "lib-leere-scatter"],
+  "usedIn": [],
+  "theme": "silicon"
+}
