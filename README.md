@@ -80,6 +80,14 @@ Fonts: [ABC Dinamo](https://abcdinamo.com/) (paid, with trial fonts for mockups)
 
 Tools: GSAP and Lenis for motion, three.js for 3D, and [p5.js](https://p5js.org/) when I want something generative or drawn (patterns, particles, type made of shapes).
 
+Polishing a site: [content/research/polish.md](content/research/polish.md) is the checklist, the traps and what my feedback taught, and `scripts/browser/` checks any site in headless Chrome:
+
+```sh
+node scripts/browser/shot.mjs https://example.com shot.png 1200 900 8000 --crop 1200x630   # share image
+node scripts/browser/look.mjs https://example.com study/                                 # study a reference
+node scripts/browser/sheet.mjs sites.txt sheet/                                           # contact sheet to pick from
+```
+
 The list lives in `content/sources.json` and shows on the site's Inspo page.
 
 ## What's inside
