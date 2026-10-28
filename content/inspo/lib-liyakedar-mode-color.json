@@ -1,0 +1,13 @@
+{
+  "id": "lib-liyakedar-mode-color",
+  "title": "Liya Kedar colour mode: flat fills and navy-outlined shapes",
+  "note": "Hovering 'color' fills the header with lilac #F1B8FF and the statement band with yellow #F6E23E. Each column turns a flat colour (#86C177 leaf, #4C6A82 slate, #A8D8F7 sky, #F3963D tangerine, #E9D8A6 sand) and its photo is replaced by the object's silhouette as a flat shape in a second colour with a 2px navy outline: a rectangle for the magazine card, a rounded phone, a tin, an app icon, a T-shirt. Labels get their own fills (#F08C82, #A9C23E, #C7ADEB, #D8493A, #7FBFB0). The 2px navy rules and navy type never change, which keeps 15 colours from turning to mush. Worth reusing: one constant ink colour for every line and letter lets you go wild with fills.",
+  "url": "https://www.liyakedar.com/",
+  "kind": "shot",
+  "section": "Color",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/liyakedar-mode-color.jpg",
+  "added": 1793226457014
+}

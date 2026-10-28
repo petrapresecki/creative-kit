@@ -1,0 +1,13 @@
+{
+  "id": "lib-liyakedar-modes",
+  "title": "Liya Kedar: three words in the statement restyle the whole page",
+  "note": "The one-screen home opens with a statement: 'Playing with TYPOGRAPHY, COLOR, and all kinds of TEXTURES is my thing.' The three words are underlined triggers. Hover one and the whole page re-renders in that mode, then snaps back when you leave. Typography swaps every line to a script, Color fills every cell flat, and Textures turns every photo into a line drawing. Built as one React state value (hover or locked) that every style reads from; the switch is instant, with no transition. On phones a tap locks a mode and a tap anywhere else clears it. The sentence that says what she cares about also demonstrates it. Worth reusing: let the intro's key words be switches that prove the claim, with a handful of modes that each change one visual system (type, colour, image) across the whole page.",
+  "url": "https://www.liyakedar.com/",
+  "kind": "site",
+  "section": "Hero",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/liyakedar-modes.jpg",
+  "added": 1793226337014
+}

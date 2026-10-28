@@ -1,0 +1,13 @@
+{
+  "id": "lib-liyakedar-mode-typography",
+  "title": "Liya Kedar typography mode: every line becomes Sloop Script",
+  "note": "Hovering 'typography' swaps every text on the page, from statement and nav to card titles, disciplines and one-liners, from Authentic Sans Condensed (90 for body, 130 for titles) in uppercase to Sloop Script in sentence case. The script is set about 1.5× bigger (clamp(25px, 3.88vw, 78px) against the sans at clamp(17px, 2.62vw, 54px)) with line-height 0.8em and a translateY(-0.11em) so both versions sit in the same box. The underline thins from .05em to .03em. Navy #0D2565 on cream #F8F8F6 throughout. Worth reusing: a formal script and a condensed grotesk, sized so they fill the same space, and swapped at once instead of mixed.",
+  "url": "https://www.liyakedar.com/",
+  "kind": "shot",
+  "section": "Type",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/liyakedar-mode-typography.jpg",
+  "added": 1793226397014
+}

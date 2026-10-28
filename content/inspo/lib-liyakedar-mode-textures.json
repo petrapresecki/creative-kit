@@ -1,0 +1,13 @@
+{
+  "id": "lib-liyakedar-mode-textures",
+  "title": "Liya Kedar textures mode: photos become navy line drawings",
+  "note": "Hovering 'textures' replaces every photo with a hand-traced line drawing of the same scene in the navy ink on cream: the gazebo, the potter's wheel, the train crossing, the kiosk. Objects keep their details (the Fetch card text, the phone screen) so the composition reads exactly as before, only drawn. They're prepared illustrations swapped in as separate images, not a filter. Worth reusing: an outline version of each image as a second state. When there's no time to draw them, an SVG edge-detect filter (greyscale, blur, Laplacian feConvolveMatrix, threshold, tinted ink) gets a rougher version of the look.",
+  "url": "https://www.liyakedar.com/",
+  "kind": "shot",
+  "section": "Interaction",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/liyakedar-mode-textures.jpg",
+  "added": 1793226517014
+}
