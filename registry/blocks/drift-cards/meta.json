@@ -1,0 +1,12 @@
+{
+  "title": "Drift cards",
+  "description": "Edge-to-edge labelled project columns: a photo with an object floating on its own layer that drifts toward the pointer, and a label that fills with the accent on hover.",
+  "category": "Sections",
+  "files": ["DriftCards.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap", "@gsap/react"],
+  "registryDependencies": [],
+  "inspiredBy": ["petra-liya-strip", "lib-liyakedar-modes"],
+  "usedIn": [],
+  "theme": "cyanotype"
+}

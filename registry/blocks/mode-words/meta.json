@@ -1,0 +1,12 @@
+{
+  "title": "Mode words",
+  "description": "Underlined words in a statement switch the whole section into a mode: a script face, flat colour fills, photos traced as line art. Hover previews, click or tap locks.",
+  "category": "Interaction",
+  "files": ["ModeWords.tsx"],
+  "lib": [],
+  "dependencies": [],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-liyakedar-modes", "lib-liyakedar-mode-typography", "lib-liyakedar-mode-color", "lib-liyakedar-mode-textures"],
+  "usedIn": [],
+  "theme": "cyanotype"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "cyanotype",
+  "name": "Cyanotype",
+  "description": "One deep navy for every line and letter on a cream sheet, a lilac hover and a yellow band. A condensed grotesk in caps with a formal pointed-pen script for the big moments, square corners.",
+  "inspiredBy": ["lib-liyakedar-modes", "lib-liyakedar-mode-typography", "lib-liyakedar-mode-color", "lib-liyakedar-mode-textures", "petra-liya-strip"],
+  "colors": { "paper": "#f8f8f6", "ink": "#0d2565", "accent": "#f1b8ff", "mist": "#f6e23e", "muted": "#56628c" },
+  "palette": [
+    { "name": "Leaf", "value": "#86c177" },
+    { "name": "Slate", "value": "#4c6a82" },
+    { "name": "Sky", "value": "#a8d8f7" },
+    { "name": "Tangerine", "value": "#f3963d" },
+    { "name": "Sand", "value": "#e9d8a6" },
+    { "name": "Coral", "value": "#f08c82" },
+    { "name": "Lime", "value": "#a9c23e" },
+    { "name": "Lavender", "value": "#c7adeb" },
+    { "name": "Tomato", "value": "#d8493a" },
+    { "name": "Sage", "value": "#7fbfb0" }
+  ],
+  "fonts": {
+    "sans": { "family": "Roboto Condensed", "fallback": "'Authentic Sans Condensed', 'Arial Narrow', sans-serif", "google": "Roboto+Condensed:ital,wght@0,300..500;1,300..500" },
+    "display": { "family": "Pinyon Script", "fallback": "'Sloop Script', 'Snell Roundhand', cursive", "google": "Pinyon+Script" }
+  },
+  "type": [
+    { "name": "display", "size": "clamp(52px, 6.4vw, 112px)", "leading": "1", "tracking": "0", "weight": 400, "font": "display" },
+    { "name": "headline", "size": "clamp(22px, 2.62vw, 54px)", "leading": "1.2", "tracking": "0.005em", "weight": 350 },
+    { "name": "title", "size": "clamp(16px, 1.45vw, 26px)", "leading": "1.15", "tracking": "0", "weight": 500 },
+    { "name": "lead", "size": "clamp(17px, 1.3vw, 21px)", "leading": "1.35", "tracking": "0", "weight": 400 },
+    { "name": "body", "size": "16px", "leading": "1.45", "tracking": "0", "weight": 400 }
+  ],
+  "radius": "0px",
+  "ease": { "out-expo": "cubic-bezier(0.16, 1, 0.3, 1)", "in-out-quart": "cubic-bezier(0.65, 0, 0.35, 1)" }
+}
