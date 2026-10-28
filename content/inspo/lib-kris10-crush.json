@@ -1,0 +1,13 @@
+{
+  "id": "lib-kris10-crush",
+  "title": "do-you-have-a-crush-on.me: glowing pixel title, hearts as the picture frame",
+  "note": "A fan site for your own listening. The title is a black bar with rounded corners and a thin red keyline, holding a blackletter pixel face lit hot pink-red with layered text-shadows so it glows like a sign: these are my spotify crushes of the last 6 months. Below, a pink-to-grey glossy tray holds five artists, each photo cropped into a heart and sat in a black card with a red blur halo, name above in small pixel type. Background is a pale grey wallpaper of hand-drawn outline doodles with green pills. A genre line runs across as text. Worth reusing: a heart clip-path turns any photo into a crush; a title that says exactly what the page is (these are my…) in a glowing bar. Built into the glow-title and heart-picks blocks.",
+  "url": "https://do-you-have-a-crush-on.me/",
+  "kind": "site",
+  "section": "Hero",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/kris10-crush.jpg",
+  "added": 1793228729130
+}
