@@ -57,5 +57,5 @@ export interface Source {
   favourite?: boolean
 }
 
-/** Where to go looking: site galleries and type foundries */
-export const sources = sourcesJson as { galleries: Source[]; fonts: Source[] }
+/** Where to go looking: site galleries, type foundries and tools to make things with */
+export const sources = sourcesJson as { galleries: Source[]; fonts: Source[]; tools: Source[] }

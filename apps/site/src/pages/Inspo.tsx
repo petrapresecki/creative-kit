@@ -64,9 +64,10 @@ export default function Inspo() {
         <p className="mt-6 max-w-[56ch] text-lead text-ink/80">
           Sites, screenshots, ideas and decisions. Reusable inspiration lives in the general library; each site I build gets its own project with what I loved and what I said no to.
         </p>
-        <div className="mt-10 grid gap-8 md:grid-cols-2 md:gap-10">
+        <div className="mt-10 grid gap-8 md:grid-cols-3 md:gap-10">
           <SourceList title="Where to find sites" items={sources.galleries} />
           <SourceList title="Where to find fonts" items={sources.fonts} />
+          <SourceList title="Tools to make things with" items={sources.tools} />
         </div>
       </div>
 

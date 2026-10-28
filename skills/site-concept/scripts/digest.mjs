@@ -107,6 +107,7 @@ for (const project of projects) {
 const sources = readJson(abs('content/sources.json'))
 say('## Galleries', ...sources.galleries.map(g => `- ${g.name}${g.favourite ? ' (favourite)' : ''}: ${g.url} — ${g.note}`), '')
 say('## Font foundries', ...sources.fonts.map(f => `- ${f.name}: ${f.url} — ${f.note}`), '')
+say('## Tools', ...sources.tools.map(t => `- ${t.name}: ${t.url} — ${t.note}`), '')
 
 const text = lines.join('\n')
 if (out) {

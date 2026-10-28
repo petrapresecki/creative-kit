@@ -19,5 +19,12 @@
     { "name": "Google Fonts", "url": "https://fonts.google.com/", "note": "What theme.mjs loads from. The good ones: Instrument Serif, Fraunces, Bricolage Grotesque, Space Grotesk, Geist, Geist Mono, Inter" },
     { "name": "Atipo Foundry", "url": "https://www.atipofoundry.com/", "note": "Pay what you want, including nothing" },
     { "name": "Pangram Pangram", "url": "https://pangrampangram.com/", "note": "Neue Montreal, Editorial New. Free trials for mockups only; commercial use needs a paid licence" }
+  ],
+  "tools": [
+    { "name": "Space Type Generator", "url": "https://spacetypegenerator.com/", "note": "Kinetic type in the browser: type on a path, ribbons, stretch and repeat, exported as video. Good for trying a type motion before building it with GSAP or p5.js" },
+    { "name": "GridType", "url": "https://grid-type.com/", "note": "Draw a typeface on a modular grid and download it as a font. For headline lettering made of shapes" },
+    { "name": "Paper Shaders", "url": "https://shaders.paper.design/", "note": "Zero-dependency WebGL shaders (mesh gradients, grain, dithering, liquid metal) as React components or GLSL. Tune them in the browser, then paste the props" },
+    { "name": "brik.space", "url": "https://brik.space/", "note": "Describe a design tool and it builds one with its own controls (animation, 3D, type). For one-off generative pieces" },
+    { "name": "javii.tools", "url": "https://javii.tools/", "note": "Small mockup makers: chat bubbles, reviews, Instagram tags, stamps, charts. Exports transparent PNGs for case studies and social posts" }
   ]
 }
