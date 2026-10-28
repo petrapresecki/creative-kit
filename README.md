@@ -1,5 +1,7 @@
 # creative-kit
 
+![The creative-kit showcase site](docs/preview.gif)
+
 My building blocks for creative websites: motion, effects, themes, grids and an inspiration library, with a showcase site that runs everything live.
 
 ## Manifesto
