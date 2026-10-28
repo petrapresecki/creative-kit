@@ -1,0 +1,12 @@
+{
+  "title": "Tiled wallpaper",
+  "description": "The page's own subject repeated small as wallpaper, washed with a gradient from mist to paper so type on top still reads. Fills its parent or the whole viewport. CSS only.",
+  "category": "Effects",
+  "files": ["TiledWallpaper.tsx"],
+  "lib": [],
+  "dependencies": [],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-kris10-badbunnyfan"],
+  "usedIn": [],
+  "theme": "rhinestone"
+}

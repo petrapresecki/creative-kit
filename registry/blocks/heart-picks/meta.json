@@ -1,0 +1,12 @@
+{
+  "title": "Heart picks",
+  "description": "A row of images cropped into hearts with a red halo, each named in pixel type with an italic note. The chosen one lights up; a heart without an image is an empty slot.",
+  "category": "Media",
+  "files": ["HeartPicks.tsx"],
+  "lib": [],
+  "dependencies": [],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-kris10-crush", "lib-kris10-thinkinboutyou"],
+  "usedIn": [],
+  "theme": "rhinestone"
+}

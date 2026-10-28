@@ -1,0 +1,12 @@
+{
+  "title": "Ticker strip",
+  "description": "A thin coloured band of small type running along the foot of the page, saying what is on right now. Pauses under the pointer, stands still with reduced motion. CSS only.",
+  "category": "Text",
+  "files": ["TickerStrip.tsx"],
+  "lib": [],
+  "dependencies": [],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-kris10-timothee"],
+  "usedIn": [],
+  "theme": "rhinestone"
+}

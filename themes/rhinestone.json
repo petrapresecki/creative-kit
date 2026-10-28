@@ -1,0 +1,27 @@
+{
+  "id": "rhinestone",
+  "name": "Rhinestone",
+  "description": "A fan site in pink light: lilac and blush paper, near-black ink, one glowing red for whatever is live, an electric-blue ticker. Typewriter text, pixel titles, an italic serif for names and credits (in the mono slot), Pinyon Script loaded for a handwritten word.",
+  "inspiredBy": ["lib-kris10-portfolio", "lib-kris10-crush", "lib-kris10-galera", "lib-kris10-badbunnyfan", "lib-kris10-bebefan", "lib-kris10-thinkinboutyou", "lib-kris10-timothee", "lib-eylon-silhouettes"],
+  "colors": { "paper": "#e9e3ff", "ink": "#111111", "accent": "#ff2a4f", "mist": "#ffd6ec", "muted": "#4a4550" },
+  "palette": [
+    { "name": "Glow", "value": "#ff5c8a" },
+    { "name": "Ticker", "value": "#2b2bff" },
+    { "name": "Bar", "value": "#0a0a0a" },
+    { "name": "Frost", "value": "#ffffff" }
+  ],
+  "fonts": {
+    "sans": { "family": "Courier Prime", "fallback": "'Courier New', monospace", "google": "Courier+Prime:ital,wght@0,400;0,700;1,400" },
+    "display": { "family": "Pixelify Sans", "fallback": "'Courier Prime', monospace", "google": "Pixelify+Sans:wght@700" },
+    "mono": { "family": "Instrument Serif", "fallback": "Georgia, serif", "google": "Instrument+Serif:ital@0;1&family=Pinyon+Script" }
+  },
+  "type": [
+    { "name": "display", "size": "clamp(30px, 3.6vw, 56px)", "leading": "1.05", "tracking": "0.02em", "weight": 700, "font": "display" },
+    { "name": "headline", "size": "clamp(28px, 2.6vw, 40px)", "leading": "1.05", "tracking": "0", "weight": 400, "font": "mono" },
+    { "name": "title", "size": "clamp(16px, 1.5vw, 22px)", "leading": "1.15", "tracking": "0.03em", "weight": 700, "font": "display" },
+    { "name": "lead", "size": "clamp(19px, 1.6vw, 22px)", "leading": "1.25", "tracking": "0", "weight": 400, "font": "mono" },
+    { "name": "body", "size": "15px", "leading": "1.35", "tracking": "0", "weight": 400 }
+  ],
+  "radius": "8px",
+  "ease": { "out-expo": "cubic-bezier(0.16, 1, 0.3, 1)", "in-out-quart": "cubic-bezier(0.65, 0, 0.35, 1)" }
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Silhouette readout",
+  "description": "Flat white object silhouettes packed into one cluster, with a run-in list of what each stands for. Point at a shape or a name and the shape fills with an image while its numbers appear underneath. SVG.",
+  "category": "Interaction",
+  "files": ["SilhouetteReadout.tsx"],
+  "lib": [],
+  "dependencies": [],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-eylon-shapes", "lib-eylon-list", "lib-kris10-bebefan"],
+  "usedIn": [],
+  "theme": "rhinestone"
+}

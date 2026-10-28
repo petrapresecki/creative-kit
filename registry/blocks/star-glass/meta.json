@@ -1,0 +1,12 @@
+{
+  "title": "Star glass",
+  "description": "A frosted glass panel: half-white over a blurred background, a white rim, a white glow inside and out, and a four-point sparkle pinned to each corner. CSS only.",
+  "category": "Layout",
+  "files": ["StarGlass.tsx"],
+  "lib": [],
+  "dependencies": [],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-kris10-galera", "lib-kris10-portfolio", "lib-kris10-badbunnyfan"],
+  "usedIn": [],
+  "theme": "rhinestone"
+}

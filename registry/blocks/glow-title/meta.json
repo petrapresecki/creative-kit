@@ -1,0 +1,12 @@
+{
+  "title": "Glow title",
+  "description": "A black bar with a white keyline and a pink halo, holding a pixel-type headline lit in the accent like a neon sign. CSS only.",
+  "category": "Text",
+  "files": ["GlowTitle.tsx"],
+  "lib": [],
+  "dependencies": [],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-kris10-crush", "lib-kris10-portfolio"],
+  "usedIn": [],
+  "theme": "rhinestone"
+}
