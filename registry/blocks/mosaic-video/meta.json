@@ -1,0 +1,11 @@
+{
+  "title": "Mosaic video",
+  "description": "A full-bleed video with a few patches drawn as big square pixels, like censor bars, jumping to new spots and shapes every few hundred ms. Canvas 2D.",
+  "category": "Media",
+  "files": ["MosaicVideo.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-locomotive-mosaic"],
+  "usedIn": []
+}

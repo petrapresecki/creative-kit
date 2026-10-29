@@ -1,0 +1,12 @@
+{
+  "title": "Shrink hero",
+  "description": "Scrolling down, the hero's bottom edge rises with the page while the media stays put and the title rides up on that edge, until a band is left that scrolls away.",
+  "category": "Motion",
+  "files": ["ShrinkHero.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap", "@gsap/react"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-locomotive-shrink", "lib-locomotive-mosaic"],
+  "usedIn": [],
+  "theme": "porcelain"
+}

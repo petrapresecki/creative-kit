@@ -1,0 +1,12 @@
+{
+  "title": "Tinted letters",
+  "description": "A headline where a few letters, sometimes a short run, take an accent colour and hand it on about once a second. Optional difference blend for text over video.",
+  "category": "Text",
+  "files": ["TintedLetters.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-locomotive-tint"],
+  "usedIn": [],
+  "theme": "porcelain"
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Word gap index",
+  "description": "Project titles centred between full-width rules. Hover a row and a thumbnail opens between two words, arriving as big pixels and sharpening while the letters shuffle.",
+  "category": "Sections",
+  "files": ["WordGapIndex.tsx"],
+  "lib": ["gsap", "use-text-scramble"],
+  "dependencies": ["gsap"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-locomotive-word-gap", "lib-locomotive-type"],
+  "usedIn": [],
+  "theme": "porcelain"
+}
