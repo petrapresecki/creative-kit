@@ -1,0 +1,13 @@
+{
+  "id": "lib-eylon-sheet",
+  "title": "Eylon Malkevich: catalog and info drop down as light mono sheets",
+  "note": "CATALOG and INFO in the nav aren't pages. Clicking one turns that nav word into a light tab with a × and drops a #f5f5f5 sheet from under the nav over the black page. The page behind dims to grey (white shapes turn ~#8a8a8a), opening over about 0.4s. Inside, everything is mono (SF Mono, light italic for labels): a marquee of 'projects guide' running across the top, a ^^^^^^ caret line as the rule, then dashed-rule rows with the project's silhouette as a small black icon, name, disciplines and year in italic on the right. The sheet ends in a two-row stripe of flat colours (#ff00ff, #0878cc, #0025e5, #efd24a, #9a96a7 above; #0289ff, #6539b4, #42ba25, #e92622 below), like a test card or tape edge. Worth reusing: an index as a printed spec sheet hanging from the nav, typed rules (^ and -) instead of drawn lines, and one colour stripe as the signature.",
+  "url": "https://www.eylonmalkevich.com/",
+  "kind": "shot",
+  "section": "Navigation",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/eylon-sheet.jpg",
+  "added": 1793228517657
+}

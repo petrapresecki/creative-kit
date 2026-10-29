@@ -1,0 +1,13 @@
+{
+  "id": "lib-eylon-list",
+  "title": "Eylon Malkevich: the project list as one running paragraph",
+  "note": "Along the bottom, all nine projects are set as one run-in paragraph instead of a menu: 'PROJECTS: [01] 9*s [02] Sacred Geometrics [03] Spectrum…' in ABC Diatype Medium at 36px, label in Bold, white names, numbers in grey #7d7979, wrapping onto a second line wherever it falls. Hovering an entry puts a solid block behind it in that project's own colour (#152cca deep blue for Spectrum, #007bc8 cerulean for Sacred Geometrics) and fills the matching silhouette above. It's linked both ways. Worth reusing: a list that reads as a sentence costs two lines and still holds nine links, and per-project highlight colours tie list and picture together.",
+  "url": "https://www.eylonmalkevich.com/",
+  "kind": "shot",
+  "section": "Navigation",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/eylon-list.jpg",
+  "added": 1793228457657
+}

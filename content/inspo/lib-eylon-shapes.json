@@ -1,0 +1,13 @@
+{
+  "id": "lib-eylon-shapes",
+  "title": "Eylon Malkevich: the home is a cluster of project silhouettes that fill with work on hover",
+  "note": "The whole home is one 100vh black screen with nine flat white silhouettes packed into a cluster: a circle, a pixel staircase, a phone receiver, a lamp, an asterisk, a zigzag… Each one is a project's own shape, made by the designer. Each floats on its own loop: translateY 0 → 10px → -10px → 0, with durations 4.5s, 5s, 5.5s, 6s and 7s mixed so they never sync (Wix 'breathe' keyframes, sine-ish beziers). Hover a shape, or its name in the list, and it fills with that project's image: the pixel staircase becomes aerial photos, the asterisk a blue wooden sculpture, the bell a Hebrew letter poster. Built as a white SVG path plus a pre-cut image of the same outline stacked on top, faded in. Worth reusing: shapes as the index. A CSS mask from the same SVG path lets any photo fill the silhouette without pre-cutting.",
+  "url": "https://www.eylonmalkevich.com/",
+  "kind": "site",
+  "section": "Hero",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Portfolio",
+  "image": "images/eylon-shapes.jpg",
+  "added": 1793228397657
+}
