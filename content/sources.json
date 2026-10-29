@@ -11,6 +11,7 @@
     { "name": "ABC Dinamo", "url": "https://abcdinamo.com/", "note": "Really good grotesks, monos and serifs (Diatype, Favorit, Monument Grotesk…). Paid licences, with trial fonts for mockups" },
     { "name": "Fontshare", "url": "https://www.fontshare.com/", "note": "Indian Type Foundry's free fonts (Satoshi, General Sans, Clash Display, Cabinet Grotesk, Switzer, Erode). Free for commercial use, with a hosted CSS API. The closest free match to Dinamo" },
     { "name": "Velvetyne", "url": "https://velvetyne.fr/", "note": "French libre foundry. Experimental, characterful display type, all OFL" },
+    { "name": "fonderie.download", "url": "https://fonderie.download/", "note": "Small French foundry, every font free under the WTFPL (no restrictions at all). Odd, characterful display faces: 4 Fromages, Beast, Crédible, Garamon(d/t), Quarantype, Tribalium Neue, Zara. One zip downloads them all" },
     { "name": "Collletttivo", "url": "https://www.collletttivo.it/", "note": "Italian open-source type collective (Apfel Grotezk). Quirky grotesks" },
     { "name": "Uncut", "url": "https://uncut.wtf/", "note": "Curated catalogue of contemporary free and libre typefaces. Good for browsing" },
     { "name": "Open Foundry", "url": "https://open-foundry.com/", "note": "Hand-picked open-source fonts with nice specimens" },
