@@ -1,0 +1,13 @@
+{
+  "id": "lib-locomotive-extras",
+  "title": "Locomotive: a ruled two-column list for the extras",
+  "note": "The Extras section starts with its title on the left and a count in brackets on the right, Extras … (13), both in the 70px serif. Below, a 1px rule, then rows: category on the left (Articles, Culture, Store) at 26px, its entries stacked in the right half, each entry on its own 1px rule, with (2024) years in brackets inline. Long titles wrap within the right column. Worth reusing: a left label column with ruled entries on the right holds articles, trips and products in one tidy block. The count in brackets is a cheap, confident detail.",
+  "url": "https://locomotive.ca/en",
+  "kind": "site",
+  "section": "Layout",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/locomotive-extras.jpg",
+  "added": 1793291402014
+}

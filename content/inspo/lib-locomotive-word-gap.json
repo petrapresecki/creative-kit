@@ -1,0 +1,13 @@
+{
+  "id": "lib-locomotive-word-gap",
+  "title": "Locomotive: a thumbnail opens between the words of a title",
+  "note": "Featured work is a list of project names in the 110px narrow serif, centred, each row between 1px black rules running the full width. Hover a row and a 165×110 thumbnail opens in the gap between two words (The [image] Drake Hotel): its width transitions from 0 to 165px over 0.45s with cubic-bezier(0.23,1,0.32,1), pushing the words apart. The image arrives pixelated and sharpens, and the letters shuffle briefly (data-hover-shuffle). Single-word names get the image after the word. Worth reusing: the preview sits inside the line of type instead of floating by the cursor, so the title and the picture read as one.",
+  "url": "https://locomotive.ca/en",
+  "kind": "site",
+  "section": "Work",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/locomotive-word-gap.jpg",
+  "added": 1793291342014
+}

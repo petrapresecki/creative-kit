@@ -1,0 +1,13 @@
+{
+  "id": "lib-locomotive-mosaic",
+  "title": "Locomotive: video hero with drifting mosaic blocks",
+  "note": "The hero is a full-screen, muted, looping video of faces lit in saturated red and blue. Over it, rectangular patches of the frame are drawn as big square pixels (about 52px cells), like censor bars, and they slide and change shape every few hundred ms, often across the eyes. The page loads three.js, so it is likely a shader that quantises UVs inside a few moving rects, but the same look works in canvas 2D: draw the video small, scale it up with imageSmoothing off, and clip to a few rects. Worth reusing: a pixel mosaic that covers only parts of the image and keeps moving reads as glitchy and deliberate. A full-frame pixelate just looks like loading.",
+  "url": "https://locomotive.ca/en",
+  "kind": "site",
+  "section": "Hero",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/locomotive-mosaic.jpg",
+  "added": 1793291162014
+}

@@ -1,0 +1,13 @@
+{
+  "id": "lib-locomotive-glyphs",
+  "title": "Locomotive: logo glyphs set inside the text",
+  "note": "Small drawn marks sit in the type like extra letters: an OPS | DES / DEV badge boxed with 2px rules in front of the wordmark, a ✳ and an underlined superscript LOCO after the tagline, a UNIT bracket opening the manifesto and a looped mark closing it, little triangles of triangles around All Work. They are inline SVGs sized to the cap height, so they wrap with the line and take the text colour (they turn with the blend-mode hero). Worth reusing: a set of 4–6 studio glyphs used as punctuation gives plain type a voice without adding another typeface.",
+  "url": "https://locomotive.ca/en",
+  "kind": "site",
+  "section": "Type",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/locomotive-glyphs.jpg",
+  "added": 1793291102014
+}

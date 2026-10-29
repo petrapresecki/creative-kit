@@ -1,0 +1,13 @@
+{
+  "id": "lib-locomotive-type",
+  "title": "Locomotive: a light narrow serif at huge sizes over a plain sans",
+  "note": "Headlines, project names and the manifesto are all set in PP Locomotive New Light (Pangram Pangram, made for the studio): a tall, narrow, high-contrast serif at 70px for the manifesto, 110–115px for project titles, line-height about 1.1, no tracking. Everything else is Helvetica Now Display Regular at 26px (15px for small print), sentence case, black on white. No bold anywhere. The size jump is the hierarchy. Worth reusing: one light display serif plus one sans in a single weight. Size alone carries the order, and the narrow face lets a 70px paragraph still fit 8–9 words per line. Free stand-ins: Instrument Serif or Gloock for the serif, Inter Tight for the sans.",
+  "url": "https://locomotive.ca/en",
+  "kind": "site",
+  "section": "Type",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/locomotive-type.jpg",
+  "added": 1793291042014
+}

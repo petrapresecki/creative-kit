@@ -1,0 +1,13 @@
+{
+  "id": "lib-locomotive-tint",
+  "title": "Locomotive: headline letters that pick up colour",
+  "note": "The hero title (Locomotive® / Digital-first Design Agency, 70px narrow serif) sits on the video with mix-blend-mode: difference, so it inverts against whatever is behind it. On top of that, a few single letters, and sometimes whole runs, switch to an accent (cyan #7fe7f2, orange #f39a3c, blue) and back about once a second, so the colour wanders through the words. Built by wrapping each letter in a span and toggling a class on a random few. Worth reusing: colour in two or three letters at a time keeps a black-and-white page alive without colouring a whole headline.",
+  "url": "https://locomotive.ca/en",
+  "kind": "site",
+  "section": "Hero",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/locomotive-tint.jpg",
+  "added": 1793291222014
+}

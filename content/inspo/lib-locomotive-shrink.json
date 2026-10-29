@@ -1,0 +1,13 @@
+{
+  "id": "lib-locomotive-shrink",
+  "title": "Locomotive: the hero shrinks while its title holds on",
+  "note": "Scrolling down, the hero does not slide away: its bottom edge rises (the box gets shorter, the video stays put inside) and the title rides up on that bottom edge until only a 300px band with the title is left, then the page carries on in white. The header stays on top in difference blend. In GSAP: a scrubbed ScrollTrigger on clip-path inset(0 0 X% 0) or height, with the title absolutely positioned at the bottom of the clipped box. Worth reusing: the hero gives way to the content but its title stays readable a while longer, a gentler handover than a parallax slide.",
+  "url": "https://locomotive.ca/en",
+  "kind": "site",
+  "section": "Hero",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/locomotive-shrink.jpg",
+  "added": 1793291282014
+}
