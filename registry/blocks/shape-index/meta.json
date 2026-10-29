@@ -1,0 +1,12 @@
+{
+  "title": "Shape index",
+  "description": "Every project as a flat silhouette in one floating cluster, named again in a run-in list. Hover a shape or a name and the shape fills with that project's image while the name gets a colour block.",
+  "category": "Sections",
+  "files": ["ShapeIndex.tsx"],
+  "lib": ["gsap"],
+  "dependencies": ["gsap", "@gsap/react"],
+  "registryDependencies": [],
+  "inspiredBy": ["lib-eylon-shapes", "lib-eylon-list"],
+  "usedIn": [],
+  "theme": "onyx"
+}

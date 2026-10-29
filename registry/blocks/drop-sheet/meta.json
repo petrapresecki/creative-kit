@@ -1,0 +1,12 @@
+{
+  "title": "Drop sheet",
+  "description": "Nav words that drop printed sheets instead of opening pages: the word becomes a tab with a ×, an inverted mono sheet unrolls from under the bar with a marquee, caret rules and a colour stripe, and the page behind dims.",
+  "category": "Navigation",
+  "files": ["DropSheet.tsx"],
+  "lib": [],
+  "dependencies": [],
+  "registryDependencies": ["marquee"],
+  "inspiredBy": ["lib-eylon-sheet"],
+  "usedIn": [],
+  "theme": "onyx"
+}
