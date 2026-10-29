@@ -1,0 +1,13 @@
+{
+  "id": "lib-fd-pills",
+  "title": "fonderie.download: filter pills each set in their own font",
+  "note": "The fonts-in-use page filters a 4-column grid of posters and books by typeface. The filter is a row of outlined pills with 30px+ radius, and each pill's label is set in the font it filters, so the buttons double as a specimen; the active one fills black with white text. Work images sit edge to edge in grey boxes with a 22px gap. Worth reusing: labelling a filter, tag or nav item in the thing it points to (a font, a colour, a material) instead of plain text.",
+  "url": "https://fonderie.download/",
+  "kind": "site",
+  "section": "Interaction",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/fd-pills.jpg",
+  "added": 1793278992522
+}

@@ -1,0 +1,13 @@
+{
+  "id": "lib-fd-pages",
+  "title": "fonderie.download: every font gets its own world",
+  "note": "Each typeface page is designed around the font rather than a shared template: Beast sits in a retro terminal box bordered with its own A glyph, Garamon(d/t) is white text on a jagged black blob with a white circle punched through it, Quarantype is scattered #typedesignathome stickers, Zara is a big sentence with a type tester under it. What holds it together: black and white, crop marks in the corners, a fixed nav of square icon buttons (one glyph from each font, plus an eye for fonts in use and a ? for about) and the round download button bottom right. Worth reusing: keep the frame (nav, marks, one button) strict so each page can go wild inside it.",
+  "url": "https://fonderie.download/",
+  "kind": "site",
+  "section": "Pages",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/fd-pages.jpg",
+  "added": 1793278932522
+}

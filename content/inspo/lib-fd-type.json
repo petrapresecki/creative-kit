@@ -1,0 +1,13 @@
+{
+  "id": "lib-fd-type",
+  "title": "fonderie.download: ugly-beautiful display faces, all free",
+  "note": "Seven display faces, all under the WTFPL (use them for anything): 4 Fromages (drippy, tribal-calligraphic ligatures), Beast (chunky pixel slab), Crédible, Garamon(d/t) (a rough wobbly Garamond revival), Quarantype (mixed-up ornamental caps made during lockdown), Tribalium Neue and Zara (a quirky sans with spiky caps, drawn on a FlixBus trip). The 4 Fromages page fills the screen with a wall of the font and a fake 3D software box on top. None of them are body faces. Worth reusing: one of these as a single loud headline or logo against a plain grotesk, the way GASS pairs a neutral sans with one ornate face (lib-gass-type).",
+  "url": "https://fonderie.download/",
+  "kind": "site",
+  "section": "Type",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/fd-type.jpg",
+  "added": 1793278872522
+}

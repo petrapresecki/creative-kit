@@ -1,0 +1,13 @@
+{
+  "id": "lib-fd-spin",
+  "title": "fonderie.download: four specimens spinning on their own axis",
+  "note": "The home page is a 2×2 grid of word specimens, one font per quarter, each image calc(50vw - 80px) by calc(50vh - 80px) on white with print crop marks in the corners. Every specimen turns forever on its vertical axis: a CSS keyframe from rotateY(0) to rotateY(-360deg), 3s linear infinite, so the words flatten to a sliver and open again. No JS, no WebGL. In the middle a round 70px download button spins twice after 4s, then on hover squares off, widens to 350px and flashes its background red, yellow, blue, green every 0.5s. Worth reusing: one cheap CSS 3D turn makes static type feel alive, and a loud hover state on the one thing you want clicked.",
+  "url": "https://fonderie.download/",
+  "kind": "site",
+  "section": "Hero",
+  "verdict": "love",
+  "project": "library",
+  "siteType": "Creative",
+  "image": "images/fd-spin.jpg",
+  "added": 1793278812522
+}
