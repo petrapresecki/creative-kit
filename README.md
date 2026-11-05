@@ -74,7 +74,7 @@ Blocks are copied in as source (into `src/components/kit/`), so each site can ch
 **Start with [content/research/start-here.md](content/research/start-here.md)**: six portfolios Petra picked herself, the first ones to look at.
 
 Galleries with good website inspo (especially **[minimal.gallery](https://minimal.gallery/websites/)**):
-[minimal.gallery](https://minimal.gallery/websites/) · [Site of Sites](https://www.siteofsites.co/?p=1) · [Godly](https://godly.website/) · [Httpster](https://httpster.net) · [Mindsparkle Mag](https://mindsparklemag.com/websites) · [Woo-hu](https://woo-hu.com/)
+[minimal.gallery](https://minimal.gallery/websites/) · [Site of Sites](https://www.siteofsites.co/?p=1) · [Recent](https://recent.design/) (formerly Godly) · [Httpster](https://httpster.net) · [Mindsparkle Mag](https://mindsparklemag.com/websites) · [Awwwards](https://www.awwwards.com/websites/)
 
 Fonts: [ABC Dinamo](https://abcdinamo.com/) (paid, with trial fonts for mockups).
 
